@@ -29,7 +29,7 @@ class Table(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     restaurant_id = Column(Integer, ForeignKey("restaurant.id"))
     max_persons = Column(Integer, default=0)
-    is_open = Boolean, default=True)
+    is_open = Column(Boolean, default=True)
 
     def can_book(self, persons: int) -> bool:
         if not self.is_open:
