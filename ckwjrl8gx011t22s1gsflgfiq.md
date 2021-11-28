@@ -159,7 +159,11 @@ def run_mappers():
     mapper(Table, table)
 
 run_mappers() # it should be execute in the app runtime
+```
+We can see that `models.py` file was divided into `entities.py` file, consisting domain models that are plain python classes and don't know anything about ORM or a database, and `orm.py` file that defines database tables and mapping from a python class to a database table. 
 
+In the end, in `test_entities.py` we test `Restaurant` class method without need of the database setup. Cool? But it's not over yet.
+```python
 # test_entities.py
 import pytest
 from entities.restaurant import Restaurant, Table
@@ -170,9 +174,6 @@ def test_restaurant_has_open_table_should_pass_if_any_table_in_restaurant_is_ope
 
     assert restaurant.has_open_table(3)
 ```
-We can see that `models.py` file was divided into `entities.py` file, consisting domain models that are plain python classes and don't know anything about ORM or a database, and `orm.py` file that defines database tables and mapping from a python class to a database table. 
-
-In the end, in `test_entities.py` we test `Restaurant` class method without need of the database setup. Cool? But it's not over yet.
 
 ## What about unit tests at a service layer?
 Thanks to the separation we can also unit test the application at a service layer (I have recently written something about service layer abstraction [here](https://jorzel.hashnode.dev/flask-mvt-service-layer)) imitating usage of a database, so the whole application logic can be tested without any integration tests. To make it happen, we need:
