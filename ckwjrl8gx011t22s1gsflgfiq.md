@@ -51,7 +51,7 @@ class Restaurant(Base):
     tables = relationship("Table", lazy="dynamic")
 
     def _get_open_table(self, persons: int) -> Optional[Table]:
-        return self.tables.filter(Table.max_persons >= persons, is_open == True).first()
+        return self.tables.filter(Table.max_persons >= persons, Table.is_open.is_(True)).first()
 
     def has_open_table(self, persons: int) -> bool:
         if self._get_open_table(persons):
