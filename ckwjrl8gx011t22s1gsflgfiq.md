@@ -297,7 +297,7 @@ class MemoryRestaurantRepository(RestaurantRepository):
     def __init__(self):
         self._restaurants = {}
 
-    def get(self, restaurant_id: RestaurantId) -> Optional[Restaurant]:
+    def get(self, restaurant_id: int) -> Optional[Restaurant]:
         return self._restaurants.get(restaurant_id)
 
 class SQLAlchemyRestaurantRepository(RestaurantRepository):
