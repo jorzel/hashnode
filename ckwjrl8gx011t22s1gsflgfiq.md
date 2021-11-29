@@ -360,7 +360,7 @@ Against arguments:
 - connascene - code that is changed for the same reason should be in the same place. Assuming, we have direct mapping between domain model classes and tables in database, the change in domain model, trigger the change in persistance model and database table (more about connascene: https://connascence.io/),
 - easier and more popular SQLAlchemy declarative mapping API,
 - your project is a CRUD application. It doesn't follow classical test pyramid. You probably can test whole application through API (functional / integration tests), because there is no business logic,
-- performance issues, e.g. for filtering `tables` in integrated model we can execute indexed database query, while in domain model we have to iterate through the whole collection.
+- performance issues, e.g. for filtering `tables` in integrated model we can execute indexed database query, while in domain model we have to iterate through the whole collection (for large collections it could be a problem).
 
 That's all. 
 
