@@ -5,8 +5,8 @@ You probably have heard about a test pyramid. It is the idea that the applicatio
 
 ![pyramid.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1638049161154/7xCB7w3fJ.png)
 
-That was the theory, but the reality in Python world is rather different. Most of applications exploit ORM (Object Relational Mapper) to setup domain models. So how this applications can be unit tested when domain classes are structurally binded to database?
-The first answer is: Tweak a little bit definition of unit test, to satisfy the need. If domain models tests need a database but are still relatively fast and easy to maintain, we can treat them as unit tests rather than integration tests. But, is it a real solution?
+That was the theory, but the reality in Python world is rather different. Most of applications exploit ORM (Object Relational Mapper) to setup domain models. So how this applications can be unit tested when domain classes are structurally binded to a database?
+The first answer is: Tweak a little bit definition of unit test, to satisfy the need. If domain model tests need a database but are still relatively fast and easy to maintain, we can treat them as unit tests rather than integration tests. But, is it a real solution?
 The second answer is: Separate your domain model from persistance model. So, here we go!
 
 # How to separate model?
@@ -161,7 +161,7 @@ def run_mappers():
     )
     mapper(Table, table)
 
-run_mappers() # it should be execute in the app runtime
+run_mappers() # it should be executed in the app runtime
 ```
 We can see that `models.py` file was divided into `entities.py` file, consisting domain models that are plain python classes and don't know anything about ORM or a database, and `orm.py` file that defines database tables and mapping from a python class to a database table. 
 
