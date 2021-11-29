@@ -216,7 +216,7 @@ class RestaurantRepository(ABC):
 
 # service.py
 from uow import UnitOfWork
-from repository import RestaurantRepository
+from repositories import RestaurantRepository
 
 class RestaurantNotExist(Exception):
     pass
