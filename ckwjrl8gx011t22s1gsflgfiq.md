@@ -51,7 +51,10 @@ class Restaurant(Base):
     tables = relationship("Table", lazy="dynamic")
 
     def _get_open_table(self, persons: int) -> Optional[Table]:
-        return self.tables.filter(Table.max_persons >= persons, Table.is_open.is_(True)).first()
+        return self.tables.filter(
+            Table.max_persons >= persons, 
+            Table.is_open.is_(True)
+        ).first()
 
     def has_open_table(self, persons: int) -> bool:
         if self._get_open_table(persons):
@@ -231,12 +234,12 @@ class BookingTableService:
         self._uow = unit_of_work
 
     def book_table(self, restuarant_id: int, persons: int) -> Table:
-        restaurant = self._restaurant_repository.get(command.restaurant_id)
+        restaurant = self._restaurant_repository.get(restaurant_id)
         if not restaurant:
             raise RestaurantNotExist
 
         with self._uow:
-            restaurant.book_table(command.persons)
+            restaurant.book_table(persons)
 ```
 For testing needs we can use in-memory imlementation of Repository (```MemoryRestaurantRepository```) and Unit of Work (```MemoryUnitOfWork```), while in production we have Repository (```SQLAlchemyRestaurantRepository```) and Unit of Work (```SQLAlchemyUnitOfWork```)  with a connection to the database.
 
