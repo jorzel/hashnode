@@ -344,7 +344,7 @@ def test_booking_service_book_table_should_pass_when_table_in_restaurant_is_avai
 
     booking_service.book_table(restaurant_id=restaurant.id, persons=3)
 
-    assert booked_table.is_open is False
+    assert table.is_open is False
     assert uow.is_committed is True
 ```
 
