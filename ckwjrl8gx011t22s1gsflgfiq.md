@@ -217,6 +217,10 @@ class RestaurantRepository(ABC):
     def get(self, restaurant_id):
         pass
 
+    @abstractmethod
+    def add(self, restaurant):
+        pass
+
 # service.py
 from uow import UnitOfWork
 from repositories import RestaurantRepository
@@ -303,12 +307,19 @@ class MemoryRestaurantRepository(RestaurantRepository):
     def get(self, restaurant_id: int) -> Optional[Restaurant]:
         return self._restaurants.get(restaurant_id)
 
+    def add(self, restaurant: Restaurant) -> None:
+        self._restaurants[restuarant.id] = restaurant
+
 class SQLAlchemyRestaurantRepository(RestaurantRepository):
     def __init__(self, session: Session):
         self.session = session
 
     def get(self, restaurant_id: int) -> Optional[Restaurant]:
         return self.session.query(Restuarant).get(restaurant_id)
+
+    def add(self, restaurant: Restaurant) -> None:
+        self.session.add(restaurant)
+        self.session.flush()
 
 # test_service.py
 from typing import List, Optional
