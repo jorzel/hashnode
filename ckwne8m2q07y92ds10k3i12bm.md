@@ -13,7 +13,7 @@ Application core, that is agonostic about external services and dependencies, sh
 
 # Implementation
  [Nameko](https://nameko.readthedocs.io/en/stable/what_is_nameko.html) is a python framework for building microservices providing simple HTTP requests, RPC and Messaging over AMQP protocol.
-In our simple example we implement an application that register entries to the system and emit event that should be handled in other part of the system (or other microservice). 
+In our simple example we implement an application that register entries to the system and emit event that should be handled in other part of the system (or other microservice).
 
 We define a **secondary port** as an interface that enables publishing domain events from application core. Depending on implementation it could publish messages to local event bus or genuine event broker like RabbitMQ (but implementation is a resposibility of an adapter).
 ```python
@@ -101,4 +101,4 @@ class NamekoRegistrationService:
 The crucial thing here is that our application core does not have any knowledge about infrastructure and API, it operates only on interfaces. If we would like to have a database access, we defined a repository interface and injected it into our service. Or, if there is a need to send a notification, we probably make a notification sender interface that can be implemented by SMS or Email sender adapter in the infrastructure layer. But inside the application core we know nothing about infrastructure implementations (thanks to it the application logic can be easily unit tested). And this is the main gain of using this architecture.
 
 # Summary
-It was a microexample of hexagonal architecture base concepts using Python and Nameko. If you find it interesting, I recommend you to visit my github repository for extended implementation of similar project (also Python, Nameko and Port and Adapters): https://github.com/jorzel/opentable.
+It was a microexample of hexagonal architecture base concepts using Python and Nameko. If you find it interesting, I recommend you to visit my github repository for extended implementation (including also a domain layer that was omitted here, for the sake of simplicity) of similar project (also Python, Nameko and Port and Adapters): https://github.com/jorzel/opentable.
