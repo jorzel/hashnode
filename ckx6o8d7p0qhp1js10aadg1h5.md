@@ -45,8 +45,7 @@ class BookingTableService:
         self.send_notification(restaurant_id)
 
     def send_notification(self, restaurant_id: str) -> None:
-        logging.info(f'Table booked in {restaurant_id=}')
-
+        # some implementation
 BookingTableSerice().book_table(1)
 ```
 1. What supportive action is done? **Yes**,  we know we a send a notification, because we call `send_notification` method.
