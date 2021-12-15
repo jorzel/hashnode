@@ -1,6 +1,5 @@
 ## Coupling. Two perspectives
 
-## Coupling definition
 Coupling is a concept used in software engineering to define how tight is a relationship between system components (classes, modules, subsystems). Here you have some defintions:
 - > Coupling is inter-connection between modules </br>
 source: K. Hennney: https://www.youtube.com/watch?v=tMW08JkFrBA
