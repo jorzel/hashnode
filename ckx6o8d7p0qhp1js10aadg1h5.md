@@ -31,11 +31,13 @@ The second perspective is a qualitative and defines how tight is a dependency be
 As far as  quantitative coupling is concerned, we know what must be done to make coupling looser from that perspective. We should decrease number of dependencies.
 But how decrease qualitative coupling?
 To present a spectrum of coupling states: from tight to loose, we prepared a set of implementations of booking table in a restaurant. There is a main responsibility that is a domain action of booking table in a system, and the supportive action of sending notification to a person that booked it. 
-In the following examples we use also four questions to determine how implementation of sending notification is coupled with business action (The more 'yes' answers for question: 'do you know it?', the coupling is tighter): 
+In the following examples we use also four questions to determine how implementation of sending notification is coupled with business action: 
 1. What supportive action is done? Does my component know which method / function is called?
 2. How the supportive action is done? Does my component know the implementation?
 3. Where the supportive action executor is instatiated? Does my component instatiate executor? Is it a global object? Is it injected?
 4. What is the supportive action executor type? Is it a function? Is it a class or an interface?
+
+The more 'yes' answers for question: 'do you know it?', the coupling is tighter.
 
 ### Internal method
 ```python
