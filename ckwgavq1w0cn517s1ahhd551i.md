@@ -2,7 +2,7 @@
 
 In this short post I would like to show how we can improve separation of concerns using Service Layer pattern within Model View Template approach.
 
-# Model View Template
+## Model View Template
 MVT is an application building pattern, commonly used in frameworks like Flask (but also Django).
 It consists of three separated components:
 1. Model layer that is resposible for domain logic and persistence.
