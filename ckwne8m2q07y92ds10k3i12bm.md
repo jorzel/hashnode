@@ -7,7 +7,7 @@ Port and adapters (or hexagonal) architecture is a software design concept intro
 
 Application core, that is agonostic about external services and dependencies, should provide orchestration of whole business process exploiting existing ports. There are two types of ports:
 - primary port, that is an entry exposing application core to outside world. It is usually a fascade **called** by a primary adapter (e.g. REST API, CLI, etc.),
-- secondary port, enables application core to communicate with external world (e.g. database, mail sender, etc). It is an interface that is **imlemented ** by a secondary adapter.
+- secondary port, enables application core to communicate with external world (e.g. database, mail sender, etc). It is an interface that is **implemented ** by a secondary adapter.
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1638306569956/jwHimA9Nkw.png)
 
