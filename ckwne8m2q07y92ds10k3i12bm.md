@@ -1,6 +1,6 @@
 ## Port and adapters architecture. Python + Nameko microexample.
 
-# Introduction
+## Introduction
 Port and adapters (or hexagonal) architecture is a software design concept introduced by Alistair Cockburn in 2005. The main goal of it is to provide a clear seperation between application logic and external dependencies like database, user interface, framework providing HTTP requests, etc. 
 
 ![paa.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1638306972626/Ti6CC5PhF.png)
@@ -11,7 +11,7 @@ Application core, that is agonostic about external services and dependencies, sh
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1638306569956/jwHimA9Nkw.png)
 
-# Implementation
+## Implementation
  [Nameko](https://nameko.readthedocs.io/en/stable/what_is_nameko.html) is a python framework for building microservices providing simple HTTP requests, RPC and Messaging over AMQP protocol.
 In our simple example we implement an application that register entries to the system and emit event that should be handled in other part of the system (or other microservice).
 
@@ -100,5 +100,5 @@ class NamekoRegistrationService:
 
 The crucial thing here is that our application core does not have any knowledge about infrastructure and API, it operates only on interfaces. If we would like to have a database access, we defined a repository interface and injected it into our service. Or, if there is a need to send a notification, we probably make a notification sender interface that can be implemented by SMS or Email sender adapter in the infrastructure layer. But inside the application core we know nothing about infrastructure implementations (thanks to it the application logic can be easily unit tested). And this is the main gain of using this architecture.
 
-# Summary
+## Summary
 It was a microexample of hexagonal architecture base concepts using Python and Nameko. If you find it interesting, I recommend you to visit my github repository for extended implementation (including also a domain layer that was omitted here, for the sake of simplicity) of similar project (also Python, Nameko and Port and Adapters): https://github.com/jorzel/opentable. For more theoretical background about hexagonal architecture, go [here](https://herbertograca.com/2017/09/14/ports-adapters-architecture/).
