@@ -1,6 +1,6 @@
 ## Persistence and domain model separation using SQLAlchemy ORM
 
-# Introduction
+## Introduction
 You probably have heard about a test pyramid. It is the idea that the application should have proper balance of automated tests on different layers. There should be a lot of unit tests, significantly less integration tests and a few UI tests (End2End, functional). The reasons for this are maintenence cost and speed of particular test type. Unit tests are usually fast and isolated from the rest of the code (so are easy to setup and maintain). 
 
 ![pyramid.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1638049161154/7xCB7w3fJ.png)
@@ -9,7 +9,7 @@ That was the theory, but the reality in Python world is rather different. Most o
 The first answer is: Tweak a little bit definition of unit test, to satisfy the need. If domain model tests need a database but are still relatively fast and easy to maintain, we can treat them as unit tests rather than integration tests. But, is it a real solution?
 The second answer is: Separate your domain model from persistance model. So, here we go!
 
-# How to separate model?
+## How to separate model?
 To show commonly practiced domain and persistance model integration, we take SQLAlchemy library. It is probably the most popular ORM in python community (along with Django ORM). We define `Restaurant` and `Table` models using SQLAlchemy declarative mapping style.
 ```python
 # models.py
@@ -70,7 +70,7 @@ class Restaurant(Base):
 ```
 We can see that our integrated model need `Base` object that can be instantiated only if we pass proper databse URI. So to test it we must provide database setup. But, is there any way to avoid it?
 
-## Separated model
+### Separated model
 ```python
 # entities.py
 from typing import List, Optional
@@ -178,7 +178,7 @@ def test_restaurant_has_open_table_should_pass_if_any_table_in_restaurant_is_ope
     assert restaurant.has_open_table(3)
 ```
 
-## What about unit tests at a service layer?
+### What about unit tests at a service layer?
 Thanks to the separation we can also unit test the application at a service layer (I have recently written something about service layer abstraction [here](https://jorzel.hashnode.dev/flask-mvt-service-layer)) imitating usage of a database, so the whole application logic can be tested without any integration tests. To make it happen, we need:
 - Repository pattern, an abstraction serving access to data storage (e.g. database),
 - Unit of Work pattern, an abstraction that groups set of operations into transaction (e.g. database transaction).
@@ -359,7 +359,7 @@ def test_booking_service_book_table_should_pass_when_table_in_restaurant_is_avai
     assert uow.is_committed is True
 ```
 
-# Is the separation always a good idea?
+## Is the separation always a good idea?
 We have seen that there is a need of some additional patterns (Dependency Injection, Repository, Unit of Work) and boilerplate code in this solution. So, it must be carefully considered whether given project need it. Here are some tips when we should go for it, becuase it brings some value and when we should avoid it, because it would be overkill or unnecessary complication.
 
 For arguments:
