@@ -13,7 +13,7 @@ source: https://injulkarnilesh.github.io/design-principles/COHESION_AND_COUPLING
 
 ## Two perspectives
 Coupling is strictly connected to cohesion concept ("togetherness" of a component) and there is a common heuristic for software developers that we should design components that have high cohesion and are loosely coupled.
-But the question is how can we determine level of coupling for a given component? Above definitions don't bring the straightforward answer. To answer this question we must divide coupling concept into two aspects: **quantitative** and **qualitative**.
+But the question is how can we determine level of coupling for a given component? Above definitions don't bring the straightforward answer. To answer this question we can divide coupling concept into two aspects: **quantitative** and **qualitative**.
 
 Quantitative perspective refers to the number of dependencies that component A has. It can be represented by two metrics:
 - Afferent coupling (Ca) - the number of external components that depend on component A.
