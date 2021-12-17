@@ -48,10 +48,10 @@ class BookingTableService:
 
 BookingTableSerice().book_table(1)
 ```
-1. What supportive action is done? **Yes**,  we know we a send a notification, because we call `send_notification` method.
-2. How the supportive action is done? **Yes**, because we have implementation of `send_notification` inside our service class.
-3. Where the supportive action executor is instatiated? **Yes**, it is a part of the service class.
-4. What is the supportive action executor type? **Yes**, yes it is`BookingTableService` type.
+1. (Do we know) What supportive action is done? **Yes**,  we know we a send a notification, because we call `send_notification` method.
+2. (Do we know) How the supportive action is done? **Yes**, because we have implementation of `send_notification` inside our service class.
+3. (Do we know) Where the supportive action executor is instatiated? **Yes**, it is a part of the service class.
+4. (Do we know)  What is the supportive action executor type? **Yes**, yes it is`BookingTableService` type.
 
 Here we don't have external dependency, but we put into the same component two different resposibilites. We know everything about sending notification, so coupling is huge.
 
@@ -71,10 +71,10 @@ class BookingTableService:
 
 BookingTableSerice().book_table(1)
 ```
-1. What supportive action is done? **Yes**,  we know we send a notification, because we call `NotificationSender.send_notification` method.
-2. How the supportive action is done? **No**, because implementation is in the `NotificationSender` class.
-3. Where the supportive action executor is instatiated? **Yes**, we instatiate in the constructor of the service.
-4. What is the supportive action executor type? **Yes**, yes it is the `NotificationSender` type.
+1. (Do we know) What supportive action is done? **Yes**,  we know we send a notification, because we call `NotificationSender.send_notification` method.
+2. (Do we know) How the supportive action is done? **No**, because implementation is in the `NotificationSender` class.
+3. (Do we know) Where the supportive action executor is instatiated? **Yes**, we instatiate in the constructor of the service.
+4. (Do we know) What is the supportive action executor type? **Yes**, yes it is the `NotificationSender` type.
 
 This is example of a hidden dependency. We instatiate it inside the service, and it is not represented in the service interface (so not "visible" from outside the component).
 
@@ -94,10 +94,10 @@ class BookingTableService:
 
 BookingTableSerice(notification_sender=NotificationSender()).book_table(1)
 ```
-1. What supportive action is done? **Yes**,  we know we send a notification, because we call `NotificationSender.send_notification` method.
-2. How the supportive action is done? **No**, because implementation is in `NotificationSender` class.
-3. Where the supportive action executor is instatiated? **No**, instance of `NotificationSender` is injected into the service.
-4. What is the supportive action executor type? **Yes**, yes it is the `NotificationSender` type.
+1. (Do we know) What supportive action is done? **Yes**,  we know we send a notification, because we call `NotificationSender.send_notification` method.
+2. (Do we know) How the supportive action is done? **No**, because implementation is in `NotificationSender` class.
+3. (Do we know) Where the supportive action executor is instatiated? **No**, instance of `NotificationSender` is injected into the service.
+4. (Do we know) What is the supportive action executor type? **Yes**, yes it is the `NotificationSender` type.
 
 Now we know less about instantiation of a sender and how it is implemented, because it is injected into our service. However, we still know what action is done and what is the concrete implementation of the action executor (what, not how).
 
@@ -124,10 +124,10 @@ class BookingTableService:
 
 BookingTableSerice(notification_sender=SmsSender()).book_table(1)
 ```
-1. What supportive action is done? **Yes**,  we know we send a notification, because we call `NotificationSender.send_notification` method.
-2. How the supportive action is done? **No**, because implementation is in `NotificationSender` class.
-3. Where the supportive action executor is instatiated? **No**, instance of `NotificationSender` is injected into the service.
-4. What is the supportive action executor type? **No**, we have only an interface, not concrete type.
+1. (Do we know) What supportive action is done? **Yes**,  we know we send a notification, because we call `NotificationSender.send_notification` method.
+2. (Do we know) How the supportive action is done? **No**, because implementation is in `NotificationSender` class.
+3. (Do we know) Where the supportive action executor is instatiated? **No**, instance of `NotificationSender` is injected into the service.
+4. (Do we know) What is the supportive action executor type? **No**, we have only an interface, not concrete type.
 
 In this approach, we have interface injected instead of concrete type. We have defined contract (interface) for notification sender and we can take any class that fulfill it.
 
@@ -172,12 +172,20 @@ class BookingTableService:
 
 BookingTableSerice(event_dispatcher=LocalEventDispatcher()).book_table(1)
 ```
-1. What supportive action is done? **No**,  we only dispatch event, do not delegate to send a notification explicitly.
-2. How the supportive action is done? **No**, because implementation is in `NotificationSender` class.
-3. Where the supportive action executor is instatiated? **No**, instance of `NotificationSender` is injected.
-4. What is the supportive action executor type? **No**, we have only an interface, not concrete type.
+1. (Do we know) What supportive action is done? **No**,  we only dispatch event, do not delegate to send a notification explicitly.
+2. (Do we know) How the supportive action is done? **No**, because implementation is in `NotificationSender` class.
+3. (Do we know) Where the supportive action executor is instatiated? **No**, instance of `NotificationSender` is injected.
+4. (Do we know) What is the supportive action executor type? **No**, we have only an interface, not concrete type.
 
 Here we have no dependency. We published an event and not even know whether other component handles it.
+
+|                              | (Do we know) How the supportive action is done? | (Do we know) Where the supportive action executor is instatiated? | (Do we know) What is the supportive action executor type? | (Do we know) What supportive action is done? |
+|------------------------------|-------------------------------------------------|-------------------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------|
+| Internal method              |                       Yes                       |                                Yes                                |                            Yes                            |                      Yes                     |
+| Delegation                   |                        No                       |                                Yes                                |                            Yes                            |                      Yes                     |
+| Delegation with DI           |                        No                       |                                 No                                |                            Yes                            |                      Yes                     |
+| Delegation with DI interface |                        No                       |                                 No                                |                             No                            |                      Yes                     |
+| Event dispatching            |                        No                       |                                 No                                |                             No                            |                      No                      |
 
 ## Summary
 We have showed some ways of analysing coupling between two components (resposibilities). However we should be concious it is not always true that the less coupling, the better. In some cases we don't need an abstraction (interface), because we have only one implementation. Introducing Dependency Injection with Interface in that case would be overkill. Event dispatching is a great way to decouple several components, but it also introduce some complexity. When we see only publishing event in the part of code (but not see handling it), we lose some sense of causality in our code (what happen next). So you must always choose optimal solution for your case. Thanks for reading.
