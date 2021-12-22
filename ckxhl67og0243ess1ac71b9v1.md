@@ -116,7 +116,7 @@ schema = graphene.Schema(
 To query the list of restaurants we execute `POST` request and determine which fields we would like to get (we still have `up` field in our schema, but it is not necessary for us now, so we don't query it) using the same `/graphql` endpoint:
 ![graphql_restaurants.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640121499402/JmhB1jKw-.png)
 
-## Post / Mutation
+## Command
 We have seen how to query objects using both REST and GraphQL. In the following section I would like to present how to modify data. To make it happen, the domain model was enrich by adding `Table`, `TableBooking` and `User` entities. 
 ```python
 # models.py
