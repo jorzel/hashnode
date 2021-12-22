@@ -4,7 +4,7 @@
 REST is probably the most popular way to expose your application to the external world (e.g. as a backend for frontend or to establish communication protocol with other application / service). However, GraphQL is now getting more and more popular, and have became a strong competitor for REST. 
 Nevertheless, the aim of this post is not to carry out a detailed comparison of advantages / disadvantages of these approaches, because there is a lot of stuff covering that topic. I would rather like to present how REST and GraphQL differ in implementation strategies. This post can be especially helpful for people who are familiar with REST pattern and wonder how to broaden interests in GraphQL technology.
 
-## Initial application setup
+## Application requirements
 First of all, I create simple `flask` project with `Blueprint` functionality to provide REST API. In contrast to REST, that need separated HTTP endpoint for each business action, GraphQL expose only one HTTP endpoint both for queries and commands. There is a `flask_graphql` package that expose this endpoint with request syntax parsing provided. To built GraphQL schema I use `graphene` library and `sqlalchemy` to build simple ORM models. To present results of both APis I use  [`insomnia`](https://insomnia.rest/download)  that is a powerful REST HTTP client with GraphQL integration. 
 
 ```bash
