@@ -1,5 +1,6 @@
 ## GraphQL API and REST API. Mirror implementations in Python
 
+## Introduction
 REST is probably the most popular way to expose your application to the external world (e.g. as a backend for frontend or to establish communication protocol with other application / service). However, GraphQL is now getting more and more popular, and have became a strong competitor for REST. 
 Nevertheless, the aim of this post is not to carry out a detailed comparison of advantages / disadvantages of these approaches, because there is a lot of stuff covering that topic. I would rather like to present how REST and GraphQL differ in implementation strategies. This post can be especially helpful for people who are familiar with REST pattern and wonder how to broaden interests in GraphQL technology.
 
