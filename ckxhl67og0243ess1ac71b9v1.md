@@ -117,7 +117,7 @@ To query the list of restaurants we execute `POST` request and determine which f
 ![graphql_restaurants.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640121499402/JmhB1jKw-.png)
 
 ## Command
-We have seen how to query objects using both REST and GraphQL. In the following section I would like to present how to modify data. To make it happen, the domain model was enrich by adding `Table`, `TableBooking` and `User` entities. 
+We have seen how to query objects using both REST and GraphQL. In the following section I would like to present how to modify data. To make it happen, the domain model was enriched by adding `Table`, `TableBooking` and `User` entities. 
 ```python
 # models.py
 from datetime import datetime
