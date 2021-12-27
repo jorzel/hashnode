@@ -179,7 +179,7 @@ def test_restaurant_has_open_table_should_pass_if_any_table_in_restaurant_is_ope
 ```
 
 ### What about unit tests at a service layer?
-Thanks to the separation we can also unit test the application at a service layer (I have recently written something about service layer abstraction [here](https://jorzel.hashnode.dev/flask-mvt-service-layer)) imitating usage of a database, so the whole application logic can be tested without any integration tests. To make it happen, we need:
+Thanks to the separation we can also unit test the application at a service layer (I have recently written something about service layer abstraction [here](https://jorzel.hashnode.dev/flask-mvt-refactor-to-service-layer)) imitating usage of a database, so the whole application logic can be tested without any integration tests. To make it happen, we need:
 - Repository pattern, an abstraction serving access to data storage (e.g. database),
 - Unit of Work pattern, an abstraction that groups set of operations into transaction (e.g. database transaction).
 
