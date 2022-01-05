@@ -9,7 +9,7 @@ An inspiration for this post has been a [stackoverflow question](https://stackov
 The post is a follow-up for  [my text](https://jorzel.hashnode.dev/graphql-api-and-rest-api-mirror-implementations-in-python) comparing GraphQL and REST example implementations in python. So you could find there a requirements to setup an application.
 
 ## Sign Up / Sign In
-We start from simple `User` model that have `email` and hashed `password` properties.  
+We start from a simple `User` model that have `email` and hashed `password` properties.  
 ```python
 from sqlalchemy import Column,Integer, String
 from sqlalchemy.orm import relationship
