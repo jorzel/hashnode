@@ -194,7 +194,7 @@ def get_current_user(context) -> User:
     except KeyError:
         raise UnauthenticatedUser("UnauthenticatedUser")
 
-def get_token_from_request(request):
+def get_token_from_request(request) -> str:
     header = request.headers["Authorization"]
     token = header.replace("Bearer ", "", 1)
     return token
