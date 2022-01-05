@@ -48,6 +48,7 @@ class Mutation(graphene.ObjectType):
 
 # service.py
 from auth import generate_password_hash
+
 class UserAlreadyExist(Exception):
     pass
 
@@ -69,7 +70,7 @@ def generate_password_hash(password: str) -> str:
     h = hashlib.md5(f"{password}{SALT}".encode())
     return h.hexdigest()
 ```
-The mutation is executed as a `POST` request at `/graphql` endpoint. As in previous post about GraphQL I use [insomnia](https://insomnia.rest/) to perform HTTP requests.
+The mutation is executed as a `POST` request at `/graphql` endpoint. As in previous post about GraphQL, I use [insomnia](https://insomnia.rest/) to perform HTTP requests.
 ![sign_up.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640694563138/kOoVp6cJF.png)
 
 When `User` instance is created, we need a `SignIn` mutation that generate `User` authentication  JWT `token` if correct credentials are passed. 
@@ -135,8 +136,8 @@ For `SignIn` mutation we pass `email` and `password` and get `token` in payload 
 ![sign_in.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640695212036/qvufgy-GQ.png)
 
 ## Authentication
-We have a `token` generated in `SignIn` step, so we can used it in "Bearer Authentication" process. In this kind of authentication, everyone that has valid `token` (bearer) can be recognized as a `User` corresponding to this `token`.
-We define a `sign_in_required` decorator that can be used for each GraphQL field resolver. This decorator takes `token` from "Authorization" request header, decode it to get `user_id` and check if `User` corresponding to `user_id` exist. If it completes successfully, we have authenicated `User`. 
+We have a `token` generated in `SignIn` step, so we can use it in "Bearer Authentication" process. In this kind of authentication, everyone that has valid `token` (bearer) can be recognized as a `User` corresponding to this `token`.
+We define a `sign_in_required` decorator that can be used for each GraphQL field resolver. This decorator takes `token` from "Authorization" request header, decode it to get `user_id` and check if `User` corresponding to `user_id` exist. If it completes successfully, we have authenticated `User`. 
 
 ```python
 # api/graphql.py
@@ -339,6 +340,6 @@ If `token` is not corresponding to owner of given `TableBooking`, the action can
 ![unauthorized_access.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640702831268/24mMer_vT5.png)
 
 ## Conclusion
-We presented how to perform authentication and authorization steps both for queries and mutations. These implementation is quite generic and can be easily integrated in any GraphQL project. Full source code you can find here: https://github.com/jorzel/service-layer/tree/auth.
+We presented how to perform authentication and authorization steps both for queries and mutations. This implementation is quite generic and can be easily integrated in any python GraphQL project. Full source code you can find here: https://github.com/jorzel/service-layer/tree/auth.
 
 Thanks!
