@@ -222,8 +222,9 @@ If we hit a field decorated with `sign_in_required` without `token` passed in "A
 
 ## Authorization
 We have seen how to authenticate query to restrict access only to signed in users. But, what about a case when we have a `User` that is logged in, but an action that he/she performs is not permitted for him/her. In our example we have two actions:
-- booking a restaurant table, that should be allowed if `User` is authenticated
-- cancelling a table booking, that is allowed only for `User` that made this booking before
+- booking a restaurant table, that should be allowed if `User` is authenticated,
+- cancelling a table booking, that is allowed only for `User` that made this booking before.
+
 We implement two mutatons: `BookRestaurantTable` that has `mutate` method decorated with `sign_in_required` and `CancelTableBooking` with new decorator `authorize_required`used.
 This decorator checks `User` is authenticated and also whether `table_booking_gid` (representing global id of an instance) is corresponding to `TableBooking` instance that was created by the authenticated `User`.
 
