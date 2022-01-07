@@ -3,7 +3,7 @@
 ## Introduction
 In this second post regarding GraphQL I would like to show how to manage authentication and authorization in GraphQL API. Authentication and authorization are often mixed each other but these concepts are responsible for different processes. The former determine user identity (whether user is logged in or 'recognized' by a system), while the latter refers to whether an authenticated user has access to a given resource. So usually authentication stage precede authorization one. Authentication and authorization could be challenging in GraphQL due to only one exposed HTTP endpoint (e.g. `/graphql`). It would be possible to authenticate user at this endpoint, but in that implementation we abandon public access option to some resources. Authorization at this sole endpoint is impossible, because we do not know which resources would be queried.
 
-An inspiration for this post has been a [stackoverflow question](https://stackoverflow.com/questions/69126083/set-permissions-on -graphene-relay-node-and-connection-fields/70252461#70252461) that seeks an answer for that topic.
+An inspiration for this post has been a [stackoverflow question](https://stackoverflow.com/questions/69126083/set-permissions-on-graphene-relay-node-and-connection-fields/70252461#70252461) that seeks an answer for that topic.
 
 ## Application setup
 The post is a follow-up for  [my text](https://jorzel.hashnode.dev/graphql-api-and-rest-api-mirror-implementations-in-python) comparing GraphQL and REST example implementations in python. So you could find there a requirements to setup an application.
