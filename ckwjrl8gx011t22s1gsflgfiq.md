@@ -43,7 +43,7 @@ class Table(Base):
             self.is_open = False
         else:
             raise BookedTableException(
-                "{self} cannot be booked, becuase is not open now or is too small"
+                f"{self} cannot be booked, becuase is not open now or is too small"
             )
 
 class Restaurant(Base):
@@ -96,7 +96,7 @@ class Table:
             self.is_open = False
         else:
             raise BookedTableException(
-                "{self} cannot be booked, becuase is not open now or is too small"
+                f"{self} cannot be booked, becuase is not open now or is too small"
             )
 
 class Restaurant:
