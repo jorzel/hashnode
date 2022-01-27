@@ -281,7 +281,7 @@ It depends...
 > - GIN indexes are two-to-three times larger than GiST indexes
 
 ## Conclusion
-I hope this will be helpful for you. Python code to create db, insert records and integration with SQLAlchemy can be found [here](https://github.com/jorzel/postgres-full-text-search). Thanks!
+I hope this will be helpful for you. Python code to create db, insert records and provide integration with SQLAlchemy can be found [here](https://github.com/jorzel/postgres-full-text-search). Thanks!
 
 ## Inspiration and help
 - https://about.gitlab.com/blog/2016/03/18/fast-search-using-postgresql-trigram-indexes/
