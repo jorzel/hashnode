@@ -10,7 +10,7 @@ I started with a database creation. All database commands will be exectuted insi
 To create a table and feed it with an example dataset (100k rows, 15 english words each one) I have written a python script (link to github repo, you find at the end of this story). However, you can do it with native SQL as well.
 
 ## Full text search using simple `ilike`
-At the very beginning I start with `ilike` operator. This option is easy and straightforward.  However, you may not be statisfied with a query performance when your database is getting large.
+At the very beginning I start with `ilike` operator. This option is easy and straightforward.  However, you may not be satisfied with a query performance when your database is getting large.
 ```sql
 >> EXPLAIN ANALYZE
    SELECT text, language
