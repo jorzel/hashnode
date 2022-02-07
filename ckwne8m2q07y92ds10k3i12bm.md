@@ -1,4 +1,4 @@
-## Port and adapters architecture. Python + Nameko microexample
+## Ports and adapters architecture. Python + Nameko microexample
 
 ## Introduction
 Port and adapters (or hexagonal) architecture is a software design concept introduced by Alistair Cockburn in 2005. The main goal of it is to provide a clear seperation between application logic and external dependencies like database, user interface, framework providing HTTP requests, etc. 
