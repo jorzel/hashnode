@@ -73,6 +73,7 @@ class RegistrationService:
 
     def register_entry(self, email: str) -> None:
         event = RegisteredEntryEvent(email=email)
+        # this should some business / domain stuff executed
         self._event_publisher.publish(event)
 ```
 
