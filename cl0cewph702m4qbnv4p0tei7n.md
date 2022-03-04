@@ -24,7 +24,7 @@ Value objects usually are useful when we encounter following challenges:
 - various presentation (e.g. different presentation of a distance concept depending on a country)
 
 However, due to not possesing an identity, value objects can come across some issues with how to persist them.
-Here, we suggest four different strategies of persitance value objects in SQLAlchemy ORM. trying to protect value object immutability requirement.
+Here, we suggest four different strategies of persitance value objects in SQLAlchemy ORM (trying to protect value object immutability requirement).
 
 ## Simple field
 In the first approach, we define `Email` class to encapsulate validation logic, but
