@@ -11,8 +11,6 @@ Here we have some examples when we can achieve some gains by value objects imple
 - email
 - phone
 - location
-- email
-- phone
 - open hours
 - money
 - subscription plan
