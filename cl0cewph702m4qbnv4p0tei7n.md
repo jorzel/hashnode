@@ -69,8 +69,8 @@ class Shop:
         return Email(self.email_address)
 
     @email.setter
-    def email(self, email_address: str) -> None:
-        self.email_address = Email(email_address).address
+    def email(self, email: Email) -> None:
+        self.email_address = email.address
 
 
 # orm.py
