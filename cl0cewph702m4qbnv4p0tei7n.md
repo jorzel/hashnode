@@ -5,7 +5,7 @@
 Value objects are one of tactical building blocks for modeling business domain introduced and popularized by Domain Driven Design aproach.
 However, we can exploit value objects even if we do not tackling complex domain problem. Value objects, in contrast to entites, are defined only
 by their attributes and do not have any identity. Two value objects are equal when their properties have the same values. Another important trait of a value object is immutability.
-Once created cannot be modified. Value object modification always result in creating new instance of the value object.
+Once created cannot be modified. Value object modification always result in creating a new instance of the value object.
 Here we have some examples when we can achieve some gains by value objects implementation:
 - distance
 - email
