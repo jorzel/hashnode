@@ -362,4 +362,4 @@ def run_mappers():
 ```
 
 ## Summary
-This project can also be found in github repository: https://github.com/jorzel/value-object-persistance
+This project can also be found in the github repository: https://github.com/jorzel/value-object-persistance
