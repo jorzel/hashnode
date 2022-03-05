@@ -361,4 +361,5 @@ def run_mappers():
 ## Summary
 All patterns were implemented using python plain classes and imperative mapping style (to underscore domain and persistance model separation).
 Class (value object) properties are read-only to ensure immutability. Because of that, queries must be performed by using tables instead of models (`select(model.__table__).where(...)` instead of `select(model).where(...)`).
-This project can also be found in the github repository: https://github.com/jorzel/value-object-persistance. Thanks,
+
+This project can also be found in the github repository: https://github.com/jorzel/value-object-persistance.
