@@ -25,7 +25,7 @@ Here, we suggest four different strategies of persitance value objects in SQLAlc
 
 ## Simple field
 In the first approach, we define `Email` class to encapsulate validation logic, but
-persist only a string field column
+persist only a string field column.
 ```python
 # value_objects/email.py
 class InvalidEmail(Exception):
@@ -359,4 +359,6 @@ def run_mappers():
 ```
 
 ## Summary
-This project can also be found in the github repository: https://github.com/jorzel/value-object-persistance
+All patterns were implemented using python plain classes and imperative mapping style (to underscore domain and persistance model separation).
+Class (value object) properties are read-only to ensure immutability. Because of that, queries must be performed by using tables instead of models (`select(model.__table__).where(...)` instead of `select(model).where(...)`).
+This project can also be found in the github repository: https://github.com/jorzel/value-object-persistance. Thanks,
