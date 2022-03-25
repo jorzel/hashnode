@@ -1,7 +1,7 @@
 ## Persistence and domain model separation using SQLAlchemy ORM
 
 ## Introduction
-You probably have heard about a test pyramid. It is the idea that the application should have proper balance of automated tests on different layers. There should be a lot of unit tests, significantly less integration tests and a few UI tests (End2End, functional). The reasons for this are maintenence cost and speed of particular test type. Unit tests are usually fast and isolated from the rest of the code (so are easy to setup and maintain). 
+You probably have heard about a test pyramid. It is the idea that tan application should have proper balance of automated tests on different layers. There should be a lot of unit tests, significantly less integration tests and a few UI tests (End2End, functional). The reasons for this are maintenence cost and speed of particular test type. Unit tests are usually fast and isolated from the rest of the code (so are easy to setup and maintain). 
 
 ![pyramid.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1638049161154/7xCB7w3fJ.png)
 
