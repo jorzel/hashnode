@@ -40,7 +40,7 @@ The default isolation level for PostgreSQL is read committed (to check an isolat
 So, how we can change this behavior to have counter increased serially or at least get an exception that allow us to retry the transaction?
 
 ## Optimistic locking
-First group of solutions is optimistic locking. In fact, it does not lock rows for concurrent access but optimistically assumes that a row would not be changed by another transaction. However, if the row does change by concurrent process, modification will fail and application can handle it. There are two ways of implement it: 
+First group of solutions is optimistic locking. In fact, it does not lock rows for concurrent access but optimistically assumes that a row would not be changed by another transaction. However, if the row does change by concurrent process, modification will fail and application can handle it. There are two ways ofhow to implement it: 
 - using a `version_number` column (it can be integer, timestamp or hash). Update is possible only if the `version_number` at commit stage is equal to the `version number` from query time. Each commit should update also the `version_number` of a the row. At application side we can check if the row was updated and make proper action.
 ```sql
 BEGIN;
