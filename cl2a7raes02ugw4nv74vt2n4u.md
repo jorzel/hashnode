@@ -97,7 +97,7 @@ COMMIT;
 ![pessimistic_nowait.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1650543813518/_8Qf2N797.png)
 
 ## Update with inline increment
-There is also a simple solution when our goal is only to increment a value. However, it would work only if we do not need a part of application logic check, so update process is not separated from query.
+There is also a simple solution when our goal is only to increment a value. However, it would work only if we do not need a part of application logic check, so update process is not separated from query that can be not up-to-date.
 ```sql
 BEGIN;
 UPDATE example SET important_counter = important_counter + 1 
