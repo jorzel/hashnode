@@ -55,7 +55,7 @@ COMMIT;
 ```
 ![optimistic.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1650543766052/twawRuifz.png)
 
-- by changing repeatable read isolation level. When T2 tries to commit changes after succesfull T1 commit, an exception is raised (worth mention that it would not be raised if T1 rollbacks transaction). Again, we can decide how to handle the exception.
+- by switching to repeatable read isolation level. When T2 tries to commit changes after succesfull T1 commit, an exception is raised (worth mention that it would not be raised if T1 rollbacks transaction). Again, we can decide how to handle the exception.
 ```sql
 SET TRANSACTION REPEATABLE READ;
 BEGIN;
