@@ -93,7 +93,6 @@ COMMIT;
 
 ## Update with inline increment
 There is also a simple solution when our goal is only to increment a value. However, it would work only if we do not need a part of application logic check, so update process is not separated from query.
-```
 ```sql
 BEGIN;
 UPDATE example set important_counter = important_counter + 1 
