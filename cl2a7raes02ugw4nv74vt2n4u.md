@@ -69,7 +69,7 @@ COMMIT;
 ![optimistic_readable_read.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1650543786881/gyXsRx36i.png)
 
 ## Pessimistic locking
-Pessimistic approach prevents simultaneous modification of a record by placing a lock on it when one transaction start an update process. A concurrent transaction that want to access locked have two options:
+Pessimistic approach prevents simultaneous modification of a record by placing a lock on it when one transaction start an update process. A concurrent transaction that want to access locked row have two options:
 - wait until transaction T1 is completed.
 ```sql
 BEGIN;
