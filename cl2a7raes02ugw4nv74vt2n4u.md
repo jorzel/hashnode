@@ -104,4 +104,4 @@ COMMIT;
 ## Conclusion
 We have showed some examples how to handle concurrent update issues. However, optimistic or pessimistic locking is not always the best solution. Sometimes, you encounter concurrency problems because of bad design of your system. When your class (model / table) break SRP (Single Responsibility Principle) by keeping data and behavior that are not cohesive, you may encounter many overlapping transactions that want modify different data corresponding to the same record. In that case, above strategies ease your problem a little bit but do not target genuine reason of your troubles.
 
-If you find it interesting, here is a [github repo](https://github.com/jorzel/concurrency-control/):  where you can find some Python code implementing these concepts in SQLAlchemy ORM. 
+If you find it interesting, here is a [github repo](https://github.com/jorzel/concurrency-control/) where you can find some Python code implementing these concepts in SQLAlchemy ORM. 
