@@ -1,4 +1,4 @@
-## Value Object persistance strategies using SQLAlchemy ORM
+## Value Object persistance strategies
 
 
 ## Overview
