@@ -44,7 +44,7 @@ First group of solutions is optimistic locking. In fact, it does not lock rows f
 - using a `version_number` column (it can be integer, timestamp or hash). Update is possible only if the `version_number` at commit stage is equal to the `version number` from query time. Each commit should update also the `version_number` of a the row. At application side we can check if the row was updated and make proper action.
 ```sql
 BEGIN;
-SELECT  important_counter, version_number from example 
+SELECT  important_counter, version_number FROM example 
 WHERE id = 1;
 # some application logic checking
 # whether important_counter should be increased
