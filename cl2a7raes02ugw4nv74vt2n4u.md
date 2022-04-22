@@ -19,10 +19,11 @@ C. `important_counter = 1` - one transaction (T1) committed changes, while the o
 There is no simple answer for this question, because it depends on the database configuration and our `SELECT / UPDATE` strategies. If we use default configuration and transaction scheme that looks like:
 ```sql
 BEGIN;
-SELECT important_counter from example where id = 1;
+SELECT important_counter FROM example WHERE id = 1;
 # some application logic checking 
 # whether important_counter should be increased
-UPDATE example set important_counter = <new_value> from where id = 1;
+UPDATE example SET important_counter = <new_value> 
+WHERE id = 1;
 COMMIT;
 ```
 the result would be an option B and this situation is usually called lost update. Surprised?
@@ -43,11 +44,13 @@ First group of solutions is optimistic locking. In fact, it does not lock rows f
 - using a `version_number` column (it can be integer, timestamp or hash). Update is possible only if the `version_number` at commit stage is equal to the `version number` from query time. Each commit should update also the `version_number` of a the row. At application side we can check if the row was updated and make proper action.
 ```sql
 BEGIN;
-SELECT  important_counter, version_number from example where id = 1;
+SELECT  important_counter, version_number from example 
+WHERE id = 1;
 # some application logic checking
 # whether important_counter should be increased
-UPDATE example set important_counter = <new_value>, version_number = version_number + 1 
-FROM where id = 1 and version_number = <version_number_from_select>;
+UPDATE example SET important_counter = <new_value>, version_number = version_number + 1 
+FROM example 
+WHERE id = 1 AND version_number = <version_number_from_select>;
 COMMIT;
 ```
 ![optimistic.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1650543766052/twawRuifz.png)
@@ -56,11 +59,11 @@ COMMIT;
 ```sql
 SET TRANSACTION REPEATABLE READ;
 BEGIN;
-SELECT  important_counter from example where id = 1;
+SELECT  important_counter FROM example WHERE id = 1;
 # some application logic checking
 # whether important_counter should be increased
-UPDATE example set important_counter = <new_value> 
-FROM where id = 1;
+UPDATE example SET important_counter = <new_value> 
+WHERE id = 1;
 COMMIT;
 ```
 ![optimistic_readable_read.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1650543786881/gyXsRx36i.png)
@@ -70,11 +73,12 @@ Pessimistic approach prevents simultaneous modification of a record by placing a
 - wait until transaction T1 is completed.
 ```sql
 BEGIN;
-SELECT  important_counter from example where id = 1 FOR UPDATE;
+SELECT  important_counter FROM example 
+WHERE id = 1 FOR UPDATE;
 # some application logic checking
 # whether important_counter should be increased
-UPDATE example set important_counter = <new_value> 
-FROM where id = 1;
+UPDATE example SET important_counter = <new_value> 
+WHERE id = 1;
 COMMIT;
 ```
 ![pessimistic_wait.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1650543799429/dT6V6yF7t.png)
@@ -82,11 +86,12 @@ COMMIT;
 - break process and raise an exception that should be handled.
 ```sql
 BEGIN;
-SELECT  important_counter from example where id = 1 FOR UPDATE NOWAIT;
+SELECT  important_counter FROM example 
+WHERE id = 1 FOR UPDATE NOWAIT;
 # some application logic checking 
 # whether important_counter should be increased
-UPDATE example set important_counter = <new_value> 
-FROM where id = 1;
+UPDATE example SET important_counter = <new_value> 
+WHERE id = 1;
 COMMIT;
 ```
 ![pessimistic_nowait.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1650543813518/_8Qf2N797.png)
@@ -95,8 +100,8 @@ COMMIT;
 There is also a simple solution when our goal is only to increment a value. However, it would work only if we do not need a part of application logic check, so update process is not separated from query.
 ```sql
 BEGIN;
-UPDATE example set important_counter = important_counter + 1 
-FROM where id = 1;
+UPDATE example SET important_counter = important_counter + 1 
+WHERE id = 1;
 COMMIT;
 ```
 ![increment_on_update.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1650562787357/9mV2zIWZu.png)
