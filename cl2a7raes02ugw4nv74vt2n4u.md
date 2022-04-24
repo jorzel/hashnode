@@ -19,7 +19,8 @@ C. `important_counter = 1` - one transaction (T1) committed changes, while the o
 There is no simple answer for this question, because it depends on the database configuration and our `SELECT / UPDATE` strategies. If we use default configuration and transaction scheme that looks like:
 ```sql
 BEGIN;
-SELECT important_counter FROM example WHERE id = 1;
+SELECT important_counter 
+FROM example WHERE id = 1;
 # some application logic checking 
 # whether important_counter should be increased
 UPDATE example SET important_counter = <new_value> 
@@ -44,12 +45,12 @@ First group of solutions is optimistic locking. In fact, it does not lock rows f
 - using a `version_number` column (it can be integer, timestamp or hash). Update is possible only if the `version_number` at commit stage is equal to the `version_number` from query time. Each commit should update also the `version_number` of the row. At application side we can check if the row was updated and make proper action.
 ```sql
 BEGIN;
-SELECT  important_counter, version_number FROM example 
+SELECT  important_counter, version_number 
+FROM example 
 WHERE id = 1;
 # some application logic checking
 # whether important_counter should be increased
 UPDATE example SET important_counter = <new_value>, version_number = version_number + 1 
-FROM example 
 WHERE id = 1 AND version_number = <version_number_from_select>;
 COMMIT;
 ```
@@ -59,7 +60,9 @@ COMMIT;
 ```sql
 SET TRANSACTION REPEATABLE READ;
 BEGIN;
-SELECT  important_counter FROM example WHERE id = 1;
+SELECT  important_counter 
+FROM example 
+WHERE id = 1;
 # some application logic checking
 # whether important_counter should be increased
 UPDATE example SET important_counter = <new_value> 
@@ -73,7 +76,8 @@ Pessimistic approach prevents simultaneous modification of a record by placing a
 - wait until transaction T1 is completed.
 ```sql
 BEGIN;
-SELECT  important_counter FROM example 
+SELECT  important_counter 
+FROM example 
 WHERE id = 1 FOR UPDATE;
 # some application logic checking
 # whether important_counter should be increased
@@ -86,7 +90,8 @@ COMMIT;
 - break process and raise an exception that should be handled.
 ```sql
 BEGIN;
-SELECT  important_counter FROM example 
+SELECT  important_counter 
+FROM example 
 WHERE id = 1 FOR UPDATE NOWAIT;
 # some application logic checking 
 # whether important_counter should be increased
