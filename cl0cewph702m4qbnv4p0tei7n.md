@@ -103,7 +103,7 @@ def run_mappers():
 ```
 
 ## Composite field
-In the second approach we use sqlalchemy `composite` field to store two fields (int, enum) corresponding to `Money` concept.
+In the second approach we use sqlalchemy `composite` field to store two fields (`balance_value` as integer and `balance_currency` as enum) within `shop` table that correspond to `Money` concept.
 ```python
 # value_objects/money.py
 import enum
@@ -196,7 +196,7 @@ def run_mappers():
 
 ```
 ## Separated object
-Third option store value object in separated `Location` database record with `id`. However the `id` exist only in the persistance layer.
+Third option stores value object in separated `Location` database table with `id` column. However the `id` exist only in the persistance layer.
 ```python
 # value_objects/location.py
 class InvalidGeolocation(Exception):
@@ -301,7 +301,7 @@ def run_mappers():
 ```
 
 ## Schemaless document (json)
-The last approach persist `OpenHour` concept as a json-like document. It is not provided by each db driver. However, you can use sqlite `JSON` or postgresql `JSONB` implementation.
+The last approach persists `OpenHour` concept as a json-like document. That data structure is not provided by each database driver but is available in SQLite as `JSON` field or in PostgreSQL as `JSONB` field.
 ```python
 # value_objects.open_hours.py
 from datetime import datetime
