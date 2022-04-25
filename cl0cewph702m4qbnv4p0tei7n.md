@@ -29,7 +29,7 @@ Here, we suggest four different strategies of persistence value objects in SQLAl
 
 ## Simple field
 In the first approach, we define `Email` class to encapsulate validation logic, but
-persist only a string field column
+persist only a string field column `email_address` in `Shop` model.
 ```python
 # value_objects/email.py
 class InvalidEmail(Exception):
