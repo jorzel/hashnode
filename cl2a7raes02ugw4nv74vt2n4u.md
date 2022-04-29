@@ -8,7 +8,7 @@ Suppose we have a PostgresSQL database with a table `example` that has an import
 
 ![transaction.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1650538124170/xZONNgeo9.png)
 
-Assuming that row initial value for the `important_counter` is 0, what state of the `important_counter` do you expect when transactions their changes? 
+Assuming that row initial value for the `important_counter` is 0, what state of the `important_counter` do you expect when both transactions are finished? 
 
 A. `important_counter = 2` - both transactions (T1 and T2) have managed to increase counter sequentially.
 
