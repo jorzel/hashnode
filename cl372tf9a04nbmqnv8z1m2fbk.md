@@ -1,6 +1,6 @@
 ## An ORM can bite you
 
-Object Relational Mappers (ORMs) are widely used in software development to abstract database operations in our application code by providing a layer between object-oriented programming language and tables in a database. However we should be conscious that simple and inconspicuous expressions in our ORM can lead to heavy actions underhood. To present it I will take SQLAlchemy, one of the most popular ORM in Python world.
+Object Relational Mappers (ORMs) are widely used in software development to abstract a database operations in our application code by providing a layer between object-oriented programming language and relational tables in a database. However we should be conscious that simple and inconspicuous expressions provided by our ORM can lead to heavy actions underhood. To present it I will take SQLAlchemy, one of the most popular ORM in Python world.
 
 Suppose we have a set of simplified models representing `User` in a `Company`:
 ![model.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652520656984/zrr7NhFW4.png align="left")
