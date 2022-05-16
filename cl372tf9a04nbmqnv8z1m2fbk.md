@@ -57,7 +57,7 @@ Now we would like to perform a query to get a `Person` matching provided filters
                 print(person.user.my_accounts[0].account.company.name)
 ```
 
-`DBStatementCounter` is a [helper class](https://stackoverflow.com/questions/19073099/how-to-count-sqlalchemy-queries-in-unit-tests) that count number of executed database statements within a given context. Assuming that a `Person` was found, what number of queries do you expect from above part of code? 
+`DBStatementCounter` is a [helper class](https://stackoverflow.com/questions/19073099/how-to-count-sqlalchemy-queries-in-unit-tests) that counts how many database statements was executed within a given context. Assuming that a `Person` was found, what number of queries do you expect from above part of code? 
 
 Correct answer is: 5. Surprised? 
 
@@ -110,7 +110,7 @@ person = session.query(Person)
     ).first()
 ```
 
-That query results in only one statement hit. Great! But, when we look at the SQL statement, there is something weird in it:
+That query results in only one query hitting the database. Great! But, when we look at the SQL statement, there is something weird in it:
 
 ```sql
 SELECT 
