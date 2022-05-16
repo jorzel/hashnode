@@ -129,7 +129,8 @@ JOIN account ON account.id = user_account.account_id
 JOIN company ON company.id = account.company_id
 LEFT OUTER JOIN user AS user_1 ON person.id = user_1.person_id
 LEFT OUTER JOIN user_account AS user_account_1 ON user_1.id = user_account_1.user_id 
-LEFT OUTER JOIN account AS account_1 ON account_1.id = user_account_1.account_id LEFT OUTER JOIN company AS company_1 ON company_1.id = account_1.company_id 
+LEFT OUTER JOIN account AS account_1 ON account_1.id = user_account_1.account_id
+LEFT OUTER JOIN company AS company_1 ON company_1.id = account_1.company_id 
 WHERE lower(person.name) LIKE lower(?) AND lower(account.status) LIKE lower(?) AND lower(company.name) LIKE lower(?)
 ```
 
