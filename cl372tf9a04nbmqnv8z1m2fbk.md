@@ -96,7 +96,7 @@ WHERE lower(person.name) LIKE lower(?) AND lower(account.status) LIKE lower(?) A
 The query has properly joined tables, however in `SELECT` section there are only attributes associated to `person` table, so to retrieve column values from joined tables we need another query (or queries).
 
 ## Eager loading
-We can change that bahaviour by passing to `relationship` an expression: `lazy="joined"`. However, it seems reasonable to not load all connected tables every time we need only a `Person`'s columns. The better option is to do it on demand, when we are sure that columns corresponding to linked tables would be used. In SQLAlchemy we can do it using `joinedload` function that provide attributes from joined tables in `SELECT` results.
+We can change that behaviour by passing to `relationship` an expression: `lazy="joined"`. However, it seems reasonable to not load all connected tables every time we need only a `Person`'s columns. The better option is to do it on demand, when we are sure that columns corresponding to linked tables would be used. In SQLAlchemy we can do it using `joinedload` function that provide attributes from joined tables in `SELECT` results.
 
 ```python
 person = session.query(Person)
