@@ -44,19 +44,19 @@ class UserAccount(Base):
 Now we would like to perform a query to get a `Person` matching provided filters and print `Company.name` that is corresponding to the retrieved `Person` object.
 
 ```python
-    with Session() as session:
-        with DBStatementCounter(session.connection()) as ctr:
-            person = (
-                session.query(Person)
-                .join("user", "my_accounts", "account", "company")
-                .filter(
-                    Person.name.ilike("test%"),
-                    Account.status.ilike("x%"),
-                    Company.name.ilike("company%"),
-                ).first()
-            )
-            if person:
-                print(person.user.my_accounts[0].account.company.name)
+with Session() as session:
+    with DBStatementCounter(session.connection()) as ctr:
+        person = (
+            session.query(Person)
+            .join("user", "my_accounts", "account", "company")
+            .filter(
+                Person.name.ilike("test%"),
+                Account.status.ilike("x%"),
+                Company.name.ilike("company%"),
+            ).first()
+        )
+        if person:
+            print(person.user.my_accounts[0].account.company.name)
 ```
 
 `DBStatementCounter` is a [helper class](https://stackoverflow.com/questions/19073099/how-to-count-sqlalchemy-queries-in-unit-tests) that counts how many database statements was executed within a given context. Assuming that a `Person` was found, what number of queries do you expect from above part of code?
