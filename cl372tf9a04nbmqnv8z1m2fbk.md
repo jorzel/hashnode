@@ -100,7 +100,7 @@ person = session.query(Person)
        Company.name.ilike("company%"),
     ).first()
 ```
-That query result in only one statement hit. Great! But, when we look at the SQL statement, there is something weird in it:
+That query results in only one statement hit. Great! But, when we look at the SQL statement, there is something weird in it:
 ```sql
 SELECT 
 person.id AS person_id, person.name AS person_name,
