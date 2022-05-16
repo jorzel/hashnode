@@ -117,7 +117,7 @@ LEFT OUTER JOIN user_account AS user_account_1 ON user_1.id = user_account_1.use
 LEFT OUTER JOIN account AS account_1 ON account_1.id = user_account_1.account_id LEFT OUTER JOIN company AS company_1 ON company_1.id = account_1.company_id 
 WHERE lower(person.name) LIKE lower(?) AND lower(account.status) LIKE lower(?) AND lower(company.name) LIKE lower(?)
 ```
-To get additional attributes we have our tables joined twice... If we do not have many records in the database, this would not be a problem. Otherwise, we can encounter huge performance issue like [here].(https://stackoverflow.com/questions/27174217/sqlalchemy-query-using-joinedload-exponentially-slower-with-each-new-filter-clau). The solution here is to replace `joinedload` with `contains_eager`, because `joinedload` basically should not be used with filtering.
+To get additional attributes we have our tables joined twice... If we do not have many records in the database, this would not be a problem. Otherwise, we can encounter huge performance issue like described [here](https://stackoverflow.com/questions/27174217/sqlalchemy-query-using-joinedload-exponentially-slower-with-each-new-filter-clau). The solution here is to replace `joinedload` with `contains_eager`, because `joinedload` basically should not be used with filtering.
 ```python
 person = session.query(Person)
    .join("user", "my_accounts", "account", "company")
