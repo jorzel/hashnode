@@ -155,7 +155,8 @@ company.id AS company_id, company.name AS company_name, account.id AS account_id
 user_account.user_id AS user_account_user_id,
 user.id AS user_id, user.person_id AS user_person_id,
 person.id AS person_id, person.name AS person_name 
-FROM person JOIN user ON person.id = user.person_id 
+FROM person
+JOIN user ON person.id = user.person_id 
 JOIN user_account ON user.id = user_account.user_id 
 JOIN account ON account.id = user_account.account_id 
 JOIN company ON company.id = account.company_id 
