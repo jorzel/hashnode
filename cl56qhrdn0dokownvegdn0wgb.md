@@ -10,7 +10,7 @@ Let's take an example. Suppose, we have a system with customers and there is a f
 - each customer can only send maximum 3 vouchers to different emails
 - customer can list sent vouchers. He can also see which vouchers have been activated
 
-Following implementations would be simplified for the sake of readability. We assume that our models are properly mapped to ORM classes or database tables and persisted, but it would be omitted in code listings.
+*Following implementations would be simplified for the sake of readability. We assume that our models are properly mapped to ORM classes or database tables and persisted, but it would be omitted in code listings.
 
 ## Straightforward approach
 Our system would need at least two models: `Voucher(customer_id: int, points: int, is_active: bool, email: str)` represents a voucher sent by a customer and `Customer(id: int, is_vip: bool)` represents the customer that can send the voucher. 
