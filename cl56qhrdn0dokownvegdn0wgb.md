@@ -175,7 +175,7 @@ def send_voucher(session: Session, customer: Customer, email: Email) -> None:
             session, VoucherSender, customer_id=customer_id
         ) 
         voucher_sender.register(email, calculate_points(customer.is_vip))
-        send_voucher_mail(email)
+    send_voucher_mail(email)
 
 @app.route("/vouchers", methods=["POST"])
 def send_voucher(self):
