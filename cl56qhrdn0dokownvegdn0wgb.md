@@ -207,5 +207,5 @@ def vouchers(self):
 
 ## Conclusion 
 At low code level rules usually are represented by sequences of "ifs" or loops. The most important thing here is to be aware that not all functional or business requirements have the same character.  Above categorization can improve separation of concerns in large systems by creating conditions to choose a pattern that fits best to given category and place it in a proper layer. It can also make our code more testable. On the one hand, we can have comprehensive domain logic tests, and provide only happy path check for process logic.
-You don't have to introduce this separation from day one. Even if you attribute categories to your requirements items, it could improve your feature and business understanding a lot.
+You don't have to introduce this separation from day one. Even if you attribute categories to your requirements items, it could improve your understanding of business demands massively.
 
