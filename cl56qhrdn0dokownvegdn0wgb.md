@@ -2,7 +2,7 @@
 
 Every project starts from functional requirements. We just want to have an application that do what we have specified. In this post I would like to show that business rules can fall into various categories and what implications it could have.
 
-Let's take an example. Suppose, we have a system with customers and there is a feature that each customer can send vouchers to friends. When user activates voucher, she becomes a customer of the system with some starting bonus points. We have also some rules specified that clarify the process:
+Let's take an example. Suppose, we have a system with customers and there is a feature that each customer can send vouchers to friends. When user activates a voucher, she becomes a customer of the system with some starting bonus points. We have also some rules specified that clarify the process:
 - voucher can be sent only by system users (customers)
 - voucher is sent by passing a target email address, however there is only several email domains allowed
 - each voucher has bonus points. The value is dependent on user status. VIP customer can send voucher with 10 bonus points, while regular user with 3 points
