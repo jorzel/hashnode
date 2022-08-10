@@ -1,15 +1,15 @@
 ## GraphQL authentication and authorization
 
 ## Introduction
-In this second post regarding GraphQL I would like to show how to manage authentication and authorization in GraphQL API. Authentication and authorization are often mixed each other but these concepts are responsible for different processes. The former determine user identity (whether user is logged in or 'recognized' by a system), while the latter refers to whether an authenticated user has access to a given resource. So usually authentication stage precede authorization one. Authentication and authorization could be challenging in GraphQL due to only one exposed HTTP endpoint (e.g. `/graphql`). It would be possible to authenticate user at this endpoint entry, but in that implementation we abandon public access option to some resources. Authorization at this sole endpoint entry is impossible, because we do not know which resources would be queried.
+In this second post regarding GraphQL, I would like to show how to manage authentication and authorization in GraphQL API. Authentication and authorization are often mixed with each other but these concepts are responsible for different processes. The former determines user identity (whether a user is logged in or 'recognized' by a system), while the latter refers to whether an authenticated user has access to a given resource. So usually authentication stage precedes the authorization one. Authentication and authorization could be challenging in GraphQL due to only one exposed HTTP endpoint (e.g. `/graphql`). It would be possible to authenticate the user at this endpoint entry, but in that implementation, we abandon the public access option to some resources. Authorization at this sole endpoint entry is impossible because we do not know which resources would be queried.
 
-An inspiration for this post has been a [stackoverflow question](https://stackoverflow.com/questions/69126083/set-permissions-on-graphene-relay-node-and-connection-fields/70252461#70252461) that seeks an answer for that topic.
+Inspiration for this post has been a [stackoverflow question](https://stackoverflow.com/questions/69126083/set-permissions-on-graphene-relay-node-and-connection-fields/70252461#70252461) that seeks an answer for that topic.
 
 ## Application setup
-The post is a follow-up for  [my text](https://jorzel.hashnode.dev/graphql-api-and-rest-api-mirror-implementations-in-python) comparing GraphQL and REST example implementations in python. So you could find there a requirements to setup an application.
+The post is a follow-up for  [my text](https://jorzel.hashnode.dev/graphql-api-and-rest-api-mirror-implementations-in-python) comparing GraphQL and REST example implementations in python. So you could find their requirements to set up an application.
 
 ## Sign Up / Sign In
-We start from a simple `User` model that have `email` and hashed `password` properties.  
+We start from a simple `User` model that has `email` and hashed `password` properties.  
 ```python
 from sqlalchemy import Column,Integer, String
 from sqlalchemy.orm import relationship
@@ -24,7 +24,7 @@ class User(Base):
     table_bookings = relationship("TableBooking")
 ```
 
-`User` registration is provided by `SignUp` mutation that takes `email` and `password` arguments and creates `User` record in a database.
+`User` registration is provided by `SignUp` mutation that takes `email` and `password` arguments and creates a `User` record in a database.
 ```python
 # api/graphql.py
 import graphene
@@ -70,10 +70,10 @@ def generate_password_hash(password: str) -> str:
     h = hashlib.md5(f"{password}{SALT}".encode())
     return h.hexdigest()
 ```
-The mutation is executed as a `POST` request at `/graphql` endpoint. As in previous post about GraphQL, I use [insomnia](https://insomnia.rest/) to perform HTTP requests.
+The mutation is executed as a `POST` request at `/graphql` endpoint. As in the previous post about GraphQL, I use [insomnia](https://insomnia.rest/) to perform HTTP requests.
 ![sign_up.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640694563138/kOoVp6cJF.png)
 
-When `User` instance is created, we need a `SignIn` mutation that generate `User` authentication  JWT `token` if correct credentials are passed. 
+When the `User` instance is created, we need a `SignIn` mutation that generates a `User` authentication  JWT `token` if correct credentials are passed. 
 ```python
 # api/graphql.py
 import graphene
@@ -132,12 +132,12 @@ def generate_token(user: User) -> str:
     serializer = Serializer(SECRET_KEY, expires_in=TOKEN_EXPIRES_IN)
     return serializer.dumps({"user_id": user.id}).decode("utf-8")
 ```
-For `SignIn` mutation we pass `email` and `password` and get `token` in payload that can be used in authentication required requests.
+For `SignIn` mutation, we pass `email` and `password` and get `token` in the payload that can be used in authentication required requests.
 ![sign_in.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640695212036/qvufgy-GQ.png)
 
 ## Authentication
-We have a `token` generated in `SignIn` step, so we can use it in "Bearer Authentication" process. In this kind of authentication, everyone that has valid `token` (bearer) can be recognized as a `User` corresponding to this `token`.
-We define a `sign_in_required` decorator that can be used for each GraphQL field resolver. This decorator takes `token` from "Authorization" request header, decode it to get `user_id` and check if `User` corresponding to `user_id` exist. If it completes successfully, we have authenticated `User`. 
+We have a `token` generated in the `SignIn` step, so we can use it in the "Bearer Authentication" process. In this kind of authentication, everyone that has a valid `token` (bearer) can be recognized as a `User` corresponding to this `token`.
+We define a `sign_in_required` decorator that can be used for each GraphQL field resolver. This decorator takes `token` from the "Authorization" request header, decode it to get `user_id`, and checks if `User` corresponding to `user_id` exist. If it completes successfully, we have authenticated `User`. 
 
 ```python
 # api/graphql.py
@@ -214,19 +214,19 @@ def get_user_by_token(session: Session, token: str) -> Optional[User]:
     data = serializer.loads(token)
     return session.query(User).get(data["user_id"])
 ```
-`up` field is open access, so we do not have to pass any credentials to query it. On the other hand, `me` field is decorated with `sign_in_required`, so we must pass proper `token` to resolve it.
+`up` field is open access, so we do not have to pass any credentials to query it. On the other hand, the `me` field is decorated with `sign_in_required`, so we must pass the proper `token` to resolve it.
 ![me.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640695457978/ajqtaNpmh.png)
 ![me_bearer.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640695462959/YP6VVPAv0.png)
-If we hit a field decorated with `sign_in_required` without `token` passed in "Authorization" header, we get an `UnauthenticatedUser` exception.
+If we hit a field decorated with `sign_in_required` without `token` passed in the "Authorization" header, we get an `UnauthenticatedUser` exception.
 ![endpoint_restricted.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640695493103/T7w8iNsQ1.png)
 
 ## Authorization
-We have seen how to authenticate query to restrict access only to signed in users. But, what about a case when we have a `User` that is logged in, but an action that he/she performs is not permitted for him/her. In our example we have two actions:
+We have seen how to authenticate queries to restrict access only to signed-in users. But, what about a case when we have a `User` that is logged in, but an action that he/she performs is not permitted for him/her? In our example we have two actions:
 - booking a restaurant table, that should be allowed if `User` is authenticated,
-- cancelling a table booking, that is allowed only for `User` that made this booking before.
+- canceling a table booking, which is allowed only for `User` that made this booking before.
 
 We implement two mutatons: `BookRestaurantTable` that has `mutate` method decorated with `sign_in_required` and `CancelTableBooking` with new decorator `authorize_required`used.
-This decorator checks `User` is authenticated and also whether `table_booking_gid` (representing global id of an instance) is corresponding to `TableBooking` instance that was created by the authenticated `User`.
+This decorator checks whether `User` is authenticated and also whether `table_booking_gid` (representing the global id of an instance) is corresponding to the `TableBooking` instance that was created by the authenticated `User`.
 
 ```python
 class BookRestaurantTable(graphene.Mutation):
@@ -293,7 +293,7 @@ class InstanceNotExist(Exception):
 
 def authorize_required(model):
     """
-    We assume that global id field name of resource 
+    We assume that the global id field name of a resource 
     follow convention like:
     model_name: `TableBooking`
     global id field name: `table_booking_gid`
@@ -332,15 +332,15 @@ def _authorize(instance: TableBooking, current_user: User) -> bool:
     return instance.user_id == current_user.id
 ```
 
-To execute `BookRestaurantTable` we pass two required arguments: `restaurant_gid` and `persons`. We have to remember about `token` in "Authorization" header. In mutation response we get `TableBooking.id`.
+To execute `BookRestaurantTable` we pass two required arguments: `restaurant_gid` and `persons`. We have to remember about `token` in the "Authorization" header. In mutation response, we get `TableBooking.id`.
 ![booking_table_mutation.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640702766025/2G9eCSp2iU.png)
 
 `CancelTableBooking` takes only `table_booking_gid` that can be taken from `BookRestuarantTable` payload (`TableBooking.id`).
 ![cancel_booking_mutation.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640702826325/KRyY8UXJI.png)
-If `token` is not corresponding to owner of given `TableBooking`, the action cannot be performed and `UnauthorizedAccess` exception in raised
+If `token` is not corresponding to the owner of given `TableBooking`, the action cannot be performed and the `UnauthorizedAccess` exception in raised
 ![unauthorized_access.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640702831268/24mMer_vT5.png)
 
 ## Conclusion
-We presented how to perform authentication and authorization steps both for queries and mutations. This implementation is quite generic and can be easily integrated in any python GraphQL project. Full source code you can find here: https://github.com/jorzel/service-layer/tree/auth.
+We presented how to perform authentication and authorization steps both for queries and mutations. This implementation is quite generic and can be easily integrated in any python GraphQL project. The full source code you can find here: https://github.com/jorzel/service-layer/tree/auth.
 
 Thanks!
