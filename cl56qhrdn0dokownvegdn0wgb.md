@@ -1,6 +1,6 @@
 ## Different types of application logic
 
-Every project starts from functional requirements. We just want to have an application that do what we have specified. In this post I would like to show that business rules can fall into various categories and what implications it could have.
+Every project starts with functional requirements. We just want to have an application that does what we have specified. In this post I would like to show that business rules can fall into various categories and what implications it could have.
 
 Let's take an example. Suppose, we have a system with customers and there is a feature that each customer can send vouchers to friends. When user activates a voucher, she becomes a customer of the system with some starting bonus points. We have also some rules specified that clarify the process:
 - voucher can be sent only by system users (customers)
