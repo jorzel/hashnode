@@ -1,16 +1,16 @@
 ## Persistence and domain model separation using SQLAlchemy ORM
 
 ## Introduction
-You probably have heard about a test pyramid. It is the idea that tan application should have proper balance of automated tests on different layers. There should be a lot of unit tests, significantly less integration tests and a few UI tests (End2End, functional). The reasons for this are maintenence cost and speed of particular test type. Unit tests are usually fast and isolated from the rest of the code (so are easy to setup and maintain). 
+You probably have heard about a test pyramid. It is the idea that an application should have the proper balance of automated tests on different layers. There should be a lot of unit tests, significantly fewer integration tests, and a few UI tests (End2End, functional). The reasons for this are maintenance cost and speed of particular test type. Unit tests are usually fast and isolated from the rest of the code (so are easy to set up and maintain). 
 
 ![pyramid.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1638049161154/7xCB7w3fJ.png)
 
-That was the theory, but the reality in Python world is rather different. Most of applications exploit ORM (Object Relational Mapper) to setup domain models. So how this applications can be unit tested when domain classes are structurally binded to a database?
-The first answer is: Tweak a little bit definition of unit test, to satisfy the need. If domain model tests need a database but are still relatively fast and easy to maintain, we can treat them as unit tests rather than integration tests. But, is it a real solution?
-The second answer is: Separate your domain model from persistance model. So, here we go!
+That was the theory, but the reality in the Python world is rather different. Most of the applications exploit ORM (Object Relational Mapper) to set up domain models. So how these applications can be unit tested when domain classes are structurally bound to a database?
+The first answer is: Tweak a little bit definition of a unit test, to satisfy the need. If domain model tests need a database but are still relatively fast and easy to maintain, we can treat them as unit tests rather than integration tests. But, is it a real solution?
+The second answer is: Separate your domain model from the persistence model. So, here we go!
 
-## How to separate model?
-To show commonly practiced domain and persistance model integration, we take SQLAlchemy library. It is probably the most popular ORM in python community (along with Django ORM). We define `Restaurant` and `Table` models using SQLAlchemy declarative mapping style.
+## How to separate models?
+To show commonly practiced domain and persistence model integration, we take the SQLAlchemy library. It is probably the most popular ORM in the python community (along with Django ORM). We define `Restaurant` and `Table` models using SQLAlchemy declarative mapping style.
 ```python
 # models.py
 from sqlalchemy import Column, MetaData, String, Integer, create_engine
@@ -43,7 +43,7 @@ class Table(Base):
             self.is_open = False
         else:
             raise BookedTableException(
-                f"{self} cannot be booked, becuase is not open now or is too small"
+                f"{self} cannot be booked, because is not open now or is too small"
             )
 
 class Restaurant(Base):
@@ -68,7 +68,7 @@ class Restaurant(Base):
             return table
         raise BookedTableException("No open tables in restaurant")
 ```
-We can see that our integrated model need `Base` object that can be instantiated only if we pass proper databse URI. So to test it we must provide database setup. But, is there any way to avoid it?
+We can see that our integrated model needs a `Base` object that can be instantiated only if we pass the proper database URI. So to test it we must provide a database setup. But, is there any way to avoid it?
 
 ### Separated model
 ```python
@@ -96,7 +96,7 @@ class Table:
             self.is_open = False
         else:
             raise BookedTableException(
-                f"{self} cannot be booked, becuase is not open now or is too small"
+                f"{self} cannot be booked, because is not open now or is too small"
             )
 
 class Restaurant:
@@ -163,9 +163,9 @@ def run_mappers():
 
 run_mappers() # it should be executed in the app runtime
 ```
-We can see that `models.py` file was divided into `entities.py` file, consisting domain models that are plain python classes and don't know anything about ORM or a database, and `orm.py` file that defines database tables and mapping from a python class to a database table. 
+We can see that the `models.py` file was divided into the `entities.py` file, consisting of domain models that are plain python classes and don't know anything about ORM or a database, and the `orm.py` file that defines database tables and mapping from a python class to a database table. 
 
-In the end, in `test_entities.py` we test `Restaurant` class method without need of the database setup. Cool? But it's not over yet.
+In the end, in `test_entities.py` we test the `Restaurant` class method without the need for the database setup. Cool? But it's not over yet.
 ```python
 # test_entities.py
 import pytest
@@ -181,7 +181,7 @@ def test_restaurant_has_open_table_should_pass_if_any_table_in_restaurant_is_ope
 ### What about unit tests at a service layer?
 Thanks to the separation we can also unit test the application at a service layer (I have recently written something about service layer abstraction [here](https://jorzel.hashnode.dev/flask-mvt-refactor-to-service-layer)) imitating usage of a database, so the whole application logic can be tested without any integration tests. To make it happen, we need:
 - Repository pattern, an abstraction serving access to data storage (e.g. database),
-- Unit of Work pattern, an abstraction that groups set of operations into transaction (e.g. database transaction).
+- The Unit of Work pattern, is an abstraction that groups a set of operations into transactions (e.g. database transaction).
 
 We define these abstractions as interfaces and inject them into the service.
 
@@ -245,7 +245,7 @@ class BookingTableService:
         with self._uow:
             restaurant.book_table(persons)
 ```
-For testing needs we can use in-memory imlementation of Repository (```MemoryRestaurantRepository```) and Unit of Work (```MemoryUnitOfWork```), while in production we have Repository (```SQLAlchemyRestaurantRepository```) and Unit of Work (```SQLAlchemyUnitOfWork```)  with a connection to the database.
+For testing needs, we can use in-memory implementation of Repository (```MemoryRestaurantRepository```) and Unit of Work (```MemoryUnitOfWork```), while in production we have Repository (```SQLAlchemyRestaurantRepository```) and Unit of Work (```SQLAlchemyUnitOfWork```)  with a connection to the database.
 
 ```python
 # uow.py
@@ -360,20 +360,20 @@ def test_booking_service_book_table_should_pass_when_table_in_restaurant_is_avai
 ```
 
 ## Is the separation always a good idea?
-We have seen that there is a need of some additional patterns (Dependency Injection, Repository, Unit of Work) and boilerplate code in this solution. So, it must be carefully considered whether given project need it. Here are some tips when we should go for it, becuase it brings some value and when we should avoid it, because it would be overkill or unnecessary complication.
+We have seen that there is a need for some additional patterns (Dependency Injection, Repository, Unit of Work) and boilerplate code in this solution. So, it must be carefully considered whether a given project needs it. Here are some tips on when we should go for it because it brings some value, and when we should avoid it because it would be overkill or unnecessary complication.
 
 For arguments:
 - unit testing without database setup.
-- infrastructure resposibility separated from domain. You can focus on business rules when your domain model is rich,
-- your model does not have direct mapping between persistance and domain, e.g. eventsourcing (you persist stream of events that are projected into stateful aggregate). 
+- infrastructure responsibility is separated from the domain. You can focus on business rules when your domain model is rich,
+- your model does not have a direct mapping between persistence and domain, e.g. event sourcing (you persist a stream of events that are projected into a stateful aggregate). 
 
 Against arguments:
-- connascene - code that is changed for the same reason should be in the same place. Assuming, we have direct mapping between domain model classes and tables in database, the change in domain model, trigger the change in persistance model and database table (more about connascene: https://connascence.io/),
+- connascene - code that is changed for the same reason should be in the same place. Assuming, we have a direct mapping between domain model classes and tables in a database, the change in a domain model, triggers the change in the persistence model and database table (more about connascene: https://connascence.io/),
 - easier and more popular SQLAlchemy declarative mapping API,
-- your project is a CRUD application. It doesn't follow classical test pyramid. You probably can test whole application through API (functional / integration tests), because there is no business logic,
-- performance issues, e.g. for filtering `tables` in integrated model we can execute indexed database query, while in domain model we have to iterate through the whole collection (for large collections it could be a problem).
+- your project is a CRUD application. It doesn't follow the classical test pyramid. You probably can test the whole application through API (functional / integration tests), because there is no business logic,
+- performance issues, e.g. for filtering `tables` in the integrated model we can execute an indexed database query, while in a domain model we have to iterate through the whole collection (for large collections it could be a problem).
 
 That's all. 
 
-If you find this subject interesting, here is full implementation: https://github.com/jorzel/opentable/.
-I also recommend great book and code repository that was inspiration for writing this post: https://github.com/cosmicpython/book.
+If you find this subject interesting, here is a full implementation: https://github.com/jorzel/opentable/.
+I also recommend great book and code repository that was an inspiration for writing this post: https://github.com/cosmicpython/book.
