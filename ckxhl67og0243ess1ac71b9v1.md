@@ -1,11 +1,11 @@
 ## GraphQL API and REST API. Mirror implementations in Python
 
 ## Introduction
-REST is probably the most popular way to expose your application to the external world (e.g. as a backend for frontend or to establish communication protocol with other application / service). However, GraphQL is now getting more and more popular, and have became a strong competitor for REST. 
-Nevertheless, the aim of this post is not to carry out a detailed comparison of advantages / disadvantages of these approaches, because there is a lot of stuff covering that topic. I would rather like to present how REST and GraphQL differ in implementation strategies. This post can be especially helpful for people who are familiar with REST pattern and wonder how to broaden interests in GraphQL technology.
+REST is probably the most popular way to expose your application to the external world (e.g. as a backend for the frontend or to establish communication protocol with other applications/services). However, GraphQL is now getting more and more popular and has become a strong competitor for REST. 
+Nevertheless, the aim of this post is not to carry out a detailed comparison of the advantages/disadvantages of these approaches, because there is a lot of stuff covering that topic. I would rather like to present how REST and GraphQL differ in implementation strategies. This post can be especially helpful for people who are familiar with the REST pattern and wonder how to broaden their interests in GraphQL technology.
 
 ## Application requirements
-First of all, I create simple `flask` project with `Blueprint` functionality to provide REST API. In contrast to REST, that need separated HTTP endpoint for each business action, GraphQL expose only one HTTP endpoint both for queries and commands. There is a `flask_graphql` package that expose this endpoint with request syntax parsing provided. To built GraphQL schema I use `graphene` library and `sqlalchemy` to build simple ORM models. To present results of both APis I use  [`insomnia`](https://insomnia.rest/download)  that is a powerful REST HTTP client with GraphQL integration. 
+First of all, I create a simple `flask` project with `Blueprint` functionality to provide REST API. In contrast to REST, which needs a separated HTTP endpoint for each business action, GraphQL exposes only one HTTP endpoint both for queries and commands. There is a `flask_graphql` package that exposes this endpoint with request syntax parsing provided. To build GraphQL schema I use the `graphene` library and `sqlalchemy` to build simple ORM models. To present the results of both APIs I use  [`insomnia`](https://insomnia.rest/download) which is a powerful REST HTTP client with GraphQL integration. 
 
 ```bash
 pip install flask
@@ -15,7 +15,7 @@ pip install sqlalchemy
 ```
 
 ## Simple query
-We start from simple healthcheck feature that ensure us that our application setup is valid and both REST API and GraphQL API is exposed to the world. For REST we define simple HTTP endpoint within the blueprint.
+We start from a simple health check feature that ensures us that our application setup is valid and both REST API and GraphQL API are exposed to the world. For REST we define a simple HTTP endpoint within the blueprint.
 ```python
 # api/rest.py
 from flask import Blueprint,  jsonify
@@ -27,10 +27,10 @@ main = Blueprint("main", __name__)
 def up():
     return jsonify({"up": True})
 ```
-Here is a query result for `GET` request in insomnia:
+Here is a query result for the `GET` request in insomnia:
 ![rest_up.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640120747886/gBd2dteav.png)
 
-GraphQL is a strongly typed query language, so we must define `Schema` with root object `Query` that defines possible entry points into the GraphQL API. For each field of the schema we define a resolver function that determine the returned value (it usually use a database connection / session to determine what value should be returned).
+GraphQL is a strongly typed query language, so we must define `Schema` with root object `Query` that defines possible entry points into the GraphQL API. For each field of the schema, we define a resolver function that determines the returned value (it usually uses a database connection/session to determine what value should be returned).
 ```python
 # api/graphql.py
 import graphene
@@ -43,12 +43,12 @@ class Query(graphene.ObjectType):
 
 schema = graphene.Schema(query=Query)
 ```
-Both queries and commands in GraphQL are executed as `POST` requests. So in insomnia we choose `POST` request structured as GraphQL Query. 
+Both queries and commands in GraphQL are executed as `POST` requests. So in insomnia, we choose the `POST` request structured as GraphQL Query. 
 ![graphql_up.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640120902863/xnwNgVrrv.png)
 
 
 ## Query real objects
-We have our "hello world" working, so now we can turn to real objects quering. To do it, we define a simple data model of `Restaurant` using SQLAlchemy ORM.
+We have our "hello world" working, so now we can turn to real objects queries. To do it, we define a simple data model of `Restaurant` using SQLAlchemy ORM.
 ```python
 # models.py
 from sqlalchemy import Column, Integer, String
@@ -62,7 +62,7 @@ class Restaurant(Base):
     name = Column(String)
 ```
 
-To query all `Restaurant` instances in REST we add new HTTP endpoint and `recruitment_serializer` to transform our model into JSON-like format.
+To query all `Restaurant` instances in REST we add a new HTTP endpoint and `recruitment_serializer` to transform our model into JSON-like format.
 ```python
 from flask import Blueprint, current_app, jsonify
 
@@ -79,10 +79,10 @@ def restaurants():
     restaurants = [restaurant_serializer(r) for r in session.query(Restaurant)]
     return jsonify(restaurants)
 ```
-In insomnia, we execute a `GET` request at `/restaurants` url:
+In insomnia, we execute a `GET` request at `/restaurants` URL:
 ![rest_restaurants.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640121797362/wZH19DAOc.png)
 
-For GraphQL we need to define `RestaurantNode` schema object. `RestaurantConnection` is an additional object that provide some useful features for working on collections (like results limiting, pagination, etc.).
+For GraphQL we need to define the `RestaurantNode` schema object. `RestaurantConnection` is an additional object that provides some useful features for working on collections (like results limiting, pagination, etc.).
 ```python
 # api/graphql.py
 import graphene
@@ -113,11 +113,11 @@ schema = graphene.Schema(
     query=Query, types=[RestaurantNode]
 )
 ```
-To query the list of restaurants we execute `POST` request and determine which fields we would like to get (we still have `up` field in our schema, but it is not necessary for us now, so we don't query it) using the same `/graphql` endpoint:
+To query the list of restaurants we execute a `POST` request and determine which fields we would like to get (we still have the `up` field in our schema, but it is not necessary for us now, so we don't query it) using the same `/graphql` endpoint:
 ![graphql_restaurants.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640121499402/JmhB1jKw-.png)
 
 ## Command
-We have seen how to query objects using both REST and GraphQL. In the following section I would like to present how to modify data. To make it happen, the domain model was enriched by adding `Table`, `TableBooking` and `User` entities. 
+We have seen how to query objects using both REST and GraphQL. In the following section, I would like to present how to modify data. To make it happen, the domain model was enriched by adding `Table`, `TableBooking`, and `User` entities. 
 ```python
 # models.py
 from datetime import datetime
@@ -180,7 +180,7 @@ class TableBooking(Base):
     restaurant = relationship("Restaurant")
     persons = Column(Integer, nullable=False, default=1)
 ```
-Our command that modify the state of the domain model, will be booking a `Table` in given `Restaurant` by `User` identified by `email`. Both REST and GraphQL are clients for the same application logic, so we abstract it into a service layer function `book_restaurant_table` that is responsible for whole business action:
+Our command that modifies the state of the domain model, will be booking a `Table` in given `Restaurant` by `User` identified by `email`. Both REST and GraphQL are clients for the same application logic, so we abstract it into a service layer function `book_restaurant_table` that is responsible for the whole business action:
 ```python
 from sqlalchemy.orm import Session
 from models import Restaurant, TableBooking, User
@@ -195,7 +195,7 @@ def book_restaurant_table(
     session.commit()
     return table_booking
 ```
-REST to modify resources use `POST`, `PUT` or `DELETE` verbs. To add a new `TableBooking` instance as result of booking action, we implement new HTTP `POST` endpoint that handle the request and execute `book_restaurant_table` use case:
+REST to modify resources use `POST`, `PUT` or `DELETE` verbs. To add a new `TableBooking` instance as a result of the booking action, we implement a new HTTP `POST` endpoint that handles the request and executes the `book_restaurant_table` use case:
 ```python
 from flask import Blueprint, current_app, jsonify, request
 from service import book_restaurant_table
@@ -214,11 +214,11 @@ def bookings():
     )
     return jsonify({"isBooked": True}), 201
 ```
-Performing a request `POST` in insomnia with input data result in response with 201 status code:
+Performing a request `POST` in insomnia with input data results in a response with a 201 status code:
 
 ![rest_post.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640175308499/zDdICBqpt.png)
 
-In GraphQL mutation object must be define to carry out an operation that result in side effects (change of state). We define `BookRestaurantTable` and also declare it in the GraphQL schema:
+In GraphQL mutation, an object must be defined to carry out an operation that results in side effects (change of state). We define `BookRestaurantTable` and also declare it in the GraphQL schema:
 ```python
 import graphene
 from graphene.relay.node import from_global_id
@@ -245,12 +245,12 @@ schema = graphene.Schema(
     query=Query, mutation=Mutation, types=[UserNode, RestaurantNode]
 )
 ```
-To execute a mutation we use the same insomnia setup, but the body of GraphQL request is a little bit different from query one. We use `mutation` key-word and pass camel case name of mutation declared here: `book_restaurant_table = BookRestaurantTable.Field()`. Response returns the result payload with 200 status code:
+To execute a mutation we use the same insomnia setup, but the body of the GraphQL request is a little bit different from query one. We use `mutation` key-word and pass camel case name of mutation declared here: `book_restaurant_table = BookRestaurantTable.Field()`. The response returns the result payload with the 200 status code:
 
 ![graphql_mutation.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640175553194/amZ_qcB29P.png)
 
 ## Parameterized queries
-We showed simple query that fetch all `Restaurant` instances. However, we usually want to parameterize query by passing arguments, limiting results, making searches, etc. Like for mutation application logic can be agnostic of API that consume it, so we can implement it in service layer as `get_restaurants` function:
+We showed a simple query that fetches all `Restaurant` instances. However, we usually want to parameterize queries by passing arguments, limiting results, making searches, etc. Like for mutation application logic can be agnostic of the API that consumes it, so we can implement it in the service layer as the `get_restaurants` function:
 ```python
 from typing import Optional
 from sqlalchemy.orm import Query, Session
@@ -267,7 +267,7 @@ def get_restaurants(
         query = query.limit(limit)
     return query
 ``` 
-As far as REST API implementation is concerned, we can take parameters from `request.args` structure.
+As far as REST API implementation is concerned, we can take parameters from the `request.args` structure.
 ```python
 @main.route("/restaurants", methods=["GET"])
 def restaurants():
@@ -280,10 +280,10 @@ def restaurants():
     restaurants = [restaurant_serializer(r) for r in query]
     return jsonify(restaurants)
 ```
-To execute request in insomnia, we use `GET` method and pass parameters in url query string:
+To execute the request in insomnia, we use the `GET` method and pass parameters in url query string:
 
 ![rest_parametrized.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640180036460/NiZ9thOxm.png)
-To parameterize GraphQL connection (list of instances), we must define allowed input arguments. We don't have to define limit parameter because `relay.Connection` class that we use have built in `first`, `last`, `before` and `after` arguments.
+To parameterize GraphQL connection (list of instances), we must define allowed input arguments. We don't have to define limit parameter because `relay.Connection` class that we use has built-in `first`, `last`, `before`, and `after` arguments.
 ```python
 class Query(graphene.ObjectType):
     up = graphene.Boolean()
@@ -304,15 +304,15 @@ class Query(graphene.ObjectType):
 
 schema = graphene.Schema(query=Query)
 ```
-Here you can see how pass these arguments in GraphQL schema execution:
+Here you can see how to pass these arguments in GraphQL schema execution:
 
 ![graphql_paramertrized.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1640178124421/ItoL4wVA_.png)
 
 ## Autogenerated schema
-We don't have to define GraphQL schema and REST serialization functions / classes from scratch. For GraphQL we can use `graphene-sqlalchemy` library, while in REST `marshmallow-sqlalchemy` library to build schema upon SQLAlchemy ORM models. It can give a head start and fast iteration but has also a huge drawback. You share the domain model in the public contract (with application clients, like frontend app). So you must consider all pros and cons whether it is worth doing.
+We don't have to define GraphQL schema and REST serialization functions / classes from scratch. For GraphQL we can use `graphene-sqlalchemy` library, while in REST `marshmallow-sqlalchemy` library to build schema upon SQLAlchemy ORM models. It can give a head start and fast iteration but has also a huge drawback. You share the domain model in the public contract (with application clients, like the frontend app). So you must consider all pros and cons and whether it is worth doing.
 
 ## Summary
-In this post I showed you how you can start with GraphQL when you are familiar with REST (or in opposite direction). However, I understand that this post does not cover important part of application building, like authentication or authorization. This can be a material for another text. 
+In this post I showed you how you can start with GraphQL when you are familiar with REST (or in opposite direction). However, I understand that this post does not cover an important part of application building, like authentication or authorization. This can be material for another text. 
 
 Here is a full project implementation: https://github.com/jorzel/service-layer/ because in code listings some parts were omitted for better readability. 
 
