@@ -40,7 +40,7 @@ Aggregate  (cost=3145.05..3145.06 rows=1 width=8) (actual time=11.308..11.308 ro
          ->  Bitmap Heap Scan on customer c  (cost=17.98..792.20 rows=202 width=4) (actual time=0.527..2.041 rows=1205 loops=1)
                Recheck Cond: (company_id = 1010)
                Heap Blocks: exact=1321
-               ->  Bitmap Index Scan on ix_cusrtomer_company_id  (cost=0.00..17.93 rows=202 width=0) (actual time=0.325..0.325 rows=3001 loops=1)
+               ->  Bitmap Index Scan on ix_customer_company_id  (cost=0.00..17.93 rows=202 width=0) (actual time=0.325..0.325 rows=3001 loops=1)
                      Index Cond: (company_id = 1010)
          ->  Index Only Scan using ix_offer_customer_id on offer i  (cost=0.43..11.48 rows=7 width=4) (actual time=0.002..0.007 rows=1 loops=1205)
                Index Cond: (customer_id = c.id)
