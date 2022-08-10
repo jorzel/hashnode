@@ -1,7 +1,7 @@
 ## Concurrent write problem
 
 ## Introduction
-Concurrency control is one of the most challenging aspects of software development. Sometimes, we have a tendency to wishful thinking and naive beliefs that our advanced toolkit like a web framework, a database or an ORM solve all our issues seamlessly underhood. However, when we tackle non-trivial problem (like concurrent write), we have to demonstrate some understanding how these tools genuinely work (and maybe why they are configured in the specific way).
+Concurrency control is one of the most challenging aspects of software development. Sometimes, we have a tendency to wishful thinking and naive beliefs that our advanced toolkit like a web framework, a database or an ORM solve all our issues seamlessly underhood. However, when we tackle the non-trivial problems (like concurrent write), we have to demonstrate some understanding how these tools genuinely work (and maybe why they are configured in a specific way).
 
 ## Concurrent write problem
 Suppose we have a PostgresSQL database with a table `example` that has an important integer column (`important_counter`) and two separated transactions query `important_counter` value from row with `id = 1` at some point and want to increase the value at approximately the same time.
@@ -12,11 +12,11 @@ Assuming that row initial value for the `important_counter` is 0, what state of 
 
 A. `important_counter = 2` - both transactions (T1 and T2) have managed to increase counter sequentially.
 
-B. `important_counter = 1` - both transactions (T1 and T2) have managed to increase counter independently starting from 0 value, but one transaction's commit overwrites commit of the other one.
+B. `important_counter = 1` - both transactions (T1 and T2) have managed to increase counter independently starting from 0 value, but one transaction's commit overwrites the commit of the other one.
 
 C. `important_counter = 1` - one transaction (T1) committed changes, while the other one (T2) got an exception due to concurrent row access.
 
-There is no simple answer for this question, because it depends on the database configuration and our `SELECT / UPDATE` strategies. If we use default configuration and transaction scheme that looks like:
+There is no simple answer for this question, because it depends on the database configuration and our `SELECT / UPDATE` strategies. If we use the default configuration and transaction scheme that looks like:
 ```sql
 BEGIN;
 SELECT important_counter 
