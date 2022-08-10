@@ -1,17 +1,17 @@
-## How to build PostgreSQL full text search engine in any language
+## How to build PostgreSQL full-text search engine in any language
 
-In this short post I will show step by step how to establish full text search engine in PostgreSQL. Several options like `ilike`, trigrams search and tsearch will be presented.
+In this short post, I will show step by step how to establish a full-text search engine in PostgreSQL. Several options like `ilike`, trigrams search and tsearch will be presented.
 
 ## Setup
-I started with a database creation. All database commands will be exectuted inside `psql` terminal.
-```sql
+I started with a database creation. All database commands will be executed inside `psql` terminal.
+```SQL
 >> CREATE DATABASE ftdb;
 ```
-To create a table and feed it with an example dataset (100k rows, 15 english words each one) I have written a python script (link to github repo, you find at the end of this story). However, you can do it with native SQL as well.
+To create a table and feed it with an example dataset (100k rows, 15 English words each) I have written a python script (link to Github repo, which you find at the end of this story). However, you can do it with native SQL as well.
 
-## Full text search using simple `ilike`
-At the very beginning I start with `ilike` operator. This option is easy and straightforward.  However, you may not be satisfied with a query performance when your database is getting large.
-```sql
+## Full-text search using simple `ilike`
+At the very beginning, I start with `ilike` operator. This option is easy and straightforward.  However, you may not be satisfied with query performance when your database is getting large.
+```SQL
 >> EXPLAIN ANALYZE
    SELECT text, language
    FROM public.document
@@ -32,9 +32,9 @@ At the very beginning I start with `ilike` operator. This option is easy and str
  Execution Time: 87.500 ms
  ```
 
-## Full text search using `ilike` supported by trigram index
+## Full-text search using `ilike` supported by trigram index
 However, we can improve `ilike` performance using trigram search. What is a trigram search? Citing [wikipedia](https://en.wikipedia.org/wiki/Trigram_search): *It finds objects which match the maximum number of three-character strings in the entered search terms*. See the trigram example:
-```sql
+```SQL
 >> CREATE EXTENSION pg_trgm;
 CREATE EXTENSION
 >> select show_trgm('fielded');
@@ -42,8 +42,8 @@ CREATE EXTENSION
 -----------------------------------------
  {"  f"," fi",ded,"ed ",eld,fie,iel,lde}
 ```
-Creating trigram index can speed up `ilike` query.
-```sql
+Creating a trigram index can speed up `ilike` query.
+```SQL
 >> CREATE INDEX  ix_document_text_trigram ON document USING gin (text gin_trgm_ops) where language = 'en';
 CREATE INDEX
 
@@ -66,17 +66,17 @@ CREATE INDEX
  Planning Time: 2.389 ms
  Execution Time: 1.524 ms
 ```
-`ilike` with trigrams can be enough solution for many projects. However, this approach is generic and does not exploit morphological distinction of a language. So, when you would like to perfom a search basing on canonical forms of words, you should choose tsearch engine.
+`ilike` with trigrams can be enough solution for many projects. However, this approach is generic and does not exploit the morphological distinction of a language. So, when you would like to perform a search based on canonical forms of words, you should choose tsearch engine.
 
 
-## Create non-default language configuration for tsearch full text search
-Postgres tsearch does not provide support for many languages by default. However, you can setup the configuration quite easily. You just need additional dictionary files. Here is an example for polish language. Polish dictionary files can be downloaded from: https://github.com/judehunter/polish-tsearch.
+## Create non-default language configuration for tsearch full-text search
+Postgres tsearch does not provide support for many languages by default. However, you can set up the configuration quite easily. You just need additional dictionary files. Here is an example for the polish language. Polish dictionary files can be downloaded from: https://github.com/judehunter/polish-tsearch.
 
-polish.affix, polish.stop and polish.dict files should be copied to postgresql sharedir `tsearch_data` location,
+polish.affix, polish.stop and polish.dict files should be copied to PostgreSQL sharedir `tsearch_data` location,
 e.g. `/usr/share/postgresql/13/tsearch_data`. To determine your sharedir location you can use `pg_config --sharedir`.
 
-There also must be created a configuration (see the [docs](https://www.postgresql.org/docs/current/textsearch-dictionaries.html)) inside database:
-```sql
+There also must be created a configuration (see the [docs](https://www.postgresql.org/docs/current/textsearch-dictionaries.html)) inside the database:
+```SQL
 >> DROP TEXT SEARCH DICTIONARY IF EXISTS polish_hunspell CASCADE;
    CREATE TEXT SEARCH DICTIONARY polish_hunspell (
     TEMPLATE  = ispell,
@@ -95,8 +95,8 @@ There also must be created a configuration (see the [docs](https://www.postgresq
         polish_hunspell, simple;
 
 ```
-You need these files and configuration because full text search engine uses lexeme comparing to find best matches (both query pattern and stored text are lexemized):
-```sql
+You need these files and configuration because a full-text search engine uses lexeme comparing to find the best matches (both query pattern and stored text are lexemized):
+```SQL
 >> SELECT to_tsquery('english', 'fielded'), to_tsvector('english', text)
    FROM document
    LIMIT 1;
@@ -115,9 +115,9 @@ If you cannot provide dictionary files you can use full text in "simple" form (w
  'fielded'  | '19':16 'bat':12 'below':7 'dead':8 'degree':1 'depth':5 'field':15 'lamp':13 'men':6 'putting':14 'ranch':2 'tall':4 'time':3 'underline':11 'waste':10 'window':9
 ```
 
-## Tsearch full text search without stored index
+## Tsearch full-text search without the stored index
 At first glance, the performance of tsearch query is really poor... 
-```sql
+```SQL
 >> EXPLAIN ANALYZE SELECT text, language
    FROM public.document
    WHERE to_tsvector('english', text) @@ to_tsquery('english', 'fielded & window & lamp & depth & test ')
@@ -136,9 +136,9 @@ At first glance, the performance of tsearch query is really poor...
 ```
 However, our data are not indexed...
 
-## Tsearch full text search with stored partial index
-Partial index gives as a possibility to store records in different languages using the same db table and query them effectively.
-```sql
+## Tsearch full-text search with stored partial index
+A partial index gives a possibility to store records in different languages using the same db table and query them effectively.
+```SQL
 >> CREATE INDEX ix_en_document_tsvector_text ON public.document USING gin (to_tsvector('english'::regconfig, text)) WHERE language = 'en';
 CREATED INDEX
 >> EXPLAIN ANALYZE SELECT text, language
@@ -158,18 +158,18 @@ CREATED INDEX
  Execution Time: 488.596 ms
 ```
 
-No difference? Index has not been used... Why is it not working?
+No difference? The index has not been used... Why is it not working?
 Ohh, looks to the partial index [docs](https://www.postgresql.org/docs/current/indexes-partial.html):
 > However, keep in mind that the predicate must match the conditions used in the queries that are supposed to benefit from the index.
 > To be precise, a partial index can be used in a query only if the system can recognize that the WHERE condition of the query mathematically implies the predicate of the index.
 > PostgreSQL does not have a sophisticated theorem prover that can recognize mathematically equivalent expressions that are written in different forms.
-> (Not only is such a general theorem prover extremely difficult to create, it would probably be too slow to be of any real use.)
+> (Not only is such a general theorem prover extremely difficult to create, but it would also probably be too slow to be of any real use.)
 > The system can recognize simple inequality implications, for example "x < 1" implies "x < 2";
 > otherwise the predicate condition must exactly match part of the query's WHERE condition or the index will not be recognized as usable.
 > Matching takes place at query planning time, not at run time. As a result, parameterized query clauses do not work with a partial index.
 
-We have to add to query a condition that was used to create partial index: `document.language = 'en'`:
-```sql
+We have to add to the query a condition that was used to create a partial index: `document.language = 'en'`:
+```SQL
 >> EXPLAIN ANALYZE SELECT text, language
    FROM public.document
    WHERE
@@ -186,9 +186,9 @@ We have to add to query a condition that was used to create partial index: `docu
  Execution Time: 0.590 ms
 ```
 
-## Tsearch full text search for partial words
-`:*` operator enables prefix search. It can be useful to execute full text search during typing a word.
-```sql
+## Tsearch full-text search for partial words
+`:*` operator enables prefix search. It can be useful to execute full-text search during typing a word.
+```SQL
 >> EXPLAIN ANALYZE SELECT text, language
    FROM public.document
    WHERE
@@ -220,13 +220,13 @@ We have to add to query a condition that was used to create partial index: `docu
 
 ```
 
-## Tsearch full text search results ranking
+## Tsearch full-text search results ranking
 There are two quite similar functions to rank tsearch results:
 - `ts_rank`, that ranks vectors based on the frequency of their matching lexemes
 - `ts_rank_cd`, that computes the "cover density" ranking
 
 For more info, see the [docs](https://www.postgresql.org/docs/13/textsearch-controls.html)
-```sql
+```SQL
 >> SELECT
      id,
      ts_rank_cd(to_tsvector('english', text), to_tsquery('english', 'fielded & wind:*')) rank,
@@ -253,12 +253,12 @@ For more info, see the [docs](https://www.postgresql.org/docs/13/textsearch-cont
   37851 | 0.007142857 | Field cloud you wife rhythm upward applied weigh continued property replace ahead forgotten trip window  +
 
 ```
-`text='fielded window'` record was added manually to show best match result.
+`text='fielded window'` record was added manually to show the best match result.
 
 ## GIST vs GIN
-We have created GIN index. But there is also GIST index option. Which one is better?
+We have created a GIN index. But there is also a GIST index option. Which one is better?
 It depends...
-```sql
+```SQL
 >> EXPLAIN ANALYZE SELECT text, language
    FROM public.document
    WHERE
@@ -281,7 +281,7 @@ It depends...
 > - GIN indexes are two-to-three times larger than GiST indexes
 
 ## Conclusion
-I hope this will be helpful for you. Python code to create db, insert records and provide integration with SQLAlchemy can be found [here](https://github.com/jorzel/postgres-full-text-search). Thanks!
+I hope this will be helpful for you. Python code to create DB, insert records, and provide integration with SQLAlchemy can be found [here](https://github.com/jorzel/postgres-full-text-search). Thanks!
 
 ## Inspiration and help
 - https://about.gitlab.com/blog/2016/03/18/fast-search-using-postgresql-trigram-indexes/
