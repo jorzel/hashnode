@@ -2,11 +2,11 @@
 
 
 ## Overview
-Value objects are one of tactical building blocks for modeling business domain introduced and popularized by Domain Driven Design approach.
-However, we can exploit value objects even if we do not tackling complex domain problem. Value objects, in contrast to entites, are defined only
+Value objects are one of the tactical building blocks for modeling the business domain introduced and popularized by the Domain Driven Design approach.
+However, we can exploit value objects even if we do not tackle complex domain problems. Value objects, in contrast to entities, are defined only
 by their attributes and do not have any identity. Two value objects are equal when their properties have the same values. Another important trait of a value object is immutability.
-Once created cannot be modified. Value object modification always result in creating a new instance of the value object.
-Here we have some examples when we can achieve some gains by value objects implementation:
+Once created cannot be modified. Value object modification always results in creating a new instance of the value object.
+Here we have some examples of when we can achieve some gains by value objects implementation:
 - distance
 - email
 - phone
@@ -15,21 +15,21 @@ Here we have some examples when we can achieve some gains by value objects imple
 - money
 - subscription plan
 
-Value objects usually are useful when we encounter following challenges:
+Value objects usually are useful when we encounter the following challenges:
 - validation (e.g. encapsulate an email validation)
-- various representation (e.g. different representation of a money concept depending on a currency)
-- various presentation (e.g. different presentation of a distance concept depending on a country)
+- various representations (e.g. different representations of a money concept depending on a currency)
+- various presentations (e.g. different presentations of a distance concept depending on a country)
 
-However, due to not possesing an identity, value objects can come across some issues with how to persist them.
+However, due to not possessing an identity, value objects can come across some issues with how to persist them.
 Here, we suggest four different strategies of persistence value objects in SQLAlchemy ORM (trying to protect value object immutability requirement).
 1. [Simple field](#simple-field)
 2. [Composite field](#composite-field)
 3. [Separated object](#separated-object)
-4. [Schemaless document (json)](#schemaless-document-json)
+4. [Schemaless document (JSON)](#schemaless-document-json)
 
 ## Simple field
-In the first approach, we define `Email` class to encapsulate validation logic, but
-persist only a string field column `email_address` in `shop` table.
+In the first approach, we define the `Email` class to encapsulate validation logic, but
+persist only a string field column `email_address` in the `shop` table.
 ```python
 # value_objects/email.py
 class InvalidEmail(Exception):
@@ -103,7 +103,7 @@ def run_mappers():
 ```
 
 ## Composite field
-In the second approach we use sqlalchemy `composite` field to store two fields (`balance_value` as integer and `balance_currency` as enum) within `shop` table that correspond to `Money` concept.
+In the second approach, we use SQLAlchemy `composite` field to store two fields (`balance_value` as integer and `balance_currency` as the enum) within the `shop` table that corresponds to the `Money` concept.
 ```python
 # value_objects/money.py
 import enum
@@ -196,7 +196,7 @@ def run_mappers():
 
 ```
 ## Separated object
-Third option stores value object in separated `Location` database table with `id` column. However the `id` exist only in the persistance layer.
+The third option stores the value objects in a separated `Location` database table with an `id` column. However, the `id` exist only in the persistence layer.
 ```python
 # value_objects/location.py
 class InvalidGeolocation(Exception):
@@ -301,7 +301,7 @@ def run_mappers():
 ```
 
 ## Schemaless document (json)
-The last approach persists `OpenHour` concept as a json-like document. That data structure is not provided by each database driver but is available in SQLite as `JSON` field or in PostgreSQL as `JSONB` field.
+The last approach persists `OpenHour` concept as a JSON-like document. That data structure is not provided by each database driver but is available in SQLite as a `JSON` field or in PostgreSQL as a `JSONB` field.
 ```python
 # value_objects.open_hours.py
 from datetime import datetime
@@ -382,7 +382,7 @@ def run_mappers():
 
 ```
 ## Summary
-All patterns were implemented using python plain classes and imperative mapping style (to underscore domain and persistance model separation).
+All patterns were implemented using python plain classes and imperative mapping style (to underscore domain and persistence model separation).
 Class (value object) properties are read-only to ensure immutability. Because of that, queries must be performed by using tables instead of models (`select(model.__table__).where(...)` instead of `select(model).where(...)`).
 
-This project can also be found in the github repository: https://github.com/jorzel/value-object-persistance.
+This project can also be found in the Github repository: https://github.com/jorzel/value-object-persistance.
