@@ -1,7 +1,7 @@
 ## An ORM can bite you
 
 ## Introduction
-Object Relational Mappers (ORMs) are widely used in software development to abstract database operations in our application code by providing a layer between object-oriented programming language and relational tables in a database. However we should be conscious that simple and inconspicuous expressions provided by our ORM can lead to heavy actions underhood. To present it I will take SQLAlchemy, one of the most popular ORMs in Python world.
+Object Relational Mappers (ORMs) are widely used in software development to abstract database operations in our application code by providing a layer between object-oriented programming language and relational tables in a database. However, we should be conscious that simple and inconspicuous expressions provided by our ORM can lead to heavy actions underhood. To present it I will take SQLAlchemy, one of the most popular ORMs in the Python world.
 
 Suppose we have a set of simplified models representing a`User` in a `Company`:
 ![model.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652520656984/zrr7NhFW4.png align="left")
@@ -59,9 +59,9 @@ with Session() as session:
             print(person.user.my_accounts[0].account.company.name)
 ```
 
-`DBStatementCounter` is a [helper class](https://stackoverflow.com/questions/19073099/how-to-count-sqlalchemy-queries-in-unit-tests) that counts how many database statements was executed within a given context. Assuming that a `Person` was found, what number of queries do you expect from above part of code?
+`DBStatementCounter` is a [helper class](https://stackoverflow.com/questions/19073099/how-to-count-sqlalchemy-queries-in-unit-tests) that counts how many database statements were executed within a given context. Assuming that a `Person` was found, what number of queries do you expect from the above part of the code?
 
-Correct answer is: 5. Surprised? 
+The correct answer is: 5. Surprised? 
 
 One query is explicit:
 
@@ -81,7 +81,7 @@ Four remaining queries are implicit:
 - `my_accounts[0].account.company.name`
 - `account.company`
 
-It results from default lazy loading strategy of our ORM. When we load `Person` object it does not automatically load objects through defined foreign keys. We can see how SQL looks in that case:
+It results from the default lazy loading strategy of our ORM. When we load the `Person` object it does not automatically load objects through defined foreign keys. We can see how SQL looks in that case:
 
 ```sql
 SELECT person.id AS person_id, person.name AS person_name 
@@ -93,10 +93,10 @@ JOIN company ON company.id = account.company_id
 WHERE lower(person.name) LIKE lower(?) AND lower(account.status) LIKE lower(?) AND lower(company.name) LIKE lower(?)
 ```
 
-The query has properly joined tables, however in `SELECT` section there are only attributes associated to `person` table, so to retrieve column values from joined tables we need another query (or queries).
+The query has properly joined tables, however in the `SELECT` section there are only attributes associated to the `person` table, so to retrieve column values from joined tables we need another query (or queries).
 
 ## Eager loading
-We can change that behaviour by passing to `relationship` an expression: `lazy="joined"`. However, it seems reasonable to not load all connected tables every time we need only a `Person`'s columns. The better option is to do it on demand, when we are sure that columns corresponding to linked tables would be used. In SQLAlchemy we can do it using `joinedload` function that provide attributes from joined tables in `SELECT` results.
+We can change that behavior by passing to `relationship` an expression: `lazy="joined"`. However, it seems reasonable to not load all connected tables every time we need only a `Person`'s columns. The better option is to do it on demand when we are sure that columns corresponding to linked tables would be used. In SQLAlchemy we can do it using `joinedload` function that provides attributes from joined tables in `SELECT` results.
 
 ```python
 person = session.query(Person)
@@ -134,7 +134,7 @@ LEFT OUTER JOIN company AS company_1 ON company_1.id = account_1.company_id
 WHERE lower(person.name) LIKE lower(?) AND lower(account.status) LIKE lower(?) AND lower(company.name) LIKE lower(?)
 ```
 
-To get additional attributes we have our tables joined twice... If we do not have many records in the database, this would not be a problem. Otherwise, we can encounter huge performance issue like described [here](https://stackoverflow.com/questions/27174217/sqlalchemy-query-using-joinedload-exponentially-slower-with-each-new-filter-clau). The solution here is to replace `joinedload` with `contains_eager`, because `joinedload` basically should not be used with filtering.
+To get additional attributes we have our tables joined twice... If we do not have many records in the database, this would not be a problem. Otherwise, we can encounter huge performance issues like described [here](https://stackoverflow.com/questions/27174217/sqlalchemy-query-using-joinedload-exponentially-slower-with-each-new-filter-clau). The solution here is to replace `joinedload` with `contains_eager` because `joinedload` basically should not be used with filtering.
 
 ```python
 person = session.query(Person)
@@ -152,7 +152,7 @@ person = session.query(Person)
     ).first()
 ```
 
-Now we are happy, because there is only one database query execution and the SQL statement looks correctly:
+Now we are happy because there is only one database query execution and the SQL statement looks correctly:
 
 ```sql
 SELECT 
@@ -169,4 +169,4 @@ WHERE lower(person.name) LIKE lower(?) AND lower(account.status) LIKE lower(?) A
 ```
 
 ## Conclusion
-This was SQLAlchemy and Python example. However, no matter you use Django ORM, Java Hibernate or .NET Nhibernate, you will encounter the same issues and should take proper decisions about lazy loading of you objects. So, be careful with your ORM.
+This was SQLAlchemy and Python example. However, no matter whether you use Django ORM, Java Hibernate, or .NET Nhibernate, you will encounter the same issues and should take proper decisions about the lazy loading of your objects. So, be careful with your ORM.
