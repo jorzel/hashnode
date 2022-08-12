@@ -5,7 +5,7 @@ Software development is a field that demands continuous skill improvement. Techn
 ## Growth mindset
 Mindset is often underestimated as a part of the soft skills family that is not the core of developer activity. However, a proper attitude can be crucial for implementing continuous learning ability. Carol Dweck in her seminal book [*Mindset: The New Psychology of Success*](https://www.amazon.com/Mindset-Psychology-Carol-S-Dweck/dp/0345472322) claims that a growth mindset is a natural way for the successful knowledge acquisition process. Here we have a short comparison between a growth mindset that encourages improvement and a fixed mindset that rather inhibits gathering new skills.
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1655735406417/8Wkz2cgxK.png align="left")
-A growth mindset can unlock your potential and make your mistakes a part of an improvement process rather than indicators of failure.
+A growth mindset can unlock your potential and make your mistakes a part of an improvement process rather than indicators of a failure.
 
 ## System and goals
 It is important to have goals that motivate us to improve ourselves. However, to be successful in achieving your goals you should place them within some repeatable process. On the one hand, writing a blog post can be a goal. On the other hand, writing every day 
@@ -40,7 +40,7 @@ You can do a similar exercise for other career paths, like Software Architect, E
 ## Remember about fundamentals
 Fundamentals give you means for solving technical challenges and can be divided into two groups:
 - technology agnostic, like algorithms, system design, TDD approach, etc.
-- technology bounded, like a programming language, framework, database, etc.
+- technology bounded, like a programming language, web framework, database, etc.
 
 The former can frame your solution, while the latter provides implementation tools. Given their significance, both should receive adequate attention.
 
