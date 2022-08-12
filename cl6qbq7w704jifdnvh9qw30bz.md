@@ -27,7 +27,7 @@ The worst scenario for you is not being aware of your knowledge gaps and deficie
 ## Career path
 The range of inspirations for improvement cannot be too broad, because for sure, you do not have enough time to master all possible domains. You should choose a career path and define areas to grow. Proper direction is as much important as fast progress. One of the useful concepts here is T-shaped engineers that are deep experts in 1-2 domains and are also competent in several other fields to be a valuable member of a team.
 ![tshaped.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1655712781838/aNlw_XH8n.png align="left")
-The above example is probably a little bit oversimplified for a Backend Developer. However, we can design some charts for the following positions:  
+The above example is probably a little bit oversimplified for a Backend Developer. However, we can design some more suitable charts for the following positions:  
 
 - Senior Backend Developer
 ![tshaped_powerful_backend.drawio.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1655712802887/q7dPN6229.png align="left")
