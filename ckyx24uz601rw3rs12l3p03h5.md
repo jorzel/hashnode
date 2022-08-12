@@ -1,6 +1,5 @@
 ## How to build PostgreSQL full-text search engine in any language
 
-## 
 PostgreSQL is a widely-used, open source object-relational database system. However, it is not limited only to relational applications. Thanks to [JSONB](https://www.postgresql.org/docs/13/datatype-json.html) feature it can be a document store, [hstore](https://www.postgresql.org/docs/current/hstore.html) extension allows to use PostgreSQL as a key-value store. So this database system is extremely versatile. It could be used also as a search engine. In this short post I will show step by step how to establish full text search in PostgreSQL. Several options like: `ilike`, trigrams search and `tsearch` will be presented.
 
 ## Setup
