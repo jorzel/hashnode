@@ -51,7 +51,7 @@ The best approach to boost your understanding of a concept is to write about it 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660287291486/_xgBmzdcT.png align="left")
 [link to source](https://twitter.com/AdamMGrant/status/1551208238581948416)
 
-You can use the hashnode.com platform (or similar) for blogging to document your work. Has been doing something interesting? Write about it. You do not have to share it. Do it, to organize your reasoning and thought process. If you are unsure of your writing skills use [grammarly](https://app.grammarly.com/) and [quilbot](https://quillbot.com/) to make the process less erroneous. 
+You can use the hashnode.com platform (or similar) for blogging to document your work. Have you been doing something interesting? Write about it. You do not have to share it. Do it, to organize your reasoning and thought process. If you are unsure of your writing skills use [grammarly](https://app.grammarly.com/) and [quilbot](https://quillbot.com/) to make the process less erroneous. 
 
 ## Effective and efficient work
 Doing a good job for your employer does not always mean maximizing output (see **Knowledge of the business domain point** again). The best way to speed up and improve your work results is to build a range of skills. Therefore, it should come as no surprise that you devote some of your work time to developing your competencies.
