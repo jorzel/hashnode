@@ -9,7 +9,7 @@ A growth mindset can unlock your potential and make your mistakes a part of an i
 
 ## System and goals
 It is important to have goals that motivate us to improve ourselves. However, to be successful in achieving your goals you should place them within some repeatable process. On the one hand, writing a blog post can be a goal. On the other hand, writing every day 
-something for 30 min can be a system that makes our goals sizable.
+something for 30 min can be a system that makes our goals seizable.
 
 ![brogan.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660298043979/CkDw1r2us.png align="left")
 [link to source](https://twitter.com/_alexbrogan/status/1534524520672944128)
