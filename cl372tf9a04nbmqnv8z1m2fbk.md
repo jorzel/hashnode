@@ -78,7 +78,7 @@ person = session.query(Person)
 Four remaining queries are implicit:
 - `person.user`
 - `user.my_accounts[0]`
-- `my_accounts[0].account.company.name`
+- `my_accounts[0].account`
 - `account.company`
 
 It results from the default lazy loading strategy of our ORM. When we load the `Person` object it does not automatically load objects through defined foreign keys. We can see how SQL looks in that case:
