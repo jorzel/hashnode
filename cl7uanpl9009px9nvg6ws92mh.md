@@ -4,10 +4,10 @@ In the [previous post](https://jorzel.hashnode.dev/continuous-learning-framework
 
 ## Habits
 What is a habit? We can take a definition from the book: "A habit is a routine or behavior that is performed regularly - and in many cases, automatically" (J. Clear, *Atomic Habits*). James Clear unfolds a habit into a four-step pattern that constitutes a set of laws: 
-1. Cue that should be obvious 
-2. Craving that comes from habit attractiveness
-3. Response that is easy
-4. Reward that gives satisfaction
+1. Cue that should be obvious.
+2. Craving that comes from habit attractiveness.
+3. Response that is easy.
+4. Reward that gives satisfaction.
 
 It would be wonderful to put all of these rules into place for each habit. However, it might only take a handful of them to begin and keep worthwhile repeating behavior. So now, we analyze each law and determine how to incorporate it into our system of continuous learning.
 
