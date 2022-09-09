@@ -39,7 +39,7 @@ We try to introduce habits to make our goals more feasible. However, a goal can 
 Starting small doesn't mean persisting small. You should plan some phases of a habit introduction that are getting more challenging over time.
 > When you establish Hacker News skimming habit and it becomes your routine, in the second phase you can improve the habit by reading one article. The third phase can be taking notes or writing down the main concepts of an article. The next phase could be reading more than one blog post from different domains.
 
-## Make it satisfied
+## Make it satisfying 
 The likelihood of doing a habit this time is increased by the first three laws, whereas the fourth law raises the probability of repeating the behavior in the future. It is much easier to persist with a habit when we get immediate pleasure during the activity or just after it.
 This is the main reason why bad habits are easily preserved, while good ones are not. Bad habits usually give us an immediate spike of joy, while unpleasant consequences are rather deferred. As far as good habits are concerned, we pay a cost now and get ultimate good outcomes in the future. One of the strategies that can make a habit more enjoyable is activity tracking. Making progress is satisfying, visual measures provide clear evidence of your progress.
 > Documenting work can be a kind of tracking. Over time, you see how much work has already been done.
