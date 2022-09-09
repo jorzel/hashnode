@@ -33,7 +33,7 @@ The temptation bundling strategy is another method for boosting habit attractive
 > When commuting listen to a tech podcast.
 
 ## Make it easy
-We try to introduce habits to make our goals more feasible. However, a goal can be huge and overwhelming (e.g. learning React framework, familiarizing myself with Domain Driven Design philosophy).  Therefore, we frequently give up on our goals when our motivational impulse wanes. To avoid it, we should start small or even tiny. In the beginning, frequency and finding an easy gateway for a repetitive habit are more important than perfection. The habit must be established before it can be improved and refined. Like in Test Driven Development, you have to write a minimal bunch of code to pass a test, and only if the test passes you can refactor the code.
+We try to introduce habits to make our goals more feasible. However, a goal can be huge and overwhelming (e.g. learning React framework, familiarizing myself with Domain Driven Design philosophy, etc.).  Therefore, we frequently give up on our goals when our motivational impulse wanes. To avoid it, we should start small or even tiny. In the beginning, frequency and finding an easy gateway for a repetitive habit are more important than perfection. The habit must be established before it can be improved and refined. Like in Test Driven Development, you have to write a minimal bunch of code to pass a test, and only if the test passes you can refactor the code.
 > Each day starts with skimming Hacker News. You don't need to read articles. Just skim. 
 
 Starting small doesn't mean persisting small. You should plan some phases of a habit introduction that are getting more challenging over time.
