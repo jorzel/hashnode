@@ -1,6 +1,6 @@
 ## Atomic habits implemented
 
-In the [previous post](https://jorzel.hashnode.dev/continuous-learning-framework) about continuous improvement, I focused on the need for a system that can make our goals achievable. However, it is easier said than done. Now, I would like to move my attention from "what" to "how" and present some robust learning framework implementation strategies. The majority of this article is a recapitulation of ideas from James Clear's excellent book [*Atomic Habits*](https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299). In addition, I share some implementation advice relevant to the Software Development learning route.
+In the [previous post](https://jorzel.hashnode.dev/continuous-learning-framework) about continuous improvement, I focused on the need for a system that can make our goals achievable. However, it is easier said than done. Now, I would like to move my attention from "what" to "how" and present a learning system implementation based on habits. The majority of this article is a recapitulation of ideas from James Clear's excellent book [*Atomic Habits*](https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299). In addition, I share some implementation advice relevant to the Software Development learning route.
 
 ## Habits
 What is a habit? We can take a definition from the book: "A habit is a routine or behavior that is performed regularly - and in many cases, automatically" (J. Clear, *Atomic Habits*). James Clear unfolds a habit into a four-step pattern that constitutes a set of laws: 
