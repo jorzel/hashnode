@@ -33,11 +33,19 @@ Greg McKeown's great book [Essentialism: The Disciplined Pursuit of Less](https:
 [Eisenhower matrix](https://www.eisenhower.me/eisenhower-matrix/) is a quite popular tool that helps assess available options and determine what is really important.
 
 
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667914880815/wC-C6MLnj.png align="left")
+source: https://wisdomsummary.com/a-summary-of-essentialism/
+
 ## Asynchronous culture
+
 The other source of our difficulty to find a space for quiet, calm, and uninterrupted activity, is the workplace environment. We have to be in touch with our workmates, be responsive to our customers, report to managers, etc. The question is whether our organization for sure demands from us this real-time communication all the time. A lot of companies, try to implement asynchronous communication by default (see a [dropbox example](https://dropbox.tech/culture/a-day-in-the-life-engineer-onboarding-at-dropbox) with "at your own pace sessions"). This approach is based on pushing information rather than pulling it:
 - writing my daily status on Slack instead of gathering my team for a short meeting,
 - preparing good documentation and runbooks, to avoid unnecessary request about how something work, or what should I do in case of emergency (this is a great [post](https://www.karlsutt.com/articles/communicating-effectively-as-a-developer/) about the culture of writing),
 - preparing an agenda before a meeting and a summary after it. The agenda gives people an introduction to the topic, while the summary usually allows for avoiding follow-up meetings or calls with people that missed the event.
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667914780750/p8NRU5uuH.png align="left")
+source: https://docs.jolie-lang.org/v1.10.x/language-tools-and-standard-library/architectural-composition/synchronousvsasynchronous.html
+
 
 Asynchronous culture brings people autonomy and lets them improve their skills and work effects. John Fried and David Heinemeier Hansson in their book [It doesn't have to be crazy at work](https://www.amazon.com/Doesnt-Have-Be-Crazy-Work/dp/0008323445) share some experiences of how they introduce a company culture that respects creative effort:
 - meeting slots, if the meeting is necessary can only be scheduled in a given period of time, e.g between 10 a.m and 1 p.m.
