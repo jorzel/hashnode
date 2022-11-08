@@ -47,7 +47,7 @@ The other source of our difficulty to find a space for quiet, calm, and uninterr
 source: https://docs.jolie-lang.org/v1.10.x/language-tools-and-standard-library/architectural-composition/synchronousvsasynchronous.html
 
 
-Asynchronous culture brings people autonomy and lets them improve their skills and work effects. John Fried and David Heinemeier Hansson in their book [It doesn't have to be crazy at work](https://www.amazon.com/Doesnt-Have-Be-Crazy-Work/dp/0008323445) share some experiences of how they introduce a company culture that respects creative effort:
+Asynchronous culture brings people autonomy and lets them improve their skills and work effects. Jason Fried and David Heinemeier Hansson in their book [It doesn't have to be crazy at work](https://www.amazon.com/Doesnt-Have-Be-Crazy-Work/dp/0008323445) share some experiences of how they introduce a company culture that respects creative effort:
 - meeting slots, if the meeting is necessary can only be scheduled in a given period of time, e.g between 10 a.m and 1 p.m.
 - library rules in a workplace, even if you work in an open space you can behave as if you are in a library (calm, quiet),
 - eventual response, you can ask a question to your workmate, but do not demand an immediate answer.
