@@ -1,4 +1,4 @@
-# Deep work
+# Deep work. Essentialism in asynchronous culture
 
 
 ## Deep work
