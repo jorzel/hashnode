@@ -19,11 +19,11 @@ source: https://blog.nuclino.com/slack-is-not-where-deep-work-happens
 
 Monastic and bimodal modes are rather reserved for professions that can manage work without intensive communication with people, like writers, scientists, researchers, etc. Journalist mode fits best to people that are experienced with deep work and can easily switch into that state. From my experience, the best option to start with deep work is the rhythmic mode. You can schedule your workday by dividing it into 30 min time slots, trying to find 2-3 periods lasting at least an hour each for deep work. Personally, I do that scheduling just before my workday starts using a google spreadsheet (for each day, I have a table with deep work, shallow work, and rest time columns). If I know that I have some meetings, I try to reserve shallow time for them. The plan is flexible, of course. It's not necessary to be obsessive about it. Nevertheless, when it is possible, you should adhere to it. The main guideline is that a deep work slot cannot be interrupted (no e-mail inbox checks, smartphone turned off or silenced, no Slack / WhatsApp / Messenger chatting) and should be focused on a single topic.
 
-![Screenshot from 2022-11-08 10-27-54.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667899696011/1sKbk8uQQ.png align="left")
+![Screenshot from 2022-11-08 10-27-54.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667899696011/1sKbk8uQQ.png)
 
 This method of tracking is one of my habits that make it possible to measure how much time I preserved for deep work. After a week, or month I can evaluate whether I am satisfied with the amount of it or not, and maybe I should change something in my approach.
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667900013390/fL0naxgqr.png align="left")
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667900013390/fL0naxgqr.png)
 
 Deep work can bring us a lot of gains. So, why is it so hard to make some space for it? There are, in my opinion, two primary causes: the first is internal, and the second is external.
 
@@ -33,7 +33,7 @@ Greg McKeown's great book [Essentialism: The Disciplined Pursuit of Less](https:
 [Eisenhower matrix](https://www.eisenhower.me/eisenhower-matrix/) is a quite popular tool that helps assess available options and determine what is really important.
 
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667914880815/wC-C6MLnj.png align="left")
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667914880815/wC-C6MLnj.png)
 source: https://wisdomsummary.com/a-summary-of-essentialism/
 
 ## Asynchronous culture
@@ -43,7 +43,7 @@ The other source of our difficulty to find a space for quiet, calm, and uninterr
 - preparing good documentation and runbooks, to avoid unnecessary request about how something work, or what should I do in case of emergency (this is a great [post](https://www.karlsutt.com/articles/communicating-effectively-as-a-developer/) about the culture of writing),
 - preparing an agenda before a meeting and a summary after it. The agenda gives people an introduction to the topic, while the summary usually allows for avoiding follow-up meetings or calls with people that missed the event.
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667914780750/p8NRU5uuH.png align="left")
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667914780750/p8NRU5uuH.png)
 source: https://docs.jolie-lang.org/v1.10.x/language-tools-and-standard-library/architectural-composition/synchronousvsasynchronous.html
 
 
