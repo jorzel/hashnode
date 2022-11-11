@@ -21,7 +21,7 @@ Monastic and bimodal modes are rather reserved for professions that can manage w
 
 ![Screenshot from 2022-11-08 10-27-54.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667899696011/1sKbk8uQQ.png)
 
-This method of tracking is one of my habits that make it possible to measure how much time I preserved for deep work. After a week, or month I can evaluate whether I am satisfied with the amount of it or not, and maybe I should change something in my approach.
+This method of tracking is one of my habits that make possible to measure how much time I preserved for deep work. After a week, or month I can evaluate whether I am satisfied with the amount of it or not, and maybe I should change something in my approach.
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667900013390/fL0naxgqr.png)
 
