@@ -56,5 +56,5 @@ Changing organization is of course much harder than changing your personal habit
 
 
 ## Conclusion
-To conclude, you must protect your time and do not let it (un)designed by chance and other people. The crucial thing is to find the proper balance between satisfying communication and creative effort.
+To conclude, you must protect your time and do not let it be (un)designed by chance and other people. The crucial thing is to find the proper balance between satisfying communication and creative effort.
 
