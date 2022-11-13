@@ -40,7 +40,7 @@ source: https://wisdomsummary.com/a-summary-of-essentialism/
 
 The other source of our difficulty to find a space for quiet, calm, and uninterrupted activity, is the workplace environment. We have to be in touch with our workmates, be responsive to our customers, report to managers, etc. The question is whether our organization for sure demands from us this real-time communication all the time. A lot of companies, try to implement asynchronous communication by default (see a [dropbox example](https://dropbox.tech/culture/a-day-in-the-life-engineer-onboarding-at-dropbox) with "at your own pace sessions"). This approach is based on pushing information rather than pulling it:
 - writing my daily status on Slack instead of gathering my team for a short meeting,
-- preparing good documentation and runbooks, to avoid unnecessary request about how something work, or what should I do in case of emergency (this is a great [post](https://www.karlsutt.com/articles/communicating-effectively-as-a-developer/) about the culture of writing),
+- creating good documentation and runbooks, to avoid unnecessary request about how something work, or what should I do in case of emergency (this is a great [post](https://www.karlsutt.com/articles/communicating-effectively-as-a-developer/) about the culture of writing),
 - preparing an agenda before a meeting and a summary after it. The agenda gives people an introduction to the topic, while the summary usually allows for avoiding follow-up meetings or calls with people that missed the event.
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1667914780750/p8NRU5uuH.png)
