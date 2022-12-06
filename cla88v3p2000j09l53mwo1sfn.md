@@ -2,7 +2,7 @@
 
 
 ## Deep work
-Nowadays, we are getting accustomed to working in a continuously interrupting environment. Smartphone notifications, hundreds of e-mails, open spaces, and meetings slice our workday. We are feeling busy, and overworked, but are we more productive? 
+Nowadays, we are getting accustomed to working in a continuously interrupting environment. Smartphone notifications, hundreds of e-mails, open spaces, and meetings slicing our workday. We are feeling busy, and overworked, but are we more productive? 
 If I am a salesman or project coordinator that way of working can bring good effects and even improve my skills. However, for Software Developers, Designers, and other professionals that need a quiet environment for creative effort, it can lead only to frustration and burnout. They need something that is called deep work. Deep work is a concept popularized by Cal Newport in his [book under the same title](https://www.amazon.com/Deep-Work-Focused-Success-Distracted/dp/1455586692) published in 2016. The author divides mental activity into two categories:
 - **shallow work**, that does not need intensive concentration like sending e-mails, formatting documents, chatting using communicators, etc.
 - **deep work**, that demands distraction-free focus on one task like writing a document, learning a new skill, designing a software system, etc.
