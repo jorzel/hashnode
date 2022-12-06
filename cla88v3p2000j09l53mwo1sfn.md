@@ -9,7 +9,7 @@ If I am a salesman or project coordinator that way of working can bring good eff
 
 Switching contexts and multitasking is intrinsic for shallow work, while deep work needs a time slot that is uninterrupted for a reasonable amount of time. Sometimes, it could be challenging to determine whether a given activity is rather shallow or rather deep. To tackle it, Cal Newport suggests an intelligent graduate criterium. It is a kind of mind experiment you carry out to find how much time a quite smart person needs to complete the task. For example, If you need to build a machine-learning model that can respond to natural language sentences, you have to in the ideal scenario take some classes in the Artificial Intelligence field or even complete a computer science degree. Hence, that task has definitely deep nature.
 
-Further, deep work can be performed in four different modes:
+As far as deep work is concerned, it can be performed in four different modes:
 - **monastic**, you are closed to the external world, do not have an e-mail address, do not check your smartphone all day long, and you work uninterrupted all the time.
 - **bimodal**, you work monastically by part of the year, month or week, e.g. you go to a mountain shelter for the whole winter, you close your office for people each first week of the month, etc.
 - **rhythmic**, you have a scheduled workday with some time slots reserved for distraction-free work.
