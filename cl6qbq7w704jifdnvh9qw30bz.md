@@ -54,7 +54,7 @@ You can use the hashnode.com platform (or similar) for blogging to document your
 
 ## Effective and efficient work
 Doing a good job for your employer does not always mean maximizing output (see **Knowledge of the business domain point** again). The best way to speed up and improve your work results is to build a range of skills. Therefore, it should come as no surprise that you devote some of your work time to developing your competencies.
-Another important factor for effective work is the quality of the work process itself (efficiency). It can be improved by implementing strategies and conventions. Some examples:
+Another important factor for productive work is the quality of the work process itself (efficiency). It can be improved by implementing strategies and conventions. Some examples:
 - [pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique)
 - find out your peak state of energy (morning for most), and allocate it for deep work without interruptions (Maker’s Time)
 - 3-3-3 method
