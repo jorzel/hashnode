@@ -10,7 +10,7 @@ A software team's goal should be to create high-quality, reliable software that 
 
 ## Team autonomy
 
-Autonomy is a crucial aspect of a high-performance team. A team that is self-dependent and does not rely on other teams' work, can realize its goal without external blocking and waiting. However, independence has a cost. The team must be cross-functional and have sufficient capable resources to accomplish the goal to eliminate unnecessary outbound communication with people outside the unit.
+Autonomy is a crucial aspect of a high-performance team. A team that is self-dependent and does not rely on other teams' work, can realize its goal without external blocking and waiting. However, independence has a cost. The team must be cross-functional and have sufficient capable resources to accomplish the goal without excessive outbound communication with people outside the unit.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671113907915/AJGc_iIEI.png align="center")
 
