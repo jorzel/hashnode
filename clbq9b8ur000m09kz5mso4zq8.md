@@ -107,6 +107,6 @@ It is also easier to keep people in the team when they like each other, are sati
 
 The performance of a software development team can be impacted by a number of important aspects, which are covered in this article. I described the necessity of having clear goals and ensuring that team members have a clear sense of purpose and are able to prioritize their work. In addition, I emphasized the value of cross-functionality that brings autonomy and how team size can impact communication paths. In order to develop a strong team identity, trust, and collaboration among team members, I highlighted the necessity for continuity and longevity in a team.
 
-I am aware that building a team is a complicated process. Even if we know what and how many people we would like to have in a team, it is really difficult to make it happen. The recruitment process is expensive and the competition to lure experienced candidates is huge. Nevertheless, people that are responsible for human resources, should have a clear idea about desired team shape.
+I am aware that building a team is a complicated process. Even if we know what people we would like to have in a team, it is really difficult to make it happen. The recruitment process is expensive and the competition to lure experienced candidates is huge. Nevertheless, people that are responsible for human resources, should have a clear idea about desired team shape and try to implement it.
 
 Please share your feedback if you have any thoughts or experiences about building a team!
