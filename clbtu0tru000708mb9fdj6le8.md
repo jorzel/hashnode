@@ -4,13 +4,13 @@
 
 Building effective teams are one of the organization's primary concerns. People working in agile methodologies recognize the value of flexibility, continuous collaboration, and development process refinement. However, I would like to demonstrate that agility does not have to embrace change and fluidity in all aspects of software development. In this article, I will discuss several team traits (goal, autonomy, size, longevity, stability) and consider how these things affect team performance.
 
-## Team goal
+## Narrow goal
 
 A software team's goal should be to create high-quality, reliable software that meets the stakeholders' and users' needs. It is hard to disagree with that statement. However, that definition is quite vague and does not pass any signs of strategy that must be taken to achieve it. The lack of precision in goal determination can lead to team members' ambiguous understanding of daily duties (distracted team). In that case, it is really hard to build a team identity and determine what is most crucial for that group of people, and what they are accountable for. Team members that do not have clarity of purpose are vulnerable to excessive context switching. Context switching is a process of frequently changing attention from one task or project to another, or even doing several actions simultaneously. It results in an extraneous cognitive load that weakens our focus and concentration ability. Multitasking can give the impression of being busy and doing many things, but usually, it decreases our productivity and affects the quality of the work output. The remedy for it is setting narrow goals and ensuring that team members have clear sense of purpose to prioritize their tasks (focused team). The team goal should be an integral part of the organization's strategy and be aligned with its objectives.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671117776397/ajl4H7Uh4.png align="center")
 
-## Team autonomy
+## Autonomy
 
 Autonomy is a crucial aspect of a high-performance team. A team that is self-dependent and does not rely on other teams' work, can realize its goal without external blocking and waiting. However, independence has a cost. The team must be cross-functional and have sufficient capable resources to accomplish the goal without excessive outbound communication with people outside the unit.
 
@@ -62,9 +62,9 @@ It is a good idea before a project kick-off to prepare a list of team responsibi
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671094073249/G0QU4FyuV.png align="center")
     
 
-The above table shows us that our team can be independent in project development and deliver a system from end to end. Nevertheless, if we find that some fields are unaddressed (visually - the whole raw will be RED), we must add somebody to the team (easier said than done, I know) or make it up that the team is not autonomous and must rely on external resources.
+The above table shows us that our team can be independent in project development and deliver a system from end to end. Nevertheless, if we find that some fields are unaddressed (visually - the whole raw will be RED), we must add somebody to the team (easier said than done, I know) or make it up that the team is not autonomous and must rely on external resources.**i**
 
-## Team size
+## **Optimal size**
 
 Team size is also an important factor to consider when organizing a software development team. A team that is too large may be difficult to manage and coordinate, while a team that is too small may not have the resources or expertise to complete the project.
 
@@ -82,11 +82,11 @@ source: [https://zknill.io/posts/brooks-law-hierarchy-async-comms/](https://zkni
 
 So, for each team, we should find the optimum point of coordination cost and satisfactory competence level. For example, Jason Fried and David Heinemeier Hansson, in their book [It doesn't have to be crazy at work](https://www.amazon.com/s?k=it+doesn%27t+have+to+be+crazy+at+work&sprefix=it+does%2Caps%2C233&ref=nb_sb_ss_ts-doa-p_1_7), claim that three-people teams (2 developers, and a designer) work best for their company. Matthew Skelton, and Manuel Pais, authors of [Team Topologies](https://www.amazon.com/Team-Topologies-Organizing-Business-Technology-ebook/dp/B09JWT9S4D/ref=sr_1_1?keywords=team+topologies&qid=1671097694&sprefix=team+top%2Caps%2C196&sr=8-1), believe that the golden number for an agile team is between 5 and 9 people. Depending on your project type and complexity (whether it needs a User Interface, can we use cloud serverless solutions, etc.), and organization culture, the team size would fluctuate and you have to find your optimum.
 
-## Team longevity
+## Longevity
 
 The longevity property tells us how long roughly the same group of people work together. Hao Ji and Jin Yan in their [article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7411077/) studied whether team longevity impacts team structure and coordination. They found that long-lived teams can refine a team structure that *"can effectively integrate individual work through establishing clear rules, procedure, and roles for team task, then team productivity and efficiency can be elevated"*. Mature teams have the opportunity to establish daily routines and widely-known conventions over time that make work more predictable and designed. Team longevity enhances previous team traits: understanding of goals and members' responsibilities. However, the team can be long-lived only if it is stable over time.
 
-## Team stability
+## Stability
 
 Two sources can affect the stability of the team: people inflow and people outflow. We said above that adding new people does not necessarily improve team performance. We cite here another conclusion from [Brooks Law Wikipedia](https://en.wikipedia.org/wiki/Brooks%27s_law) page:
 
