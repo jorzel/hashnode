@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Building effective teams are one of the organization's primary concerns. People working in agile methodologies recognize the value of flexibility, continuous collaboration, and development process refinement. However, I would like to demonstrate that agility does not have to embrace change and fluidity in all aspects of software development. In this article, I will discuss several team traits (goal, autonomy, size, longevity, stability) and consider how these things affect team performance. The study of how the qualities are manifested by various team structures (silo team, stream-aligned team, feature team, etc.) is not a part of my analysis. It is a large topic and should probably be the subject of a different article.
+Building effective teams are one of the organization's primary concerns. People working in agile methodologies recognize the value of flexibility, continuous collaboration, and development process refinement. However, I would like to demonstrate that agility does not have to embrace change and fluidity in all aspects of software development. In this article, I will discuss several team traits (goal, autonomy, size, longevity, stability) and consider how these things affect team performance. The study of how that qualities are manifested by various team structures (silo team, stream-aligned team, feature team, etc.) is not a part of my analysis. It is a large topic and should probably be the subject of a different article.
 
 ## Narrow goal
 
