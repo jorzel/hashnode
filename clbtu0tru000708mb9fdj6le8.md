@@ -62,7 +62,7 @@ It is a good idea before a project kick-off to prepare a list of team responsibi
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671094073249/G0QU4FyuV.png align="center")
     
 
-The above table shows us that our team can be independent in project development and deliver a system from end to end. Nevertheless, if we find that some fields are unaddressed (visually - the whole raw will be RED), we must add somebody to the team (easier said than done, I know) or make it up that the team is not autonomous and must rely on external resources.**i**
+The above table shows us that our team can be independent in project development and deliver a system from end to end. Nevertheless, if we find that some fields are unaddressed (visually - the whole raw will be RED), we must add somebody to the team (easier said than done, I know) or make it up that the team is not autonomous and must rely on external resources.
 
 ## **Optimal size**
 
