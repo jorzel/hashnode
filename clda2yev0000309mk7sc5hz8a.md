@@ -312,7 +312,7 @@ Our application is accessible now on `http://127.0.0.1:30100`.
 The last thing I would like to show is how to scale up the application from 2 to 6 replicas. I make a modification in a deployment manifest (increase `replicas` field vale to 6) and apply changes.
 
 ```bash
-$ kubectl apply -f k8s-course/definitions/deployment-definition.yml                                         
+$ kubectl apply -f hello-deployment.yml                                         
 deployment.apps/hello-deployment configured
 $ kubectl get deployment hello-deployment                                                               
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
