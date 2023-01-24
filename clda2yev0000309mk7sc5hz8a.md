@@ -1,4 +1,4 @@
-# Kubernetes - my first steps
+# Kubernetes - first steps
 
 A few days ago I started my journey with Kubernetes. I would like to share how you can take the first steps with this complex tool and not feel overwhelmed.
 
