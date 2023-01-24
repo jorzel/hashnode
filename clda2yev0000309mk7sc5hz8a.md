@@ -118,9 +118,9 @@ spec:
       image: nginx
 ```
 
-We can describe high-level structure of a manifest:
+We can describe the high-level structure of a manifest:
 
-* `apiVersion -` API version dedicated to given object kind(could be different for various objects)
+* `apiVersion` - API version dedicated to given object kind (could be different for various objects)
     
 * `kind` - a type of object (e.g. `Pod`, `Service`, `Deployment`, etc.)
     
