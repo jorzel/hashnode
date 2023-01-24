@@ -140,7 +140,18 @@ The imperative style is straightforward, so it is a good idea for starters. Howe
 
 ## Running an application
 
-Now, we would like to run an application using Kubernetes. We try to focus on Kubernetes here, so our application would be as simple as possible. It would be a kind of "hello world" that was written using Python Flask framework. The only functionality of the application is returning a hardcoded string on `/` HTTP endpoint: #hello.py
+Now, we would like to run an application using Kubernetes. We try to focus on Kubernetes here, so our application would be as simple as possible. It would be a kind of "hello world" that was written using Python Flask framework. The only functionality of the application is returning a hardcoded string on `/` HTTP endpoint:
+
+```python
+# hello.py
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def up():
+    return "I am running!"
+```
 
 To run an application using Kubernetes we need to have it containerized.
 
