@@ -309,7 +309,7 @@ Our application is accessible now on `http://127.0.0.1:30100`.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1674553827096/d3724958-dca9-40ba-8e87-7e4e42f8a779.png align="center")
 
-The last thing I would like to show is how to scale up the application from 2 to 6 replicas. I make a modification in a deployment manifest (increase `replicas` field vale to 6) and apply changes.
+The last thing I would like to show is how to scale up the application, e.g. from 2 to 6 replicas. I make a modification in a deployment manifest (increase `replicas` field value to 6) and apply changes.
 
 ```bash
 $ kubectl apply -f hello-deployment.yml                                         
