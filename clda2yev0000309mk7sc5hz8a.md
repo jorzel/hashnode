@@ -97,7 +97,7 @@ Now, we can deploy and manage a simple application to test how it works. But bef
 
 ## Kubernetes configuration
 
-Kubernetes provides two ways of object configuration: imperative and declarative. The imperative style of managing Kubernetes is about directly specifying in the command line what exactly should be done, e.g. run a container by creating a new pod:
+Kubernetes provides two ways of object configuration: imperative and declarative. The imperative style of managing Kubernetes is about directly specifying in the command line what exactly should be done ([here](https://spacelift.io/blog/kubernetes-cheat-sheet) you have a helpful cheatsheet for commands), e.g. run a container by creating a new pod:
 
 ```bash
 $ kubectl run nginx-pod --image=nginx:latest
