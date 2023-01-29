@@ -257,7 +257,7 @@ spec:
       app: hello
 ```
 
-In the `template` the section we place a definition of our pod. We also specified a strategy `RollingUpdate` to replace application instances one by one during the update. The desired number `replicas` is 2. The `selector` section provides a set of labels to identify the pod (from the template section).
+In the `template` section we place a definition of our pod. We also specified a strategy `RollingUpdate` to replace application instances one by one during the update. The desired number `replicas` is 2. The `selector` section provides a set of labels to identify the pod (from the template section).
 
 Now we can apply our configuration and investigate our cluster state.
 
