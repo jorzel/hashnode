@@ -59,7 +59,7 @@ In a production-ready environment, containers are deployed only to worker nodes.
 
 * `API server` - enables communication with worker nodes
     
-* `etcd` - a key-value store all cluster data
+* `etcd` - a key-value store for all cluster data
     
 * `scheduler` - distributes containers to the worker nodes
     
