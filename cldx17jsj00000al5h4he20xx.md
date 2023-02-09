@@ -55,7 +55,7 @@ Our efficiency dream can represent a situation where each minute of our working 
 * naps - properly done (10-20 min) can improve cognitive performance, boost mental and physical health
     
 
-Each person has a different dynamic throughout the day. We have a peak, trough, and rebound time. It is a really good idea to find when is your peak and place the most intensive task while taking a long break when you know your performance naturally drops.
+Each person has a different dynamic throughout the day. We have a peak, trough, and rebound time. It is a really good idea to find when is your peak and place the most intensive task in that time while taking a long break when you know your performance naturally drops.
 
 ## Conclusion
 
