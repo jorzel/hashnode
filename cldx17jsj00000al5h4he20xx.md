@@ -34,11 +34,11 @@ The root cause of the aforementioned spiral is that we tend to confuse effective
 
 You probably can discern the difference by the following example. When people's career success is analyzed, you can find a lot of people that were great at school but do not fulfill their potential in the job market. Individuals that do not have problems with efficient work are usually great at school because they do not take decisions about what has to be done. They have supervisors and teachers that set the direction, and the best pupils follow it diligently. The situation is entirely different when you must choose your major at university or a job position. The proper implementation is not enough when your chosen field of interest is not profitable or you can hardly find a job. Although you mastered something, it is not desired by the current market. Your decision was bad or unlucky, and great efficiency cannot change your plight.
 
-Another example is the Scrum Sprint approach. Nobody denies that the velocity of a development team is an important factor in sprint success. But it is only instrumental for a sprint goal. We are inviting problems when our main focus is to deliver more story points than we have in the previous sprint instead of thinking about what outcome we want to achieve when we complete the current iteration.
-
 ![Efficiency and Effective Matrix Template 2](https://www.edrawsoft.com/images/business/effective-efficiency-matrix-2.png align="left")
 
 source: [https://www.edrawsoft.com/efficiency-effectiveness-matrix-templates.html](https://www.edrawsoft.com/efficiency-effectiveness-matrix-templates.html)
+
+Another example is the Scrum Sprint approach. Nobody denies that the velocity of a development team is an important factor in sprint success. But it is only instrumental for a sprint goal. We are inviting problems when our main focus is to deliver more story points than we have in the previous sprint instead of thinking about what outcome we want to achieve when we complete the current iteration.
 
 ## Efficient stagnation
 
