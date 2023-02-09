@@ -36,9 +36,9 @@ You probably can discern the difference by the following example. When people's 
 
 Another example is the Scrum Sprint approach. Nobody denies that the velocity of a development team is an important factor in sprint success. But it is only instrumental for a sprint goal. We are inviting problems when our main focus is to deliver more story points than we have in the previous sprint instead of thinking about what outcome we want to achieve when we complete the current iteration.
 
-![](https://www.slideteam.net/media/catalog/product/cache/1280x720/e/f/effectiveness_and_efficiency_matrix_slide01.jpg align="left")
+![Efficiency and Effective Matrix Template 2](https://www.edrawsoft.com/images/business/effective-efficiency-matrix-2.png align="left")
 
-source: [https://www.slideteam.net/effectiveness-and-efficiency-matrix.html](https://www.slideteam.net/effectiveness-and-efficiency-matrix.html)
+source: [https://www.edrawsoft.com/efficiency-effectiveness-matrix-templates.html](https://www.edrawsoft.com/efficiency-effectiveness-matrix-templates.html)
 
 ## Efficient stagnation
 
