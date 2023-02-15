@@ -59,7 +59,7 @@ Each person has a different dynamic throughout the day. We have a peak, trough, 
 
 ## Conclusion
 
-I have presented four different issues that can be side efficiency traps. It is definitely a good idea to step back occasionally and consider what it means to have meaningful work instead of boosting efficiency at all costs.
+I have presented four different issues that can be efficiency traps. It is definitely a good idea to step back occasionally and consider what it means to have meaningful work instead of boosting efficiency at all costs.
 
 At the very end, I would like to leave you with a great quote to remember:
 
