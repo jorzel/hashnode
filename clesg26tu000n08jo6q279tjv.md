@@ -345,4 +345,6 @@ The article has covered the Prometheus server setup, web application exporter, a
 
 Although this post covers some aspects of system monitoring based on metrics, there is a lot more that should be done to have an application production ready. Prometheus is a really good tool for metrics gathering. However, it may not best choice for visualization and alerting. For that need, we should probably turn to [Grafana](https://grafana.com/) and [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/).
 
-All stuff covering Prometheus setup and web application code can be found in the GitHub [repo](https://github.com/jorzel/web-app-monitoring). I hope it would be helpful.
+All stuff covering Prometheus setup and web application code can be found in the GitHub [repo](https://github.com/jorzel/web-app-monitoring). If you want to dive deeper into Prometheus I strongly recommend this [course](https://kodekloud.com/courses/prometheus-certified-associate-pca/).
+
+I hope it would be helpful.
