@@ -6,7 +6,7 @@ datePublished: Fri Mar 03 2023 11:20:27 GMT+0000 (Coordinated Universal Time)
 cuid: clesg26tu000n08jo6q279tjv
 slug: how-to-use-prometheus-for-web-application-monitoring
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1677842405923/869817c4-e36e-4b72-a9e7-05f20acce48b.webp
-tags: learning, monitoring, devops, sre, prometheus
+tags: python, learning, monitoring, devops, prometheus
 
 ---
 
