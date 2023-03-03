@@ -337,7 +337,7 @@ histogram_quantile(0.99, sum(rate(http_request_duration_bucket
 
 If you want to get more understanding of this approach, I would highly recommend [Tom Wilkie talk](https://grafana.com/blog/2018/08/02/the-red-method-how-to-instrument-your-services/) about how to instrument services.
 
-While the RED method can function as an SLI, it is usually recommended (see [Google SRE book](https://sre.google/sre-book/service-level-objectives/)) to take SLI as the ratio of two numbers: the number of good events (e.g. with a response code different from `5xx`) divided by the total number of events. Thanks to it our indicator is always between 0 and 1, and we can easily set a target for our system - Service Level Objective (SLO), e.g 0.98 requests without errors. It enables us to trigger alerts when our system reaches a level that is below our SLO. The value for SLOs must be carefully chosen to avoid excessive alert calls but guarantee that system is stable at a promised level.
+While the RED method can function as an SLI, it is usually recommended (see [Google SRE book](https://sre.google/sre-book/service-level-objectives/)) to take SLI as the ratio of two numbers: the number of good events (e.g. with a response code different from `5xx`) divided by the total number of events. Thanks to it our indicator is always between 0 and 1, and we can easily set a target for our system - Service Level Objective (SLO), e.g 98% requests without errors. It enables us to trigger alerts when our system reaches a level that is below our SLO. The value for SLOs must be carefully chosen to avoid excessive alert calls but guarantee that system is stable at a promised level.
 
 ## Conclusion
 
