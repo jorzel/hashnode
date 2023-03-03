@@ -324,7 +324,7 @@ sum(rate(http_request_duration_count{job="web-app"}[1m]))
 
 ```bash
 sum(rate(http_request_duration_count{job="web-app",
-status_code~=”5..”}[1m]))
+status_code=~”5..”}[1m]))
 ```
 
 * **Duration** - the amount of time those requests take
