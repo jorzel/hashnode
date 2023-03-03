@@ -285,7 +285,7 @@ def synthetic():
     ...
 ```
 
-The HTTP endpoint is decorated by `observe_http` function that collects `HTTP_REQUEST_DURATION` metric. For our histogram we declared:
+The HTTP `/synthetic` endpoint is decorated by `observe_http` function that collects `HTTP_REQUEST_DURATION` metric. For our histogram we declared:
 
 * three labels: `method`, `code`, `url` (that metric can be grouped by)
     
