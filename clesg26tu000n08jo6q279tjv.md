@@ -10,7 +10,7 @@ tags: python, learning, monitoring, devops, prometheus
 
 ---
 
-## Intro
+## Introduction
 
 The ability to comprehend and assess a system's state using the data it produces is known as observability. It is one of the most important traits of system reliability that gives an opportunity to take action. Observability is crucial, especially in distributed systems where end-to-end testing is really difficult or even impossible. There are three pillars of observability:
 
