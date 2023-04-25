@@ -24,7 +24,7 @@ As we probably can see, there is no restriction for activities that can bring en
     
 * Concentration is possible because a task has a clear goal and gets immediate feedback. Quick feedback tells whether we are closer to our goal. In addition, clear feedback (the information on whether we are doing something properly) can be a source of enjoyment by itself.
     
-* Deep but effortless involvement that removes worries of everyday life. It put us into a kind of focus tunnel leaving no room for irrelevant information
+* Deep but effortless involvement that removes worries of everyday life. It put us into a kind of tunnel, leaving no room for irrelevant information.
     
 * Sense of control over the actions. We should feel that we can influence what is going on.
     
