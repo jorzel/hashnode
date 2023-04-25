@@ -5,6 +5,7 @@ seoDescription: "The post is about finding flow in everyday life that brings enj
 datePublished: Tue Apr 25 2023 08:55:34 GMT+0000 (Coordinated Universal Time)
 cuid: clgw180gj000h09l965v3dvis
 slug: finding-enjoyment
+cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/Wp9yZErodaE/upload/21e808bcf36d482b424417dbb5bc3c6a.jpeg
 tags: programming, self-improvement-1
 
 ---
