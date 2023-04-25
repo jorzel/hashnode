@@ -18,7 +18,7 @@ Mihály Csíkszentmihályi in his great book [Flow: The Psychology of Optimal Ex
 
 As we probably can see, there is no restriction for activities that can bring enjoyment. However, Csíkszentmihályi determines the phenomenology of enjoyment - a set of conditions that can bring flow into a given activity:
 
-* A task we have a chance to complete. There must be a proper balance between challenge and skills (e.g. tennis game is not enjoyable for players if opponents are mismatched). Flow experience is usually between a state of boredom and anxiety.
+* A task has a chance to complete. There must be a proper balance between challenge and skills (e.g. tennis game is not enjoyable for players if opponents are mismatched). Flow experience is usually between a state of boredom and anxiety.
     
 * We are able to concentrate and focus on a given thing. The pleasure often comes without any effort. Enjoyment needs merging action and awareness. We must feel absorbed by the activity.
     
