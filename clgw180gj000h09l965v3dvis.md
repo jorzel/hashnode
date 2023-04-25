@@ -14,34 +14,34 @@ People often think that material possessions or external achievements will bring
 
 The reason for the above fallacy is probably that people often confuse pleasure with happiness. A satisfying dinner, a brand-new car, or a fancy vacation are examples of things that provide immediate pleasure and to be achieved need resources (e.g. money).
 
-Mihály Csíkszentmihályi in his great book [Flow](https://www.amazon.com/Flow-Psychology-Experience-Perennial-Classics/dp/0061339202) insists that pleasure is an important component of the quality of life but does not provide psychological growth that is essential for perceiving your life as meaningful and happy. The author describes a flow, the optimal experience that drives the enjoyment in our life. It is a state of deep engagement and focus that occurs when we are fully absorbed in an activity that challenges us just enough to keep us engaged but not so much that we become frustrated. When we are in a state of flow, time seems to fly by, and we feel a sense of satisfaction and purpose that is hard to find in other activities. While pleasure and enjoyment are both positive experiences, enjoyment is more focused on long-term fulfillment and purpose, while pleasure is more focused on immediate gratification.
+Mihály Csíkszentmihályi in his great book [Flow: The Psychology of Optimal Experience](https://www.amazon.com/Flow-Psychology-Experience-Perennial-Classics/dp/0061339202) insists that pleasure is an important component of the quality of life but does not provide psychological growth that is essential for perceiving your life as meaningful and happy. The author describes a flow, the optimal experience that drives the enjoyment in our life. It is a state of deep engagement and focus that occurs when we are fully absorbed in an activity that challenges us just enough to keep us engaged but not so much that we become frustrated. When we are in a state of flow, time seems to fly by, and we feel a sense of satisfaction and purpose that is hard to find in other activities. While pleasure and enjoyment are both positive experiences, enjoyment is more focused on long-term fulfillment and purpose, while pleasure is more focused on immediate gratification.
 
 As we probably can see, there is no restriction for activities that can bring enjoyment. However, Csíkszentmihályi determines the phenomenology of enjoyment - a set of conditions that can bring flow into a given activity:
 
-* A task we have a chance to complete. There must be a proper balance between challenge and skills (e.g tennis game is not enjoyable for players if opponents are mismatched). Flow experience is usually between a state of boredom and anxiety.
+* A task we have a chance to complete. There must be a proper balance between challenge and skills (e.g. tennis game is not enjoyable for players if opponents are mismatched). Flow experience is usually between a state of boredom and anxiety.
     
 * We are able to concentrate and focus on a given thing. The pleasure often comes without any effort. Enjoyment needs merging action and awareness. We must feel absorbed by the activity.
     
 * Concentration is possible because a task has a clear goal and gets immediate feedback. Quick feedback tells whether we are closer to our goal. In addition, clear feedback (the information on whether we are doing something properly) can be a source of enjoyment by itself.
     
-* Deep but effortless involvement that removes worries of everyday life. It put us into a kind of focus tunnel leaving no room for irrelevant information 
+* Deep but effortless involvement that removes worries of everyday life. It put us into a kind of focus tunnel leaving no room for irrelevant information
     
 * Sense of control over the actions. We should feel that we can influence what is going on.
     
-* The loss of self-consciousness - egoless. We are immersed in an activity. 
+* The loss of self-consciousness - egoless. We are immersed in an activity.
     
 * Sense of the time duration is altered. It does not match the measured sense of time.
     
 
 Optimal experience can be maintained by traversing on the verge of our comfort zone. However, it needs a proper mindset that fosters constant improvement to feel comfortable with it. It is not easy and straightforward. It is challenging. So we need a proper life perspective to seek it and also persist in it.
 
-The growth mindset presented by Carol Dweck in her insightful book [Mindset](https://www.amazon.com/Mindset-Psychology-Carol-S-Dweck/dp/0345472322/) is probably a good attitude for achieving enjoyment from flow experience. It is mainly because of the underlying conviction that improvement is always possible and skills development can be successful in almost any field.
+The growth mindset presented by Carol Dweck in her insightful book [Mindset: The New Psychology of Success](https://www.amazon.com/Mindset-Psychology-Carol-S-Dweck/dp/0345472322/) is probably a good attitude for achieving enjoyment from flow experience. It is mainly because of the underlying conviction that improvement is always possible and skills development can be successful in almost any field.
 
-Another personal trait that can be useful is patience. Oliver Burkeman in his inspirational book [Four Thousand Weeks](https://www.amazon.com/Four-Thousand-Weeks-Management-Mortals/dp/B08XZY5ZF7/) gives several tips on how to cultivate patience:
+Another personal trait that can be useful is patience. Oliver Burkeman in his inspirational book [Four Thousand Weeks: Time Management for Mortals](https://www.amazon.com/Four-Thousand-Weeks-Management-Mortals/dp/B08XZY5ZF7/) gives several tips on how to cultivate patience:
 
-* Develop a taste of having problems (the fantasy of not having problems at all is a myth). Life is a process of engaging with problems. 
+* Develop a taste of having problems (the fantasy of not having problems at all is a myth). Life is a process of engaging with problems.
     
-* Embrace radical incrementalism (chopping, chunking into small parts that make progress visible). Tolerate that would not be producing very much on an individual day. Be willing to stop when your daily time is up even if you bursting with energy. 
+* Embrace radical incrementalism (chopping, chunking into small parts that make progress visible). Tolerate that would not be producing very much on an individual day. Be willing to stop when your daily time is up even if you bursting with energy.
     
 * The originality lies on the far side of unoriginality (trial and error, copying others, tinkering)
     
