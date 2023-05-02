@@ -161,6 +161,17 @@ In all of these implementations, we are using a simple `if` condition (based on 
 
 If we take B or C option from the previous section, we can manipulate the amount of traffic that is routed to the new solution. Gradual rollout involves slowly increasing the percentage of users who are exposed to the new version of the system. This can be done in stages, such as starting with 10% of users (or requests) and increasing by 10% increments every few hours or days. This allows for any issues or bugs to be identified and addressed before a larger percentage of users are affected. Even if some unexpected issues occur, it will not affect all users using the system.
 
+For example, we can implement the following algorithm:
+
+* Start with a small fraction of requests (let's say 1%) routed to the new solution.
+    
+* Monitor application logs and metrics to ensure that everything works fine. If something goes wrong, reduce the percentage of requests routed to the new solution or disable it completely.
+    
+* Gradually increase the fraction of requests routed to the new solution, monitoring logs and metrics at every stage.
+    
+* Once the new solution has been rolled out to 100% of users, disable the old solution
+    
+
 ## Conclusion
 
 We have shortly described how to make high-risk changes in software development more reliable and predictable. These techniques allow teams in a really simple way to validate changes in real production environments and making a step back without code modifications if things are not going well. Although not all changes have to be introduced with that level of carefulness, I believe that approach should be in all software developers' toolkits.
