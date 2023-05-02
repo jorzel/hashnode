@@ -93,6 +93,7 @@ A. A simple boolean flag that determines which solution (legacy vs new) would be
 
 ```python
 import os
+import logging
 
 is_enabled = bool(os.environ.get('IS_ENABLED', False))
 
@@ -101,6 +102,7 @@ def should_use_improved_bar() -> bool:
 
 def run(user_id: str) -> Any:
     if should_use_improved_bar():
+        logger.info("Use new model")
         return improved_bar(user_id)
     return bar(user_id)
 ```
@@ -109,6 +111,7 @@ B. Every n-th request should hit a new solution
 
 ```python
 import os
+import logging
 
 nth = int(os.environ.get('NTH_REQUEST', 100))
 
@@ -121,6 +124,7 @@ def should_use_improved_bar(
 
 def run(user_id: str) -> Any:
     if should_use_improved_bar(user_id, counter, nth):
+        logger.info("Use new model")
         return improved_bar(user_id)
     counter += 1
     return bar(user_id)
@@ -131,6 +135,7 @@ C. A stable fraction (percentage) of users should be routed to a new model
 ```python
 import os
 import hashlib
+import logging
 
 # range [0;1]
 fraction = float(os.environ.get('USERS_FRACTION', 0)) 
@@ -145,6 +150,7 @@ def should_use_improved_bar(
           
 def run(user_id: str) -> Any:
     if should_use_improved_bar(user_id, fraction):
+        logger.info("Use new model")
         return improved_bar(user_id)
     return bar(user_id)
 ```
