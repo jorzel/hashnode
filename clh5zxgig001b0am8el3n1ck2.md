@@ -71,9 +71,9 @@ def improved_bar(user_id: str, *args, **kwargs) -> Any:
 
 def run(user_id: str) -> Any:
     legacy_results = bar(user_id)
-    logging.info("Legacy model results: ", legacy_results)
+    logging.info("Legacy model results: {legacy_results}")
     new_results = improved_bar(user_id)
-    logging.info("New model results: ", new_results
+    logging.info("New model results: {new_results}")
     if new_results != legacy_results:
         logging.warning("New and legacy models results mismatch")
     return legacy_results
