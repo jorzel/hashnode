@@ -102,7 +102,7 @@ def should_use_improved_bar() -> bool:
 
 def run(user_id: str) -> Any:
     if should_use_improved_bar():
-        logger.info("Use new model")
+        logger.info("Use new model for {user_id=}")
         return improved_bar(user_id)
     return bar(user_id)
 ```
@@ -124,7 +124,7 @@ def should_use_improved_bar(
 
 def run(user_id: str) -> Any:
     if should_use_improved_bar(user_id, counter, nth):
-        logger.info("Use new model")
+        logger.info("Use new model for {user_id=}")
         return improved_bar(user_id)
     counter += 1
     return bar(user_id)
@@ -150,7 +150,7 @@ def should_use_improved_bar(
           
 def run(user_id: str) -> Any:
     if should_use_improved_bar(user_id, fraction):
-        logger.info("Use new model")
+        logger.info("Use new model for {user_id=}")
         return improved_bar(user_id)
     return bar(user_id)
 ```
