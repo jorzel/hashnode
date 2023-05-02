@@ -105,7 +105,7 @@ def run(user_id: str) -> Any:
     return bar(user_id)
 ```
 
-B. Every n-th request should choose a new solution
+B. Every n-th request should hit a new solution
 
 ```python
 import os
