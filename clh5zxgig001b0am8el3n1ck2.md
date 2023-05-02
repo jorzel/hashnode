@@ -1,5 +1,5 @@
 ---
-title: "Step-by-Step Guide to Safely Introducing High-Risk Changes in Your Software System"
+title: "Step-by-step guide to safely introducing high-risk changes in your software system"
 seoTitle: "Step-by-Step Guide to Introducing High-Risk Changes in Your Software"
 seoDescription: "When introducing a change to a software system, it's essential to do so in a way that minimizes the risk of unintended consequences"
 datePublished: Tue May 02 2023 08:17:04 GMT+0000 (Coordinated Universal Time)
@@ -71,11 +71,11 @@ def improved_bar(user_id: str, *args, **kwargs) -> Any:
 
 def run(user_id: str) -> Any:
     legacy_results = bar(user_id)
-    logger.info("Legacy model results: ", legacy_results)
+    logging.info("Legacy model results: ", legacy_results)
     new_results = improved_bar(user_id)
-    logger.info("New model results: ", new_results
+    logging.info("New model results: ", new_results
     if new_results != legacy_results:
-        logger.warning("New and legacy models results mismatch")
+        logging.warning("New and legacy models results mismatch")
     return legacy_results
 ```
 
@@ -102,7 +102,7 @@ def should_use_improved_bar() -> bool:
 
 def run(user_id: str) -> Any:
     if should_use_improved_bar():
-        logger.info("Use new model for {user_id=}")
+        logging.info("Use new model for {user_id=}")
         return improved_bar(user_id)
     return bar(user_id)
 ```
@@ -150,7 +150,7 @@ def should_use_improved_bar(
           
 def run(user_id: str) -> Any:
     if should_use_improved_bar(user_id, fraction):
-        logger.info("Use new model for {user_id=}")
+        logging.info("Use new model for {user_id=}")
         return improved_bar(user_id)
     return bar(user_id)
 ```
