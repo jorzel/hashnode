@@ -155,7 +155,7 @@ def run(user_id: str) -> Any:
     return bar(user_id)
 ```
 
-In all of these implementations, we are using a simple `if` condition (based on results from `should_use_improved_bar`) function to route (or not) to the new solution.
+In all of these implementations, we are using a simple `if` condition (based on results from `should_use_improved_bar` function) to route (or not) to the new solution.
 
 ## Gradual rollout
 
