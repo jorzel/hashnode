@@ -45,7 +45,7 @@ Another personal trait that can be useful is patience. Oliver Burkeman in his in
     
 * The originality lies on the far side of unoriginality (trial and error, copying others, tinkering)
     
-* There is no problem in our desire to escalate our goals, as long as we enjoy the struggle along the way
+* There is no problem in our desire to escalate our goals, as long as we enjoy the struggle along the way (see this [article](https://forge.medium.com/how-it-feels-to-get-everything-youve-ever-wanted-114a30604a09) wriiten by Ryan Holiday)
     
 
 To conclude, I think that software development is a great field to find a state of flow. One way to find enjoyment in software development is to focus on the process of building software, rather than just the end result. This means embracing the challenge of solving complex problems, experimenting with new technologies, and collaborating with other developers to create something great. Whether you are building a new feature, designing a new interface, or creating a new application from scratch, the act of creating something new can be an inherently rewarding experience. The sense of accomplishment that comes from seeing your ideas come to life can be deeply fulfilling and can provide a sense of purpose and meaning. There are many opportunities for autotelic experiences in software development. By focusing on the intrinsic rewards of the work itself, developers can find deep satisfaction and fulfillment in their work, regardless of external factors such as pay or recognition.
