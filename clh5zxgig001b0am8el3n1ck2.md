@@ -169,7 +169,7 @@ For example, we can implement the following algorithm:
     
 * Gradually increase the fraction of requests routed to the new solution, monitoring logs and metrics at every stage.
     
-* Once the new solution has been rolled out to 100% of users, disable the old solution
+* Once the new solution has been rolled out to 100% of users, disable the old solution.
     
 
 ## Conclusion
