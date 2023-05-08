@@ -1,4 +1,14 @@
-# Efficiency traps
+---
+title: "Efficiency traps"
+seoTitle: "Efficiency traps"
+seoDescription: "It is definitely a good idea to step back occasionally and consider what it means to have meaningful work instead of boosting efficiency at all costs."
+datePublished: Thu Feb 09 2023 11:43:52 GMT+0000 (Coordinated Universal Time)
+cuid: cldx17jsj00000al5h4he20xx
+slug: efficiency-traps
+cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/C_NJKfnTR5A/upload/6eac966629ac4655d740ac1aa7f96eb1.jpeg
+tags: productivity, programming, efficiency
+
+---
 
 Efficiency can be defined as doing things correctly, but also in a reasonable amount of time. We are trying to improve our work attitude and are ready to disturb our work-life balance to generate more output. To boost our efficiency we tend to eradicate activities that do not increase the amount of desired stuff done. Cannot make a break, need overtime, must finish X, can have a desk lunch, etc. Constant efficiency growth becomes the main goal. Something that should be instrumental is becoming essential.
 
@@ -24,7 +34,7 @@ We are done with the definition. Now I will turn to cases when efficiency growth
 
 ## Efficiency spiral
 
-In his inspirational book [Four thousand weeks: Time Management for Mortals](https://www.amazon.com/Four-Thousand-Weeks-Management-Mortals/dp/B08XZY5ZF7), Oliver Burkman claims that optimization and efficiency growth usually generate additional work. As a result, an efficiency bump often extends our to-do list.
+In his inspirational book [Four thousand weeks: Time Management for Mortals](https://www.amazon.com/Four-Thousand-Weeks-Management-Mortals/dp/B08XZY5ZF7), Oliver Burkeman claims that optimization and efficiency growth usually generate additional work. As a result, an efficiency bump often extends our to-do list.
 
 Of course, there is no issue that we want to work better or faster. The problem starts when boosting efficiency becomes the main goal of our activity. In that situation, we are feeling enjoyment mostly from increasing the tempo of our work. It can create a spiral that leads to a crash. At some point, you cannot speed up or even keep the tempo, so the main source of your enjoyment (boosting efficiency) vanished. If you cannot find an alternative that brings enjoyment, you probably experience burnout. To avoid the spiral we should treat efficiency instrumentally, and care more about effectiveness.
 
