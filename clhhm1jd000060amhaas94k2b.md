@@ -150,7 +150,7 @@ The easiest way to add Alertmanager to our stack is by modifying Docker compose 
 
 First, we need to define `alertmanager.yml` configuration file. At that stage, it would be almost empty. We just want to run the Alertmanager instance. Eventually, we will configure our alert routing and receivers in this file.
 
-```bash
+```yaml
 # alertmanager.yml
 route:
   receiver: default
