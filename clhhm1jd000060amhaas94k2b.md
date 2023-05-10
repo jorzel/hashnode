@@ -18,7 +18,7 @@ This is where Alertmanager comes in. Alertmanager is a component of the Promethe
 
 Without Alertmanager, Prometheus would be limited to only collecting and storing metrics without providing any actionable alerts when certain thresholds or conditions are met. Therefore, Alertmanager is a crucial component of the Prometheus ecosystem that complements its monitoring capabilities by enabling efficient and reliable alerting.
 
-## How Alertmanager works
+## How the Alertmanager works
 
 The Prometheus server is a component that sends alerts to the Alertmanager. The Alertmanager is responsible for receiving, deduplicating, grouping, and routing alerts to various notification systems such as email, webhook, or other alerting systems via an API. The Alertmanager also provides additional features such as silence management, notification inhibition, and alert template rendering.
 
@@ -144,7 +144,7 @@ If we check the situation after 1 minute, our alert would be `firing`.
 
 As we said before, `firing` alert would not send a notification, because Prometheus is not responsible for it. In the next step, we configure the Alertmanager to handle `firing` alerts and send notifications to external systems (e.g. email, slack, etc.).
 
-## Alertmanager installation
+## The Alertmanager installation
 
 The easiest way to add Alertmanager to our stack is by modifying Docker compose file. We can use a docker image provided by the Prometheus community (Nevertheless if you would like to install Alertmanager from scratch on a host, here is a great [tutorial](https://developer.couchbase.com/tutorial-configure-alertmanager) describing this process step by step).
 
