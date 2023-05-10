@@ -162,7 +162,7 @@ receivers:
 In the next step, we specify the Alertmanager image, and where the `alertmanager.yml` configuration file would be located. All that stuff would be configured within the Docker Compose file:
 
 ```yaml
-# docker-compose
+# docker-compose.yml
 version: "3.7"
 
 services:
