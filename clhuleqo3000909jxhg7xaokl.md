@@ -32,7 +32,7 @@ Flow and burnout/boreout represent opposite ends of a continuum of work engageme
 
 Of course, the width and the slope of the flow passage can be different for various people. However, the framework showing that we must continuously seek a balance between anxiety and boredom is quite universal.
 
-The sources of work disengagement can be both objective (related to the job, work environment, workload, cultural context, etc.) and subjective (related to personality traits and individual experiences). Burnout can occur in any profession, but there are certain professions that are commonly associated with higher levels of burnout due to various factors such as workload, high-stress environments, and emotional demands. Boreout can also occur in any profession, but some professions are more susceptible than others due to their routine and repetitive nature.
+The sources of work disengagement can be both objective (related to the job, work environment, workload, cultural context, etc.) and subjective (related to personality traits and individual experiences). Burnout can occur in any profession, but there are certain professions that are commonly associated with higher levels of burnout due to various factors such as workload, high-stress environments, and emotional demands. Boreout can occur in any profession, but some professions are more susceptible than others due to their routine and repetitive nature.
 
 Even if we are not sure how to tackle burnout/boreout, maybe we can find flow experience and as a side effect, reduce the work disengagement feeling.
 
