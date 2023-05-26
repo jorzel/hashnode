@@ -123,10 +123,10 @@ def should_use_improved_bar(
     return counter % nth == 0
 
 def run(user_id: str) -> Any:
+    counter += 1
     if should_use_improved_bar(user_id, counter, nth):
         logger.info("Use new model for {user_id=}")
         return improved_bar(user_id)
-    counter += 1
     return bar(user_id)
 ```
 
