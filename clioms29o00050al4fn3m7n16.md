@@ -267,8 +267,7 @@ func (r CachedExternalDownloaderRepository) Get(ctx context.Context, userId down
 func (r CachedExternalDownloaderRepository) Save(
     ctx context.Context, resourceDownloader downloader.ResourceDownloader
 ) error {
-	r.cache.Save(ctx, resourceDownloader)
-	return nil
+	return r.cache.Save(ctx, resourceDownloader)
 }
 
 func (r CachedExternalDownloaderRepository) fetchUserLimitsFromExternalAPI(
