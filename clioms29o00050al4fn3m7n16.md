@@ -226,7 +226,7 @@ In cases where you are using a data store like Redis, which does not provide tra
 
 ### External API with cache
 
-Repository pattern is not restricted only to databases and filesystems. In distributed system repository pattern can be exploited as an abstraction for an external REST API data source. In the following example, we set up `CachedExternalDownloaderRepository` class. If the `ResourceDownloader` object is not found in the cache, the repository will make a call to the External API (using `UserServiceClient`) and cache the retrieved data for subsequent requests.
+Repository pattern is not restricted only to databases and filesystems. In distributed system repository pattern can be exploited as an abstraction for an external REST API data source. In the following example, we set up `CachedExternalDownloaderRepository` class. If the `ResourceDownloader` object is not found in the cache, the repository will make a call to the External User Service API (using UserServiceClient) that keeps information about downloads limits for users. The data fetched from User Service is returned by `CachedExternalDownloaderRepository` and also stored in the local cache for subsequent requests.
 
 ```go
 type CachedExternalDownloaderRepository struct {
