@@ -16,6 +16,8 @@ The Repository Pattern is a software design pattern that provides an abstraction
 
 In the Repository Pattern, a repository acts as a mediator between the application and the data source. It encapsulates the logic for retrieving, storing, and querying data, allowing the application to interact with the repository instead of directly accessing the database or other data sources.
 
+![]( align="center")
+
 While the repository pattern is commonly associated with Domain-Driven Design (DDD) and Clean Architecture, it is a flexible and versatile pattern that can be used in various software development contexts.
 
 ## Application core
