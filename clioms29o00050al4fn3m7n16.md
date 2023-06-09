@@ -59,7 +59,7 @@ There are 4 main steps in the process:
     
 2. Delegating to `ResourceDownloader` download registration attempt.
     
-3. Performing download of the resource (we skip the implementation of that stet to keep the example concise).
+3. Performing download of the resource (we skip the implementation of that step to keep the example concise).
     
 4. Storing `ResourceDownloader` refreshed data using `DownloaderRepository.Save` method.
     
