@@ -106,6 +106,13 @@ func (s DefaultDownloadService) DownloadResource(ctx context.Context, userId dow
 
 As you can see `DefaultDownloadService` is dependent on `DownloaderRepository` class. However, `DownloaderRepository` is an interface that does not reveal the implementation details. As a result, our application service does not have any knowledge about infrastructure components.
 
+The interface of `DownloaderRepository` is simple and consist of two methods:
+
+* `Get` to retrieve an object from the datasource
+    
+* `Save` to store an object in the datasource
+    
+
 ## Repository implementations
 
 ### In-memory
