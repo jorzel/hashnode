@@ -345,9 +345,9 @@ redisClient := redis.NewClient(&redis.Options{
 	Password: "secret",
 	DB:       0,
 })
-cache = NewRedisDownloaderRepository(redisClient)
-userServiceClient = NewDefaultUserServiceClient("http://localhost")
-repository = NewCachedExternalDownloaderRepository(
+cache := NewRedisDownloaderRepository(redisClient)
+userServiceClient := NewDefaultUserServiceClient("http://localhost")
+repository := NewCachedExternalDownloaderRepository(
     cache, userServiceClient
 )
 ```
