@@ -345,10 +345,12 @@ redisClient := redis.NewClient(&redis.Options{
 	Password: "secret",
 	DB:       0,
 })
-cache := NewRedisDownloaderRepository(redisClient)
-userServiceClient := NewDefaultUserServiceClient("http://localhost")
-repository := NewCachedExternalDownloaderRepository(
-    cache, userServiceClient
+cache := internalRedis.NewRedisDownloaderRepository(redisClient)
+userServiceClient := external.NewDefaultUserServiceClient(
+    "http://localhost"
+)
+external.NewCachedExternalDownloaderRepository(
+	&userServiceClient, cache,
 )
 ```
 
