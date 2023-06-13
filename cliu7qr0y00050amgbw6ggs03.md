@@ -119,7 +119,7 @@ Conventions play an important role when making commits to version control system
 4. Separate concerns with a blank line: For complex commits that address multiple concerns or changes, it is beneficial to separate them with a blank line in the commit message.
     
 
-Here is [an article](https://cbea.ms/git-commit/) that provides even more rules to take into account when writing commits. It's important to establish and follow conventions that are agreed upon within your team or organization.
+Here is [the article](https://cbea.ms/git-commit/) that provides even more rules to take into account when writing commits. It's important to establish and follow conventions that are agreed upon within your team or organization.
 
 ### Service instrumentation
 
