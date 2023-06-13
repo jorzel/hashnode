@@ -133,7 +133,7 @@ Conventions in service instrumentation promote uniformity, standardization, and 
 
 ## Conclusion
 
-Conventions can serve as a type of contract between team members that we would solve problems in a predictable and designed way.
+Conventions can serve as a type of contract between team members that allows solving problems in a predictable and designed way.
 
 The important point is that breaking a convention may not have immediately noticeable effects ("it's not a big deal"), and the consequences can be deferred, which can lead to decreased maintainability and increased surprises for others working on the solution. The solution may continue to function correctly, giving a false impression that breaking the convention is inconsequential. However, over time, the deferred consequences start to emerge, making the solution harder to understand and maintain.
 
