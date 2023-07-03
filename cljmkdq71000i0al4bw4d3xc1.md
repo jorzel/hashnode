@@ -1,5 +1,5 @@
 ---
-title: "Strategic Domain-Driven Design: Subdomains Identification"
+title: "Strategic Domain-Driven Design: Subdomains"
 seoTitle: "Strategic DDD: Subdomains identification"
 seoDescription: "Understanding what our business domain consists of and what are relationships between these parts are is crucial as it enables effective organization"
 datePublished: Mon Jul 03 2023 07:53:19 GMT+0000 (Coordinated Universal Time)
