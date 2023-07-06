@@ -6,7 +6,7 @@ datePublished: Mon Jul 03 2023 07:53:19 GMT+0000 (Coordinated Universal Time)
 cuid: cljmkdq71000i0al4bw4d3xc1
 slug: strategic-domain-driven-design-subdomains-identification
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1688370651938/f2dbd39e-93f6-4952-8c0e-369b8fb99879.jpeg
-tags: software-development, programming, software-architecture, ddd, domain-driven-design
+tags: software-development, programming, software-architecture, learning, ddd
 
 ---
 
