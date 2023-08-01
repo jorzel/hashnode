@@ -38,7 +38,7 @@ Indulging in bad habits can provide immediate pleasure or relief, but over time,
 
 Winning battles with great tactics might give a sense of accomplishment in the short term. However, without a solid long-term strategy, those tactical victories may not contribute to the ultimate goal of winning the war. A good strategy provides direction, purpose, and a coherent plan to achieve overarching objectives. Relying solely on tactics without strategic foresight can lead to scattered efforts and an inability to adapt to changing circumstances, ultimately resulting in failure.
 
-**Bad software architecture**
+**Undesigned software architecture**
 
 In the short term, a poorly designed software architecture can give head start and issues might not be immediately noticeable. It might fulfill expected functionalities and even appear to work adequately. However, over time, the system's flaws become apparent as it becomes harder to maintain, update, or adapt to changing requirements. Technical debt accumulates, leading to increased development time and costs. Eventually, the system may become obsolete and require a complete overhaul, causing disruption and significant expenses.
 
@@ -66,4 +66,4 @@ Micromanagement might give a manager the impression of tight control and efficie
 
 There is a recurring pattern in the above examples, which can be summarized as a conflict between short-term gains and long-term consequences. In many of these scenarios, the choices or actions that lead to immediate benefits or positive outcomes are often at odds with the bigger picture or long-term goals.
 
-Recognizing and addressing this pattern is crucial for making informed decisions and achieving sustainable success in various aspects of life, be it personal, professional, or societal. It highlights the importance of considering the broader consequences and aligning actions with long-term objectives to ensure more favorable outcomes in the future. Being aware of "cumulative advantage" bias can help individuals make more informed and realistic judgments, especially when considering long-term implications based on short-term outcomes or limited observations.
+Recognizing and addressing this pattern is crucial for making informed decisions and achieving sustainable success in various aspects of life, be it personal, professional, or societal. It highlights the importance of considering the broader consequences and aligning actions with long-term objectives to ensure more favorable outcomes in the future. Being aware of the "cumulative advantage" bias can help individuals make more informed and realistic judgments, especially when considering long-term implications based on short-term outcomes or limited observations.
