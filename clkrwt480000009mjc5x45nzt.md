@@ -62,6 +62,10 @@ Avoiding difficult conversations to maintain short-term harmony can lead to unre
 
 Micromanagement might give a manager the impression of tight control and efficient task completion in the short term. However, over time, it can erode employee morale, creativity, and initiative. Employees may become overly dependent on the manager's guidance and decisions, leading to a lack of autonomy and decreased job satisfaction. This, in turn, can stifle innovation, hinder team collaboration, and ultimately lead to reduced productivity and organizational growth in the long term.
 
+**Withholding spending**
+
+Withholding spending on additional courses or certificates is an excellent illustration of the conflict between short-term savings and long-term potential development and financial gain. In the short term, choosing not to spend money on courses or certifications may seem like a prudent financial decision, as it preserves immediate resources. It provides a sense of saving money upfront, and there might be other pressing financial needs or desires that one wants to address in the present. However, in the long term, this decision can have several negative consequences: stagnation of skills and knowledge that usually results in reduced long-term earning potential.
+
 ---
 
 There is a recurring pattern in the above examples, which can be summarized as a conflict between short-term gains and long-term consequences. In many of these scenarios, the choices or actions that lead to immediate benefits or positive outcomes are often at odds with the bigger picture or long-term goals.
