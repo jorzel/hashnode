@@ -56,7 +56,7 @@ Providing excessive help to children in completing tasks in the short term can l
 
 **Avoiding Difficult Conversations**
 
-Avoiding difficult conversations to maintain short-term harmony can lead to unresolved conflicts, resentment, and damaged relationships in the long term.
+Avoiding difficult conversations is a common tendency among individuals in various aspects of life, whether in personal relationships, the workplace, or other social settings. These conversations may involve discussing sensitive topics, addressing conflicts, or providing constructive feedback. People may choose to avoid such discussions due to various reasons, including fear of confrontation, discomfort, uncertainty about the outcome, or a desire to maintain harmony in relationships. However, avoiding difficult conversations can lead to unresolved conflicts, resentment, and damaged relationships in the long term.
 
 **Micromanagement**
 
