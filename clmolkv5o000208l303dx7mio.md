@@ -22,7 +22,7 @@ The straightforward design of the codebase brings predictability for developers.
 
 The chaotic structure is one of the reasons why the system becomes obscure. Obscurity directly relates to system maintainability. In a system where information is not obvious (e.g. we must dive into the code deeply and reverse engineer it to determine the external dependencies that the system relies on), maintainability is becoming an issue over time. Modifications are made slowly and without confidence, increasing the risk of errors and degrading overall efficiency.
 
-In the following sections I would like to discuss few cases of codebase ordering (or disordering).
+In the following sections, I would like to discuss a few cases of codebase ordering (or disordering).
 
 ## Model-View-Template
 
@@ -54,13 +54,13 @@ It's common for developers to default to a chaotic structure when they are unsur
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694790602636/04bfc121-e139-442b-935c-57d2a25908f1.png align="center")
 
-At the very beginning, that approach could be tempting because this structure is not overwhelming. However, it is really difficult to say what this application is responsible for. We only know that it implements a kind of `reservation` model. The application logic is probably implemented within HTTP server controllers. We cannot distinct layers that have properly defined boundaries. With the absence of clear boundaries, it is really difficult to impose any rules or constraints on code development. As the codebase grows and complexity increases, chaotic structures hinder scalability and adaptability to changing requirements. Developers working in chaotic codebases often experience cognitive overload (usually extraneous) due to the constant need to navigate through disorganized code and make sense of it.
+At the very beginning, that approach could be tempting because this structure is not overwhelming. However, it is really difficult to say what this application is responsible for. We only know that it implements a kind of `reservation` model. The application logic is probably implemented within HTTP server controllers. We cannot distinguish layers that have properly defined boundaries. With the absence of clear boundaries, it is really difficult to impose any rules or constraints on code development. As the codebase grows and complexity increases, chaotic structures hinder scalability and adaptability to changing requirements. Developers working in chaotic codebases often experience cognitive overload (usually extraneous) due to the constant need to navigate through disorganized code and make sense of it.
 
 ## DDD-like layers
 
 The layered architecture, suggested by [Eric Evans in his Domain-Driven Design fundamentals book](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215), offers a structured and modular way to manage complex business logic and dependencies. Here's a breakdown of the layers:
 
-1. **Domain Layer:** This layer focuses on encapsulating the core business logic, domain models, and business invariants. It's where the heart of the application resides and ensures that business rules are consistently enforced.
+1. **Domain Layer:** This layer encapsulates the core business logic, domain models, and business invariants. It's where the heart of the application resides and ensures that business rules are consistently enforced.
     
 2. **Application Layer:** The application layer orchestrates and coordinates the execution of business processes by interacting with the domain layer. It's responsible for handling use cases, transactions, and workflow management. What is really important, it should be free of knowledge about infrastructure.
     
@@ -82,13 +82,13 @@ This approach allows us to have a set of conventions that will drive the develop
 * and so on...
     
 
-This application design, inspired by DDD and layered architecture, is particularly effective in domains where complex business rules and invariants need to be enforced. It is also helpful in services that shares the same application logic between several entrypoints to the system.
+This application design, inspired by DDD and layered architecture, is particularly effective in domains where complex business rules and invariants need to be enforced. It is also helpful in services that share the same application logic between several entry points to the system.
 
 This strategy may be successful when our system consists of more than one subdomain.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1695020057265/445e2a07-887f-43d7-8854-3fdfc58393a3.png align="center")
 
-One of the options could be sharing an `api` layer but each subdomain can have separate set of `application`, `domain` and `infrastructure` layers.
+One of the options could be sharing an `api` layer but each subdomain can have a separate set of `application`, `domain` and `infrastructure` layers.
 
 ## Conclusion
 
