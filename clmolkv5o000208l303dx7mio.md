@@ -77,7 +77,7 @@ This approach allows us to have a set of conventions that will drive the develop
 
 * Retrieve and save data only within application services using repositories. This makes our code clean of *ad hoc* data flushes to the data store.
     
-* Do not contaminate application logic with transport API concepts, e.g. request, cookies. This makes our transport agnostic. The same application logic can be reached by HTTP REST endpoints, CLI scripts, or event handlers.
+* Do not contaminate application logic with transport API concepts, e.g. request, cookies. This makes our services transport agnostic. The same application logic can be reached by HTTP REST endpoints, CLI scripts, or event handlers.
     
 * and so on...
     
