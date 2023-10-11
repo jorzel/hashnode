@@ -1,4 +1,14 @@
-# Continuous learning framework
+---
+title: "Continuous Learning Framework"
+seoTitle: "Continuous learning framework"
+seoDescription: "Here I have some tips from my experience on how to build your continuous improvement framework (growth mindset, repetitive learning system)."
+datePublished: Fri Aug 12 2022 10:25:59 GMT+0000 (Coordinated Universal Time)
+cuid: cl6qbq7w704jifdnvh9qw30bz
+slug: continuous-learning-framework
+cover: https://cdn.hashnode.com/res/hashnode/image/unsplash/WE_Kv_ZB1l0/upload/v1660299927244/Nx_78mX5C.jpeg
+tags: software-development, programming, learning, self-improvement-1, learning-journey
+
+---
 
 Software development is a field that demands continuous skill improvement. Technology advances rapidly and to be successful you must find a balance between a destructive attempt to be up-to-date at all costs and clinging to your comfort zone by taking the same repetitive tasks all the time. There is a huge difference between 5 years of experience doing the same, and 5 years of experience practicing new things and taking on challenges. Here I have some tips from my experience, on how to build your continuous improvement framework.
 
