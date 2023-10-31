@@ -5,6 +5,7 @@ seoDescription: "Tracing is a critical component of modern observability methods
 datePublished: Tue Oct 31 2023 08:52:46 GMT+0000 (Coordinated Universal Time)
 cuid: cloe3cesc000a09mkee3n4ans
 slug: understanding-distributed-tracing-a-python-guide-with-opentelemetry-and-grafana-tempo
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1698742519488/ab9845a4-21e6-4f51-ac14-8b231d8b54d6.png
 tags: programming, learning, devops, observability, distributed-tracing
 
 ---
