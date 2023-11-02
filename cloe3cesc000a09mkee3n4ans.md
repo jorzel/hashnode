@@ -53,7 +53,7 @@ Here's an overview of these components.
 * **The Visualization Platform** is used to query and visualize trace data. It includes tools like Grafana Tempo, Jaeger UI, or other tracing systems. These platforms provide dashboards, charts, and query interfaces for exploring and analyzing trace information.
     
 
-## Tracing configuration - Opentelemetry SDK
+## Tracing configuration - OpenTelemetry SDK
 
 [OpenTelemetry](https://opentelemetry.io/docs/) is a versatile framework for distributed tracing and observability that fits into the architecture described previously. It plays a crucial role in instrumenting applications, capturing trace data, and exporting it to various destinations in a distributed tracing system. In the next sections, I would like to present how to:
 
