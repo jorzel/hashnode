@@ -131,7 +131,7 @@ The main business use case implemented by `reservations` handler is represented 
 Initially, we configured a tracing to use a console span exporter. At this stage, we do not need a trace collector and could test gathering spans and traces without a remote tracing platform setup.
 
 ```python
-# tracing.go
+# tracing.py
 
 import os
 
