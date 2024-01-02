@@ -158,6 +158,24 @@ scrape_configs:
 
 Client configuration `url` indicates the address ([`http://loki:3100/loki/api/v1/push`](http://loki:3100/loki/api/v1/push)) to which Promtail will push log entries. This points to the Loki server, which is responsible for storing and indexing log data. The `scrape_configs` section defines which logs will be scraped. Container selection for logging is based on specific criteria defined in `filters` subsection. In our case, we are looking for containers with `logging=promtail` label attached.
 
+The Promtail config can be now added to `docker-compose.yaml` file. The `/var/run/docker.sock:/var/run/docker.sock` mapping in a Promtail Docker Compose configuration provides access to the Docker daemon socket within the Promtail container. This configuration is crucial when Promtail is deployed alongside Docker containers and needs to interact with the Docker API.
+
+```yaml
+# docker-compose.yaml
+
+version: "3"
+
+services:
+    image: grafana/promtail:2.9.0
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./promtail-config.yaml:/etc/promtail/config.yml
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - loki
+```
+
 To illustrate how to scrape logs from applications, we create two simple Python applications, each with a single HTTP endpoint that registers info logs.
 
 * reservations service
