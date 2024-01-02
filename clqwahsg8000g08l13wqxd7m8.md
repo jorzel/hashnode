@@ -222,7 +222,9 @@ def notifications():
 
 The following `Dockerfile` is needed to build containers for these applications (in `requirements.txt` we have only `flask` dependency).
 
-```python
+```bash
+# Dockerfile
+
 FROM python:3.9-slim
 RUN apt-get update && apt-get install build-essential -y
 COPY app.py requirements.txt /
