@@ -6,7 +6,7 @@ datePublished: Tue Jan 02 2024 11:52:10 GMT+0000 (Coordinated Universal Time)
 cuid: clqwahsg8000g08l13wqxd7m8
 slug: centralized-logs-with-grafana-loki
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1704196380798/ba9ad167-c924-4e84-a2ee-e5716619707e.png
-tags: programming, devops, logging, grafana, observability
+tags: software-development, programming, devops, logging, grafana, observability, grafana-loki
 
 ---
 
