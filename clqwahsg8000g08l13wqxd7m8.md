@@ -1,7 +1,7 @@
 ---
 title: "Centralized logs with Grafana Loki"
 seoTitle: "Centralized logs with Grafana Loki"
-seoDescription: "In this post, we  show how to set up a logging server (Grafana Loki) and configure applications to push logs into it"
+seoDescription: "We show how to set up a logging server (Grafana Loki) and configure applications to push logs into it"
 datePublished: Tue Jan 02 2024 11:52:10 GMT+0000 (Coordinated Universal Time)
 cuid: clqwahsg8000g08l13wqxd7m8
 slug: centralized-logs-with-grafana-loki
