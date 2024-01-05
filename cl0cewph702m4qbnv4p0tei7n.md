@@ -1,4 +1,14 @@
-# Value Object persistance strategies
+---
+title: "Value Object persistence strategies"
+seoTitle: "Value object persistance strategies using SQLAlchemy"
+seoDescription: "For different strategies to persist value objects perseviring immutability requirement."
+datePublished: Fri Mar 04 2022 12:48:00 GMT+0000 (Coordinated Universal Time)
+cuid: cl0cewph702m4qbnv4p0tei7n
+slug: value-object-persistence-strategies
+cover: https://cdn.hashnode.com/res/hashnode/image/unsplash/j2tExQL-OyA/upload/v1646397832644/NWCuMFME2.jpeg
+tags: python, orm, ddd, domain-driven-design
+
+---
 
 
 ## Overview
