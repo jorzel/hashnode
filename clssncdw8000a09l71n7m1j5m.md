@@ -5,6 +5,7 @@ seoDescription: "I have a problem with talent perception as a natural gift. It i
 datePublished: Mon Feb 19 2024 08:00:13 GMT+0000 (Coordinated Universal Time)
 cuid: clssncdw8000a09l71n7m1j5m
 slug: the-myth-of-natural-talent
+canonical: https://medium.com/illumination/the-myth-of-natural-talent-ac74787f5826
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/-ktUX4KHlU8/upload/6d429ef2d257255491dc6b1901a576d3.jpeg
 tags: programming, practice, learning, talent, self-improvement-1
 
