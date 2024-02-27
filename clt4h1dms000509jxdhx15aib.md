@@ -10,7 +10,7 @@ tags: redis, performance, databases, devops, software-engineering
 
 ---
 
-Redis is a powerful and versatile in-memory data store that is widely used for caching, session management, real-time analytics, and more. One of the key features of Redis is its support for logical databases, which allow users to partition their data within a single Redis instance. These logical databases provide isolation and separate namespaces for keys, enabling more efficient data management and organization. In this post, I will show how you can exploit logical databases to boost Redis query performance.
+[Redis](https://redis.io/) is a powerful and versatile in-memory data store that is widely used for caching, session management, real-time analytics, and more. One of the key features of Redis is its support for logical databases, which allow users to partition their data within a single Redis instance. These logical databases provide isolation and separate namespaces for keys, enabling more efficient data management and organization. In this post, I will show how you can exploit logical databases to boost Redis query performance.
 
 ## Logical Databases
 
@@ -51,6 +51,8 @@ def populate_db(host, port, db_number, key_prefix, n):
 In Redis, the `SCAN` command is used for iterating over the keys in a database in a safe and efficient manner. The primary reason for using a cursor-based iteration approach with `SCAN` instead of fetching all keys (`KEYS <prefix>)` at once is to ensure that the operation does not block the Redis server or impact its performance negatively, especially in cases where the database is large.
 
 ```python
+import redis
+
 def scan_redis_by_pattern(host, port, db_number, pattern):
     r = redis.Redis(host=host, port=port, db=db_number)
     num_keys = r.dbsize()
