@@ -1,5 +1,5 @@
 ---
-title: "Enhancing Query Performance with Redis Logical Databases"
+title: "Enhancing Scan Performance with Redis Logical Databases"
 seoTitle: "Enhancing Query Performance with Redis Logical Databases"
 seoDescription: "In this post, I will show how you can exploit logical databases to boost Redis query performance."
 datePublished: Tue Feb 27 2024 14:36:56 GMT+0000 (Coordinated Universal Time)
