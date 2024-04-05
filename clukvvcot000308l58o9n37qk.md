@@ -1,5 +1,5 @@
 ---
-title: "How to exploit Amazon S3 presigned URLs"
+title: "How to utilize Amazon S3 presigned URLs"
 seoTitle: "How to exploit Amazon S3 presigned URLs"
 seoDescription: "I aim to demonstrate the use of presigned URLs for uploading and downloading files, empowering you to utilize AWS S3 effectively while maintaining security."
 datePublished: Thu Apr 04 2024 06:56:10 GMT+0000 (Coordinated Universal Time)
