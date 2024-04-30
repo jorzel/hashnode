@@ -1,7 +1,6 @@
 ---
-title: "How to imporve the visibility of system internals"
-seoTitle: "How to improve the visibility of system internals
-"
+title: "How to improve the visibility of system internals"
+seoTitle: "How to improve the visibility of system internals"
 seoDescription: "How to increase the visibility of system internals using RED metrics, Grafana visualizations and dashboard as code approach"
 datePublished: Tue Apr 30 2024 21:58:51 GMT+0000 (Coordinated Universal Time)
 cuid: clvmxkd4q00040ak01mxd9dg4
