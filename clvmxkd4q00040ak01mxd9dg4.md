@@ -569,7 +569,7 @@ We should see two Grafana Rows without data. Now we can simulate some traffic in
 
 To get some data, we can hit `http://localhost:3000/<user_id/reservations` endpoint several times.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713437896625/be929f9b-f474-4321-8d56-b1ce2cdec818.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1714545911779/97d35e5b-6b35-4483-97a2-d093f351f379.png align="center")
 
 We should see a nice visualization of the HTTP request rate (the number of requests per second) grouped by `path`, `method` and `status`. On the right-hand side, we have requests latency for 99, 90, and 50 percentiles. Similar data are visible for Redis calls (grouped by `operation` and `status`).
 
