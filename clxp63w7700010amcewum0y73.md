@@ -138,7 +138,7 @@ type client struct {
 	headers map[string]string
 }
 
-func (c *client) prepareRequest(key string) {
+func (c *client) sendRequest(key string) {
 	fields := c.headers
 	fields["Authorization"] = key
 	simulateLatency()
