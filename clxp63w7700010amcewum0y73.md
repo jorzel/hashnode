@@ -6,7 +6,7 @@ datePublished: Fri Jun 21 2024 20:52:56 GMT+0000 (Coordinated Universal Time)
 cuid: clxp63w7700010amcewum0y73
 slug: the-subtle-difference-between-shallow-and-deep-copy
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/4yOgRb_b_i4/upload/e50aa5639121ff0748960a25cde86240.jpeg
-tags: software-development, software-engineering
+tags: software-development, golang, software-engineering
 
 ---
 
