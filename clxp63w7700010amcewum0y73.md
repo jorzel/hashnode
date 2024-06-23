@@ -12,25 +12,25 @@ tags: software-development, software-engineering
 
 ## Introduction
 
-In many programming languages, using the assignment operator (`=`) to duplicate arrays or maps (or similar data structures) does not create a new, independent copy. Instead, it creates a new reference to the same underlying data. This can lead to unintended side effects when the original data is modified. In software terminology, the terms "deep copy" and "shallow copy" are indeed used to describe different methods of duplicating objects:
+In many programming languages, using the assignment operator (`=`) to duplicate arrays or maps (or similar data structures) does not create a new, independent copy. Instead, it creates a new reference to the same underlying data. This can lead to unintended side effects when the original data is modified. In software terminology, we use terms "deep copy" and "shallow copy" to describe different methods of duplicating objects:
 
 * A deep copy of an object creates a new object and recursively copies all objects found in the original. This means that the new object is a complete copy, with no shared references to the objects in the original.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1718982390157/f6b99c6b-178d-47bd-b431-3b098cd8a853.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1719163113030/d749e871-4e34-403f-89f2-a2ea842a5b71.png align="center")
 
 * A shallow copy of an object creates a new object but inserts references into it to the objects found in the original. Therefore, the new object is a copy of the original object's structure but not of the objects that the structure references.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1718982402780/e8788e26-ea22-4944-a400-e67e73b2a3bb.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1719163101055/3607e08b-b8c4-40fd-bebc-2930d2bfb89d.png align="center")
 
-In the following examples, we show how using the wrong type of copying method could lead to unintended consequences in our software.
+In this short article, I would like to show how using the wrong copying approach could lead to unintended consequences in our programs.
 
 ## Simple example
 
-What happens when we assign a map to another one?
+*NOTE: We use Golang to present it, but the same behavior could be seen in other popular languages like Javascript, Python, etc.*
 
-NOTE: We use Golang to present it, but the same behavior could be seen in other popular languages like Javascript, Python, etc.
+What happens when we assign a hash map to another one?
 
 ```go
 package main
@@ -52,7 +52,7 @@ func main() {
 }
 ```
 
-We initialized a `headers` map, assigned `headers` to `fields`, and eventually added `Authorization` to `fields`. And what is the result:
+We initialized a `headers` map, assigned `headers` to `fields`, and eventually added `Authorization` to `fields`. Our intention was probably to copy values from `headers` to `fields` and made changes that affect `fields` but not `headers`. However, we get something like that:
 
 ```bash
 SHALLOW COPY
@@ -62,7 +62,7 @@ Fields: map[Authorization:Bearer 123 Content-Type:application/json]
 Headers: map[Authorization:Bearer 123 Content-Type:application/json]
 ```
 
-By adding `Authorization` to `fields` we modified not only `fields` but also `headers`. How to improve it?
+By adding `Authorization` to `fields` we modified not only `fields` but also `headers`. The reason is that the assignment operator did shallow copy and we did not duplicate the object but only copied the reference to `headers`. Consequently, `headers` and `fields` pointed to the same object.
 
 ```go
 package main
@@ -91,7 +91,7 @@ func deepCopy(m map[string]string) map[string]string {
 }
 ```
 
-Now `headers` variable is not assigned to `fields`, but the object is duplicated.
+We replaced the assignment operator (shallow copy) by `deepCopy` function (deep copy). Now `headers` and `fields` just after making a copy have the same values, but are represented by two different objects.
 
 ```go
 DEEP COPY
@@ -152,11 +152,11 @@ func simulateLatency() {
 }
 ```
 
-In this example, there is a small gap between setting `Authorization` field and printing values (or sending a request over the network in a real system). This gap and using a shallow copy of the headers map can lead to a situation where another concurrent operation overwrites the `Authorization` field. In the end, the `Authorization` field is not set to the expected value.
+In this example, there is a small time gap between setting `Authorization` field and printing values (or sending a request over the network in a real system). This gap and using a shallow copy of the `headers` map can lead to a situation where another concurrent operation overwrites the `Authorization` field. In the end, the `Authorization` field is not set to the expected value.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1719002601625/58678099-8861-4a41-b8c0-896ff1fd02f1.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1719163128380/33a941e0-9266-4b2d-ad62-be9b0810c11c.png align="center")
 
-When we run the code:
+When we run the code, we get something like this:
 
 ```bash
 CONCURRENCY
@@ -172,7 +172,9 @@ key: Bearer 8, fields: map[Authorization:Bearer 9 Content-Type:application/json]
 key: Bearer 9, fields: map[Authorization:Bearer 9 Content-Type:application/json]
 ```
 
-As we expected, some of the requests have incorrect `Authorization` field.
+As we expected, some of the requests have incorrect `Authorization` field, because `headers` has been shared between concurrent operations.
+
+The solution here is simple: use a deep copy instead of a shallow one. Although using deep copy seems straightforward when dealing with concurrent access to shared resources, even experienced developers can make mistakes. It is crucial to be extremely careful when duplicating mutable structures to avoid errors.
 
 ## Conclusion
 
