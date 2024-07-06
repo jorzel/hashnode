@@ -59,13 +59,22 @@ A process mindset allows for enjoyment during activities without solely relying 
 
 Adam Grant in his inspirational book [*Hidden Potential*](https://www.amazon.com/Hidden-Potential-Science-Achieving-Greater/dp/B0C5Y6DM2D/) claims that great learners got comfortable with being uncomfortable. Failure and the discomfort it brings are integral to the learning process. Limiting oneself to playing only to strengths denies the chance to grow in areas of weakness. Resilient individuals recognize mistakes not as failures but as valuable indicators for personal growth.
 
-Individuals with intrinsic motivation tend to be more resilient because their goals are not rigid or defining of their identity. They can pursue their aspirations through various avenues and are adept at re-engaging and setting new goals after experiencing failure.
+> When we explore instead of avoid, we are able to integrate the experience into our story. We're able to make meaning out of struggle, out of suffering. Meaning is the glue that holds our mind together, allowing us to both response and recover.
+> 
+> S. Magness "Do Hard Things"
+
+Enduring discomfort becomes more manageable when the activity holds significant personal meaning to us. Individuals with intrinsic motivation tend to be more resilient because they have a sense of mission. However, their goals usually are not rigid. They can pursue their aspirations through various endeavors and are adept at re-engaging and setting new goals after experiencing failure.
 
 [![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720281481351/0ec0ccae-595f-465c-838e-6c21b2c05434.png align="center")](https://x.com/AdamMGrant/status/1767545126396502395)
 
 [source](https://x.com/AdamMGrant/status/1767545126396502395)
 
-Therefore, resilience can stem from both accepting discomfort as a normal and potentially beneficial part of the learning process and nurturing a diverse set of goals. Even if some goals fail, we can always pivot to others that still fulfill our objectives.
+Therefore, resilience can stem from:
+
+* accepting discomfort as a normal and potentially beneficial part of the learning process
+    
+* a sense of doing something important for us. Even if some goals fail, we can always pivot to others that still fulfill our objectives.
+    
 
 ## Confidence comes from competence
 
