@@ -98,7 +98,7 @@ While the goal of becoming a genius may seem daunting, achieving progress and ma
 
 Different individuals may require different strategies to solve the same problems, and the availability (education, mentorship, coaching, etc.) of robust strategies is crucial for success.
 
-### References
+## References
 
 \[1\] [Gagné F. (2010). Motivation within the DMGT 2.0 framework. High Ability Studies, 21(2), 81–99](https://www.researchgate.net/publication/232977785_Motivation_within_the_DMGT_20_framework).
 
