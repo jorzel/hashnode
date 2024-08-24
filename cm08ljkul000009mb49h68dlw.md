@@ -5,6 +5,7 @@ seoDescription: "How giftedness relates to talent, and whether deliberate practi
 datePublished: Sat Aug 24 2024 20:32:04 GMT+0000 (Coordinated Universal Time)
 cuid: cm08ljkul000009mb49h68dlw
 slug: the-talent-debate-does-mastery-require-giftedness
+cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/Sb2WndJS1ls/upload/8104cf677f784dd23a4099e95580c8fb.jpeg
 tags: learning, personal-development, personal-growth, self-improvement-1, learning-journey
 
 ---
