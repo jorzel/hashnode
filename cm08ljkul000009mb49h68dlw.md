@@ -43,6 +43,10 @@ Ericsson acknowledges the existence of individual differences and innate abiliti
 
 Addressing Gagné’s viewpoint that natural abilities are the raw materials for talent, Ericsson contends that while some individuals may start with certain advantages, these can be overcome with systematic and sustained practice. He notes, “Individual differences in basic learning rates are challenging to study because individuals differ substantially in their background knowledge and in the structure of the skills and strategies that they bring to bear in learning situations in the laboratory.” \[2\] This implies that the initial rate of learning, influenced by prior knowledge and strategies, can be refined and improved through proper mentorship and environment.
 
+![Zdjęcie](https://pbs.twimg.com/media/GVIYzRMWEAAUAnM?format=jpg&name=large align="left")
+
+source: [https://x.com/Moral\_Wisdom\_/status/1824548316798988648/photo/1](https://x.com/Moral_Wisdom_/status/1824548316798988648/photo/1)
+
 Furthermore, Ericsson's research underscores the plasticity of the brain, showing that different training can transform brain structure and function. This aligns with his argument that the real differentiator is the quality and quantity of deliberate practice.
 
 ## The main question in the debate
