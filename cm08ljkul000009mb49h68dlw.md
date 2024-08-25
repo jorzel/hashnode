@@ -91,7 +91,7 @@ Neurodivergent individuals typically do not start as great performers but achiev
 
 Gagne's model is testable to some extent, as it makes predictions about the relationship between natural abilities, environmental factors, and the development of talent. However, the complexity of the model and the multitude of factors involved can make it challenging to design definitive tests.
 
-Although the deliberate practice approach cannot be classified as a fully-fledged scientific theory due to issues with falsifiability (one can always argue that progress was not made because the appropriate training strategy was not found) and challenges in explaining individual differences in skill acquisition, it remains a valuable **philosophical framework** that can effectively foster skill development.
+Although the deliberate practice approach cannot be classified as a fully-fledged scientific theory due to issues with falsifiability (one can always argue that progress was not made because the appropriate training strategy was not found, more [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7461852/)) and challenges in explaining individual differences in skill acquisition, it remains a valuable **philosophical framework** that can effectively foster skill development.
 
 The debate between Gagné and Ericsson's perspectives on talent development highlights the complexity of the field, and both offer valuable insights and the answer likely lies somewhere in between their viewpoints.
 
