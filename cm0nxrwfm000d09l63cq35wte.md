@@ -42,7 +42,7 @@ What I also liked in the book was the idea of creating frameworks that make task
 
 > Errors have many different meanings, and call for different types of response depending on context, but in all of their guises they represent invaluable aids with the potential to help us learn.
 > 
-> M. Syed "Black Box Thinking"
+> M. Syed, "Black Box Thinking"
 
 ## ["The Duty Of Genius" by R. Monk](https://www.amazon.com/Ludwig-Wittgenstein-Genius-Ray-Monk/dp/0140159959/)
 
