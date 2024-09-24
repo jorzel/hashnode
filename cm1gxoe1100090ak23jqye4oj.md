@@ -1,5 +1,5 @@
 ---
-title: "10 Laws That Every Software Developer Should Know"
+title: "9 Laws That Every Software Developer Should Know"
 seoTitle: "10 Laws That Every Software Developer Should Know"
 seoDescription: "Principles can significantly impact the productivity of organizations, teams, and individuals."
 datePublished: Tue Sep 24 2024 21:13:36 GMT+0000 (Coordinated Universal Time)
