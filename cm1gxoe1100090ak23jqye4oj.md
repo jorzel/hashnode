@@ -20,7 +20,7 @@ In software development, there are numerous guidelines and observations referred
 
 Due to coordination costs, more developers added to a project don’t always increase productivity. This law highlights the risks of "throwing more people" at a delayed project without proper planning.
 
-It is important to find a balance between a too-large team and a small team consisting of members wearing multiple hats.
+Besides, it is important to find a balance between a too-large team and a small team consisting of members wearing multiple hats.
 
 ![brooks law dilbert](http://nscblog.com/wp-content/uploads/2015/12/brooks-law-dilbert.gif align="left")
 
@@ -41,7 +41,7 @@ This means that once a specific metric is turned into a target or goal, people w
 * Code coverage (to measure testing quality)
     
 
-To avoid this trap we don’t need to abandon the data-driven approach. However, we need several metrics that drive our efforts. We have to constantly refine and reassess metrics, and in some cases don’t avoid qualitative approaches.
+To avoid this trap we don’t have to abandon the data-driven approach. However, we need at least several metrics that drive our efforts. We have to constantly refine and reassess metrics, and in some cases don’t avoid qualitative approaches.
 
 ![](https://miro.medium.com/v2/resize:fit:1400/1*2eUj3N7C0RhjG9z6I8TcBA.png align="left")
 
@@ -93,11 +93,9 @@ Hofstadter's Law serves as a reminder of how consistently inaccurate we tend to 
 
 It reinforces the importance of buffer time and managing expectations.
 
-![A sketchnote showing hofstadter's law which states: It always takes longer than you expect, even when you take into account Hofstadter's Law.
+![](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/cc719e6f-fb7f-4673-ac18-ddf3d0872b38/IMG_1323.PNG align="left")
 
-The image shows someone predicting how long something will take, how long it will take accounting for hofstadter's law and then a final longer timeline showing how long it actually takes. ](https://sketchyideas.co/wp-content/uploads/2023/09/IMG_0028-1024x1024.webp align="left")
-
-[Image](https://sketchyideas.co/hofstadters-law/)
+[Image](https://idea-milanicreative.beehiiv.com/p/finding-inspiration-and-hofstadter-s-law), author: PJ Milani
 
 ## Kernighan's Law
 
