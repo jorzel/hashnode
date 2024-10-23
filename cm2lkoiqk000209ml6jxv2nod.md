@@ -47,13 +47,13 @@ Lambda can be configured using multiple methods, including:
 
 ## Architecture
 
-When a user makes a reservation, we want to send a notification to the user. In this context, AWS Lambda can be utilized as a notification service. However, we cannot directly trigger the Lambda function from our code. For example, we can use AWS Simple Notification Service (SNS) to publish a message to a topic, and then the Lambda function can be subscribed to the topic. AWS Lambda handler can encapsulate notification logic (e.g. sending an email, whitelisting the user, etc.) but it cannot send the email or sms directly. A service like Simple Email Service (SES) is needed to send the email.
+When a user makes a reservation, we want to notify the user. In this context, AWS Lambda can be utilized as a notification service. However, we cannot directly trigger the Lambda function from our code. For example, we can use AWS Simple Notification Service (SNS) to publish a message to a topic, and then the Lambda function can be subscribed to the topic. AWS Lambda handler can encapsulate notification logic (e.g. choosing notification type, whitelisting the user, etc.) but cannot send the email or sms directly. The AWS Simple Email Service (SES) can be used to send the email.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1729597078942/31949f38-7e6e-4a14-9b0c-20c4d23616cb.png align="center")
 
 ## Publish message to AWS SNS
 
-In a production-ready system, our reservations service should expose API to trigger the action. However, for simplicity, we will use a simple function to simulate the reservation.
+Our reservations service should expose API to trigger the action in a production-ready system. However, for simplicity, we will use a simple function to simulate the reservation.
 
 ```python
 import boto3
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     publish_message(message)
 ```
 
-We need to have installed boto3 package to use AWS SDK for Python. We can install it using pip:
+We need to have installed the `boto3` package to use AWS SDK for Python. We can install it using pip:
 
 ```bash
 pip install boto3
