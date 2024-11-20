@@ -78,7 +78,7 @@ Paradoxically, the finiteness of life is what makes it precious. If we had unlim
 
 ## Happiness is a direction
 
-Many people assume that the ultimate aim of life is to be happy. However, this view often reduces happiness to a fleeting emotional state, like pleasure. As [Arthur Brooks discusses in his conversation with Becky Kennedy](https://good-inside.simplecast.com/episodes/happiness-isnt-a-feeling-its-a-direction-with-arthur-brooks-tavetrDe), this misconception leads people to chase emotions that are fleeting, unreliable, and ultimately unsatisfying. In reality, happiness is much deeper—it is not a state but can be a direction of our life. A meaningful, fulfilling life is the true foundation of happiness.
+Many people assume that the ultimate aim of life is to be happy. However, this view often reduces happiness to a fleeting emotional state, like pleasure. As [Arthur Brooks discusses in his conversation with Becky Kennedy](https://good-inside.simplecast.com/episodes/happiness-isnt-a-feeling-its-a-direction-with-arthur-brooks-tavetrDe), this misconception leads people to chase emotions that are fleeting, unreliable, and ultimately unsatisfying. In reality, happiness is much deeper—it is not a state but can be a direction of our life.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1732135796793/abd73be6-4702-4579-bb15-2145cd84a9b3.png align="center")
 
