@@ -114,7 +114,7 @@ Life’s purpose isn’t to stay safe but to grow and contribute. Yet, to set sa
 
 ## Living to yourself
 
-To live a meaningful life, you must live *to yourself*—a concept that goes beyond living *by yourself* or *for yourself*. It is about aligning your life with your values and maintaining integrity, even in the face of external pressures.
+To live a meaningful life, you must [live *to yourself*](https://medium.com/a-little-stoic-wisdom/how-to-live-to-yourself-b94c3f06673c)—a concept that goes beyond living *by yourself* or *for yourself*. It is about aligning your life with your values and maintaining integrity, even in the face of external pressures.
 
 Living to yourself means doing the hard work of defining your own values, beliefs, and priorities—and then consistently acting in accordance with them. It is a commitment to authenticity over conformity and principles over convenience.
 
