@@ -55,6 +55,9 @@ Aspirations challenge us to redefine our values, create new identities, and stre
 
 ## The End
 
+> "And in the end, it' not the years in your life that count. It's life in your years."  
+> A. Lincoln
+
 There is perhaps no sharper lens for understanding what is important than the awareness of our own mortality. The finality of life forces us to ask: *What truly matters?*
 
 Our culture often encourages us to avoid thinking about death, framing it as something to fear or evade. But by confronting our mortality, we unlock a powerful tool for prioritization. When we reflect on life from the perspective of its end, it becomes easier to discern what is meaningful and what is trivial.
