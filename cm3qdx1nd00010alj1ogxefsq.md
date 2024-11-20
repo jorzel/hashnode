@@ -10,7 +10,7 @@ tags: programming, personal-development, personal-growth, improvement
 
 ---
 
-# Introduction
+## Introduction
 
 The ability to prioritize what is important seems like a simple idea. Frameworks like the Eisenhower Matrix urge us to distinguish between the urgent and the essential, emphasizing that we must focus on what truly matters. But there’s a deeper question here: **how do we determine what is important in the first place?**
 
