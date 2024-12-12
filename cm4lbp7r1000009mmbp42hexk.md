@@ -5,6 +5,7 @@ seoDescription: "In this post, I would like to show the process of building a ba
 datePublished: Thu Dec 12 2024 12:56:21 GMT+0000 (Coordinated Universal Time)
 cuid: cm4lbp7r1000009mmbp42hexk
 slug: the-idea-of-synthetic-monitoring
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1734013609439/a6306a92-1a14-4fba-a3f7-bd806529b6e7.png
 tags: programming, python, monitoring, devops, observability
 
 ---
