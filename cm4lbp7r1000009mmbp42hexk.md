@@ -516,4 +516,4 @@ Now, we can observe on `localhost:9090/alerts` page that we genuinely have situa
 
 In this post, we demonstrated how to utilize synthetic monitoring as a complementary tool alongside traditional monitoring and testing to enhance system reliability. We walked through the implementation of a simple synthetic monitor and highlighted how this service can help identify issues in situations where other indicators might remain silent. By simulating user behavior and observing the system from an external perspective, synthetic monitoring provides proactive insights that traditional methods may miss, ensuring that potential problems are detected and addressed early.
 
-The codebase covering the topic can be found here.
+The codebase covering the topic can be found [here](https://github.com/jorzel/synthetic-monitoring).
