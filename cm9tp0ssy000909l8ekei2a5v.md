@@ -6,7 +6,7 @@ datePublished: Wed Apr 23 2025 08:49:57 GMT+0000 (Coordinated Universal Time)
 cuid: cm9tp0ssy000909l8ekei2a5v
 slug: 9-insights-from-four-thousand-weeks
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/3eC5n6gHwe8/upload/8f95d052f02d7d41bb315b207e852a5e.jpeg
-tags: work, life-lessons, personal-development
+tags: books, work, life, life-lessons, personal-development
 
 ---
 
