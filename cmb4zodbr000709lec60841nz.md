@@ -10,6 +10,29 @@ tags: software-development, programming-blogs, programming, software-architectur
 
 ---
 
+### 📌 TL;DR
+
+* **Consistent hashing** is a strategy for evenly assigning keys (like `user_id`, `session_id`) to servers with minimal disruption when servers are added or removed.
+    
+* **Naive approaches** (e.g., `hash(key) % N`) cause massive remapping on any change to the server pool.
+    
+* A **hash ring** maps keys and servers into a circular hash space, improving assignment stability.
+    
+* **Virtual nodes** (multiple positions per server) help distribute load more evenly and avoid hot spots.
+    
+* Common use cases:
+    
+    * Sticky session routing (stateful services)
+        
+    * Database sharding
+        
+    * Canary or feature-flag rollouts
+        
+* Choose a good **hash function** (e.g., MurmurHash, xxHash) to avoid key clustering and ensure fair distribution.
+    
+
+## Intro
+
 In distributed systems, assigning keys (like `user_id`, `session_id`, or data records) to servers efficiently and reliably is a fundamental challenge, especially as the set of available servers changes over time. **Consistent hashing** is a well-established technique that addresses this challenge with minimal disruption.
 
 In this post, we’ll explore how consistent hashing works, starting with naive approaches and the problems they create. We’ll then walk through improvements using hash rings and virtual nodes to enhance stability and balance. Finally, we'll dive into practical use cases where consistent hashing proves invaluable, such as sticky session routing, data sharding, and canary-style rollouts.
@@ -100,7 +123,7 @@ To address the problem of uneven distribution, many implementations introduce th
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748253732843/3e4a5f5c-35ae-48ce-bc68-5f261c6c1674.png align="center")
 
-Now we have quite an even distribution (31-35% for each server). We are also flexible to add and remove servers without remapping a large part of the keys. We can see what happens when we add 2 additional servers.
+Now we have quite an even distribution (31-35% for each server). We are also flexible to add and remove servers without remapping a large part of the keys. Let’s examine what happens when we add 2 additional servers.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748254080807/90fe134d-51df-4052-923d-d81c69544b8f.png align="center")
 
@@ -125,6 +148,8 @@ The second use case is sharding, where we split large, loosely related datasets 
 The third application is canary-style traffic splitting. Here, we use consistent hashing to deterministically assign a hash of each `user_id` to a percentage-based threshold. For example, if we want to enable a feature for 40% of users, only those whose hash falls below the 40% mark will be enrolled. This ensures a stable, user-specific rollout, rather than random per-request percentage splits, so each user consistently sees the same experience.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748257416713/f2c0fe8d-3f53-4f98-b4ed-6a8085121fe0.png align="center")
+
+Consistent hashing is used in real-world systems like Amazon DynamoDB, Apache Cassandra, and distributed caches like Memcached or Redis Cluster to ensure resilience and balance at scale.
 
 ## Conclusion
 
