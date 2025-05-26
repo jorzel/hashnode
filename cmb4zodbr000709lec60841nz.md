@@ -1,8 +1,7 @@
 ---
 title: "Understanding Consistent Hashing: Concepts, Pitfalls, and Real-World Use Cases"
 seoTitle: "Understanding Consistent Hashing: Concepts, Pitfalls, and Use-cases"
-seoDescription: "Consistent hashing is a well-established technique that addresses this challenge with minimal disruption.
-"
+seoDescription: "Consistent hashing is a well-established technique that addresses this challenge with minimal disruption."
 datePublished: Mon May 26 2025 11:13:24 GMT+0000 (Coordinated Universal Time)
 cuid: cmb4zodbr000709lec60841nz
 slug: understanding-consistent-hashing-concepts-pitfalls-and-real-world-use-cases
@@ -40,7 +39,7 @@ Your goal is to deterministically and evenly assign that key to a physical serve
 * When servers are added or removed, only a small number of keys are remapped
     
 
-## Naive approach
+## Naive Approach
 
 The first approach could be to use simple `modulo` function to determine a server node based on an incoming key.
 
@@ -66,7 +65,7 @@ It provides uniform distribution of keys (assuming a good hash function), which 
 
 When the number of servers changes from 3 → 5, every single user is reassigned to a different server.
 
-## Consistent hashing
+## Consistent Hashing
 
 Consistent hashing is a strategy for assigning keys to servers in a way that ensures stable mappings and minimizes disruption when servers are added or removed.
 
@@ -95,23 +94,23 @@ Almost all keys landed on the GREEN server (~81%), while only ~2% landed on the 
 
 This imbalance leads to **hot spots**. Certain servers receive a disproportionately high share of the traffic, while others remain underutilized.
 
-## Virtual nodes
+## Virtual Nodes
 
-To address the problem with uneven distribution, many implementations introduce the concept of virtual nodes (or replicas). Instead of placing each physical server on the ring once, we hash it multiple times using different suffixes (e.g., `server-1#1`, `server-1#2`, etc.). Each of these virtual nodes is placed independently on the ring. See the example of 3 servers with 25 virtual nodes for each.
+To address the problem of uneven distribution, many implementations introduce the concept of virtual nodes (or replicas). Instead of placing each physical server on the ring once, we hash it multiple times using different suffixes (e.g., `server-1#1`, `server-1#2`, etc.). Each of these virtual nodes is placed independently on the ring. See the example of 3 servers with 25 virtual nodes for each.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748253732843/3e4a5f5c-35ae-48ce-bc68-5f261c6c1674.png align="center")
 
-Now we have quite an even distribution. We are also flexible to add and remove servers without remapping a large part of the keys. We can see what happens when we add 2 additional servers.
+Now we have quite an even distribution (31-35% for each server). We are also flexible to add and remove servers without remapping a large part of the keys. We can see what happens when we add 2 additional servers.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748254080807/90fe134d-51df-4052-923d-d81c69544b8f.png align="center")
 
-The distribution is even, and ~43% of keys were remapped.
+The distribution is still even, and ~43% of keys were remapped.
 
 The number of virtual nodes per server controls how evenly the load is distributed. More virtual nodes lead to a smoother, more uniform key distribution and reduce the chance of any one server becoming a hot spot. They also improve stability by minimizing the number of keys that need to be reassigned when a node is added or removed.
 
 Beyond around 100–200 virtual nodes per physical server, the improvements in load distribution and assignment stability become minimal. Increasing virtual nodes further mainly adds memory and computational overhead without meaningful benefits, so it’s usually not worth the extra cost
 
-## Common use-cases
+## Common Use-cases
 
 The three most common applications of consistent hashing are load balancing with sticky sessions, data sharding, and canary-like traffic control.
 
