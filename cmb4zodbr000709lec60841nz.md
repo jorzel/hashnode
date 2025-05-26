@@ -41,7 +41,7 @@ Your goal is to deterministically and evenly assign that key to a physical serve
 
 ## Naive Approach
 
-The first approach could be to use simple `modulo` function to determine a server node based on an incoming key.
+The first approach could be to use simple `modulo` function to determine a server node based on an incoming hash of incomming key.
 
 ```python
 class NaiveSharding:
@@ -128,4 +128,8 @@ The third application is canary-style traffic splitting. Here, we use consistent
 
 ## Conclusion
 
-Consistent hashing is a powerful and versatile technique that every software engineer should have in their toolbox. It provides a resilient and scalable way to assign keys to nodes in dynamic environments, ensuring minimal disruption during system changes. Whether you're building stateful web services, partitioning large datasets, or gradually rolling out new features, consistent hashing helps maintain balance and predictability with elegant simplicity.
+Consistent hashing is a powerful and versatile technique that every software engineer should have in their toolbox. It provides a resilient and scalable way to assign keys to nodes in dynamic environments, ensuring minimal disruption when nodes are added or removed. Whether you're building stateful web services, sharding databases, or rolling out new features gradually, consistent hashing helps keep your system balanced and predictable.
+
+Keep in mind, though, that the quality of your hashing algorithm directly impacts how well consistent hashing performs. Choosing a hash function with uniform distribution (like MurmurHash or xxHash) can significantly reduce hot spots and improve fairness across the ring. While cryptographic hashes (like SHA-1) are commonly used, they may add unnecessary overhead if you don’t need security guarantees.
+
+In short, combining a solid hash function with a well-designed hash ring (and virtual nodes) gives you a simple yet powerful tool for building reliable distributed systems.
