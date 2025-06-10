@@ -45,8 +45,6 @@ RESP is fast, simple, and designed for high-performance command parsing. Redis t
 * Remaining elements are treated as arguments (e.g. key and value).
     
 
-#### Example:
-
 A client command like:
 
 ```bash
@@ -86,8 +84,6 @@ It is intentionally simple in a single-node architecture, but can later evolve t
 The response serializer performs the opposite of parsing: it takes the result of command execution and encodes it into a valid RESP response to send back to the client.
 
 Whether it's a simple acknowledgment (`OK`), a string value, or an error message — every outgoing response must follow RESP conventions so that clients can correctly interpret it.
-
-#### Example:
 
 ```bash
 serialize("+OK")       // returns "+OK\r\n"
@@ -152,7 +148,7 @@ func (ms *MasterServer) Start(ctx context.Context) error {
 }
 ```
 
-#### 🔧 Key Components:
+🔧 Key Components:
 
 * `net.Listener` is used to bind to a TCP port and accept new client connections.
     
@@ -216,9 +212,9 @@ func (ms *MasterServer) handleConnection(ctx context.Context, conn net.Conn) {
 }
 ```
 
-#### 🔍 Step-by-step Explanation:
+🔍 Step-by-step Explanation:
 
-* **Reading Input**:  
+* **Reading Input:**  
     We allocate a 4KB buffer and read raw bytes directly from the TCP stream using [`conn.Read`](http://conn.Read).
     
     > ℹ️ **Note:** Instead of using `bufio.Reader`, we directly read into the buffer to make debugging easier. This way, you can log exactly what was received — useful when learning how RESP messages are structured.
