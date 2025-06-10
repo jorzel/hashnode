@@ -469,7 +469,7 @@ func BulkArray(elements []string) []byte {
 }
 ```
 
-## Storage
+### Storage
 
 Our storage layer is intentionally simple at this stage — it’s a `thin wrapper around Go’s` [`sync.Map`](http://sync.Map), which gives us safe concurrent access out of the box.
 
