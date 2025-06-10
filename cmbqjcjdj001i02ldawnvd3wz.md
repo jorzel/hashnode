@@ -98,8 +98,8 @@ This ensures full compatibility with Redis clients and predictable behavior acro
 
 With the architecture in place and a basic understanding of how Redis uses the RESP protocol for communication, we’re ready to dive into the actual implementation. We’ll start by building out the essential components, beginning with the connection listener and handler, then move through the command parser, dispatcher, response serializer, and finally the in-memory storage engine. Each piece will be kept simple but functional, focusing on clarity and correctness over full feature parity with Redis.
 
-> ⚠️ **Disclaimer**:  
-> This post dives into the actual implementation details of our Redis-like server. If you're not interested in the code-level internals at this point, feel free to skip this section and jump to demonstration section
+> ⚠️ **Suggestion**:  
+> This post dives into the actual implementation details of our Redis-like server. If you're not interested in the code-level internals at this point, feel free to skip this section and jump to demonstration section.
 
 ### Master Server
 
@@ -240,15 +240,12 @@ type Command struct {
 	Args []string
 }
 
-// ParseResult holds either parsed commands or an RDB payload.
 type ParseResult struct {
 	Commands []Command
 }
 
-// DefaultCommandParser parses raw RESP messages.
 type DefaultCommandParser struct{}
 
-// Parse parses rawMessage (RESP format) into commands or RDB payload.
 func (p DefaultCommandParser) Parse(rawMessage []byte) (ParseResult, error) {
 	result := ParseResult{}
 
@@ -380,13 +377,6 @@ type CommandHandler interface {
 type DefaultCommandHandler struct {
 	storage storage.Storage
 	config  *config.Config
-}
-
-func NewCommandHandler(config *config.Config) CommandHandler {
-	return &DefaultCommandHandler{
-		config:  config,
-		storage: storage.NewStorage(),
-	}
 }
 
 func (h *DefaultCommandHandler) Handle(
