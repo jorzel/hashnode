@@ -407,53 +407,10 @@ func (h *DefaultCommandHandler) Handle(
 }
 ```
 
-The specific implementations of each handler.
+The specific implementations of each handler can be found in the repo (link at the end of the post). Now we show only how `GET` is implemented.
 
 ```go
-
-func (h *DefaultCommandHandler) executeUnknownCommand(
-	_ context.Context, command protocol.Command,
-) ([]byte, error) {
-	errMsg := fmt.Sprintf("Unknown command: %s", command.Name)
-	return protocol.Error(errMsg), fmt.Errorf(errMsg)
-}
-
-func (h *DefaultCommandHandler) handlePing(
-	ctx context.Context, conn net.Conn, command protocol.Command,
-) (HandleResult, error) {
-	msg, commandErr := h.executePing(ctx, command)
-	err := h.sendMsg(ctx, conn, msg)
-	return HandleResult{
-		CommandError: commandErr,
-	}, err
-}
-
-func (h *DefaultCommandHandler) executePing(_ context.Context, command protocol.Command) ([]byte, error) {
-	return protocol.SimpleString("PONG"), nil
-}
-
-func (h *DefaultCommandHandler) handleSet(
-	ctx context.Context, conn net.Conn, command protocol.Command,
-) (HandleResult, error) {
-	msg, commandErr := h.executeSet(ctx, command)
-	err = h.sendMsg(ctx, conn, msg)
-	return HandleResult{
-		CommandError: commandErr,
-	}, err
-}
-
-func (h *DefaultCommandHandler) executeSet(_ context.Context, command protocol.Command) ([]byte, error) {
-	if len(command.Args) < 2 {
-		errMsg := "SET command requires at least 2 arguments"
-		return protocol.Error(errMsg), fmt.Errorf(errMsg)
-	}
-	record := storage.KVRecord{
-		Value: command.Args[1],
-	}
-
-	h.storage.Set(command.Args[0], &record)
-	return protocol.SimpleString("OK"), nil
-}
+package commands
 
 func (h *DefaultCommandHandler) handleGet(
 	ctx context.Context, conn net.Conn, command protocol.Command,
@@ -480,42 +437,22 @@ func (h *DefaultCommandHandler) executeGet(_ context.Context, command protocol.C
 	}
 	return protocol.BulkString(deserializedRecord.Value), nil
 }
-
-func (h *DefaultCommandHandler) handleDel(
-	ctx context.Context, conn net.Conn, command protocol.Command,
-) (HandleResult, error) {
-	msg, commandErr := h.executeDel(ctx, command)
-	err := h.sendMsg(ctx, conn, msg)
-	return HandleResult{
-		CommandError: commandErr,
-	}, err
-}
-
-func (h *DefaultCommandHandler) executeDel(_ context.Context, command protocol.Command) ([]byte, error) {
-	count := 0
-	for i := 0; i < len(command.Args); i++ {
-		err := h.storage.Del(command.Args[i])
-		if err != nil {
-			continue
-		}
-		count++
-	}
-	return protocol.SimpleInteger(count), nil
-}
 ```
 
-All handlers share a common method `sendMsg(...)` to serialize and write RESP-formatted messages back to the client.
+`GET` handler checks whether the key can be found in the storage.
 
-All response commands are defined in the serialization protocol module
+* If the key doesn't exist, it returns a `nil` response (encoded in RESP as `$-1\r\n`).
+    
+* If the key is found and valid, it returns the associated value as a bulk string.
+    
+
+All response commands are defined in the serialization protocol module. Some examples:
 
 ```go
 package protocol
 
 const CRLF = `\r\n`
 
-func SimpleInteger(i int) []byte {
-	return []byte(":" + strconv.Itoa(i) + CRLF)
-}
 
 func SimpleString(s string) []byte {
 	return []byte("+" + s + CRLF)
@@ -540,11 +477,6 @@ func BulkArray(elements []string) []byte {
 	}
 	return []byte(result)
 }
-
-func FileContent(content []byte) []byte {
-	// For file content, we use a bulk string with the length of the content
-	return []byte(fmt.Sprintf("$%d%s%s", len(content), CRLF, content))
-}
 ```
 
 ## Storage
@@ -558,7 +490,7 @@ package storage
 
 type KVRecord struct {
 	Value    string
-	ExpireAt *time.Time
+	ExpireAt *time.Time // for future EX/PX implementation
 }
 
 type DefaultStorage struct {
