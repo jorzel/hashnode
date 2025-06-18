@@ -1,5 +1,5 @@
 ---
-title: "Building Your Own Redis From Scratch: Implementing a Basic Server in Go"
+title: "Building Your Redis From Scratch: Implementing a Basic Server in Go"
 seoTitle: "Building Your Own Redis From Scratch"
 seoDescription: "I want to walk you through the process of designing and building a Redis-like server from scratch"
 datePublished: Tue Jun 10 2025 13:07:14 GMT+0000 (Coordinated Universal Time)
