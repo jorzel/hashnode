@@ -664,7 +664,7 @@ Stay tuned — the journey into Redis internals is just getting started.
 
 > 🔗 **Full code**  
 > The entire codebase for this Redis-like server is available on GitHub. Feel free to explore, clone, or contribute:  
-> [https://github.com/jorzel/myredis](https://github.com/jorzel/myredis)
+> [https://github.com/jorzel/myredis](https://github.com/jorzel/myredis/tree/blogpost1)
 
 ## [References:](https://github.com/yourusername/your-repo)
 
