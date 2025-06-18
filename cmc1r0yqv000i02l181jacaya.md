@@ -1,7 +1,7 @@
 ---
 title: "Building your Redis From Scratch: Multi-Node Architecture & Initial Communication"
 seoTitle: "Building your Redis From Scratch: Multi-Node Architecture"
-seoDescription: "In this post, we begin the journey into building a multi-node Redis architecture. "
+seoDescription: "In this post, we begin the journey into building a multi-node Redis architecture."
 datePublished: Wed Jun 18 2025 09:27:38 GMT+0000 (Coordinated Universal Time)
 cuid: cmc1r0yqv000i02l181jacaya
 slug: building-your-redis-from-scratch-multi-node-architecture-and-initial-communication
