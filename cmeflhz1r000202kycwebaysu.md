@@ -52,7 +52,7 @@ What's worse, we underestimate the influence of luck and context. We read succes
 
 In our world, this plays out in some pretty predictable ways:
 
-**We only study the success stories.** When we're researching architecture decisions, we read about companies that scaled successfully with microservices or NoSQL databases. But we don't hear from the dozens of teams that tried the same approach and ended up with an unmaintainable mess. The failures don't write blog posts or give conference talks, so we get a completely skewed view of what actually works.
+**We only study the success stories.** When we're researching architecture decisions, we read about companies that scaled successfully with microservices or NoSQL databases. But we don't hear from the dozens of teams that tried the same approach and ended up with an unmaintainable mess. The failures usually don't write blog posts or give conference talks, so we get a completely skewed view of what works (However, you can find some exceptions).
 
 ## Confirmation Bias: Our Personal Echo Chambers
 
@@ -80,11 +80,11 @@ This one hits close to home:
 
 **We judge legacy code like armchair architects.** You crack open some old system and think, "What idiot wrote this garbage?" But here's the thing — you don't know what constraints they were working under. Maybe it was the best solution possible given the timeline, the team, and the technology available at the time.
 
-**Every outage becomes obvious in hindsight.** After a deployment goes sideways, managers love to say things like "the warning signs were all there." Were they, though? Because I'm pretty sure if they were actually obvious, someone would have caught them before they took down production. Post-mortems have this nasty habit of oversimplifying complex failures, which leads to prevention plans that miss the real complexity.
+**Every outage becomes obvious in hindsight.** After a deployment goes sideways, managers love to say things like "the warning signs were all there." Were they, though? Because I'm pretty sure if they were obvious, someone would have caught them before they took down production. Post-mortems have this nasty habit of oversimplifying complex failures, which leads to prevention plans that miss the real complexity.
 
 ## Egocentric Bias: The Skewed First-Person Perspective
 
-Egocentric bias stems from what psychologists call the "first-person delusion" — our natural tendency to view the world primarily through our own experiences. We have direct, vivid access to our own thoughts and efforts, but only indirect access to others'.
+Egocentric bias stems from what psychologists call the "first-person delusion" — our natural tendency to view the world primarily through our own experiences. We have direct, vivid access to our thoughts and efforts, but only indirect access to others'.
 
 This creates the "better than average" effect. When researchers ask married couples what percentage of household chores they handle, the numbers routinely add up to more than 100%. Each spouse vividly remembers their work, while others' efforts fade into the background noise.
 
@@ -105,5 +105,7 @@ Look, I'm not suggesting we all become paralyzed by self-doubt or start second-g
 But here's what I've learned: the developers I most respect aren't the ones who never make mistakes. They're the ones who've figured out how to catch themselves making predictable mistakes. They build in friction where they know they're likely to go wrong. They ask for fresh eyes when they know they're too close to a problem. They document their reasoning so future teams (including future versions of themselves) can understand why certain decisions made sense at the time.
 
 The goal isn't to become a perfectly logical machine. It's to become a human who knows they're human.
+
+---
 
 If you're curious to dive deeper into this fascinating world of cognitive biases, I can't recommend two books enough: ["Thinking, Fast and Slow" by Daniel Kahneman](https://www.amazon.com/Thinking-Fast-and-Slow-audiobook/dp/B005Z9GAJG/) and ["The Black Swan" by Nassim Nicholas Taleb](https://www.amazon.com/Black-Swan-Second-Improbable-Robustness/dp/B07KRM6L52/). Both are incredible sources for understanding how our minds work — and how they sometimes work against us.
