@@ -24,7 +24,7 @@ You know that feeling when you've been wrestling with a problem for hours, your 
 
 source: [https://advanced-hindsight.com/blog/b-e-dogs-sunk-cost/](https://advanced-hindsight.com/blog/b-e-dogs-sunk-cost/)
 
-This bias convinces us to keep going down a path because we've already invested time or money, even when starting fresh would be smarter. The thinking goes: "I can't abandon this now — look how much I've already put into it!" Greg McKeown warns in "Essentialism" that sunk cost bias is particularly dangerous because it traps us in a vicious cycle where we keep investing more resources to justify what we've already spent, making the problem worse instead of better.
+This bias convinces us to keep going down a path because we've already invested time or money, even when starting fresh would be smarter. The thinking goes: "I can't abandon this now — look how much I've already put into it!" [Greg McKeown warns in "Essentialism"](https://www.amazon.com/Essentialism-Disciplined-Pursuit-Greg-McKeown/dp/0804137382) that sunk cost bias is particularly dangerous because it traps us in a vicious cycle where we keep investing more resources to justify what we've already spent, making the problem worse instead of better.
 
 The antidote is learning to step back and reflect. Ask yourself this refreshing question: "If I were starting this project tomorrow, would I follow this same path again?" If the answer is no, you might be throwing good effort after bad.
 
@@ -46,7 +46,7 @@ source: [https://en.wikipedia.org/wiki/Survivorship\_bias](https://en.wikipedia.
 
 We only hear from the survivors.
 
-Nassim Taleb calls this the "Casanova effect" in "The Black Swan." The legendary lover becomes famous for his conquests, but we never hear about all the times he struck out — or about all the other would-be Casanovas who tried the same techniques and failed. This survivorship bias leads us to focus on successful outcomes while completely ignoring the failures that were also part of the process. We get a skewed perception of what works because we only see the individuals or ventures that made it through — not the many who didn't.
+[Nassim Taleb calls this the "Casanova effect" in "The Black Swan"](https://www.amazon.com/Black-Swan-Improbable-Robustness-Fragility/dp/081297381X/). The legendary lover becomes famous for his conquests, but we never hear about all the times he struck out — or about all the other would-be Casanovas who tried the same techniques and failed. This survivorship bias leads us to focus on successful outcomes while completely ignoring the failures that were also part of the process. We get a skewed perception of what works because we only see the individuals or ventures that made it through — not the many who didn't.
 
 What's worse, we underestimate the influence of luck and context. We read success stories and try to copy their advice, forgetting that our situation is different and that context is crucial for success.
 
@@ -72,7 +72,7 @@ You know how experts always seem so smart when they explain what happened after 
 
 It's like watching a movie for the second time. All the plot twists that surprised you initially now seem telegraphed from the opening scene. Your brain reconstructs the past with the benefit of knowing how everything turned out, making it feel like the outcome was inevitable all along.
 
-Philip Tetlock demonstrated in "Superforecasters" just how terrible we are at predicting the future, yet we're all geniuses at explaining the past. Once we know what happened, we unconsciously rewrite our memory of what we thought would happen. The uncertainty, the multiple possibilities, the genuine confusion we felt at the time — all of that gets smoothed over by our brain's desire to create a coherent narrative.
+[Philip Tetlock demonstrated in "Superforecasting"](https://www.amazon.com/Superforecasting-Science-Prediction-Philip-Tetlock/dp/0804136718/) just how terrible we are at predicting the future, yet we're all geniuses at explaining the past. Once we know what happened, we unconsciously rewrite our memory of what we thought would happen. The uncertainty, the multiple possibilities, the genuine confusion we felt at the time — all of that gets smoothed over by our brain's desire to create a coherent narrative.
 
 This creates a dangerous illusion: we become overconfident in our ability to predict future events because we misremember how obvious past events were.
 
@@ -86,9 +86,9 @@ This one hits close to home:
 
 Egocentric bias stems from what psychologists call the "first-person delusion" — our natural tendency to view the world primarily through our own experiences. We have direct, vivid access to our own thoughts and efforts, but only indirect access to others'.
 
-This creates the "better than average" effect. When researchers ask married couples what percentage of household chores they handle, the numbers routinely add up to more than 100%. Each spouse vividly remembers their work while others' efforts fade into the background noise.
+This creates the "better than average" effect. When researchers ask married couples what percentage of household chores they handle, the numbers routinely add up to more than 100%. Each spouse vividly remembers their work, while others' efforts fade into the background noise.
 
-Adam Grant shares workplace examples in "Originals": 94% of college professors believe their work is above average, and 32% of engineers in one company thought they were top 5% performers. This isn't ego — it's the fundamental asymmetry of human perspective.
+[Adam Grant shares workplace examples in "Originals"](https://www.amazon.com/Originals-How-Non-Conformists-Move-World/dp/014312885X/): 94% of college professors believe their work is above average, and 32% of engineers in one company thought they were top 5% performers. This isn't ego — it's the fundamental asymmetry of human perspective.
 
 In our day-to-day work, this shows up as:
 
@@ -106,4 +106,4 @@ But here's what I've learned: the developers I most respect aren't the ones who 
 
 The goal isn't to become a perfectly logical machine. It's to become a human who knows they're human.
 
-If you're curious to dive deeper into this fascinating world of cognitive biases, I can't recommend two books enough: "Thinking, Fast and Slow" by Daniel Kahneman and "The Black Swan" by Nassim Nicholas Taleb. Both are incredible sources for understanding how our minds work — and how they sometimes work against us.
+If you're curious to dive deeper into this fascinating world of cognitive biases, I can't recommend two books enough: ["Thinking, Fast and Slow" by Daniel Kahneman](https://www.amazon.com/Thinking-Fast-and-Slow-audiobook/dp/B005Z9GAJG/) and ["The Black Swan" by Nassim Nicholas Taleb](https://www.amazon.com/Black-Swan-Second-Improbable-Robustness/dp/B07KRM6L52/). Both are incredible sources for understanding how our minds work — and how they sometimes work against us.
