@@ -18,15 +18,15 @@ In the first part, we explored how to identify subdomains within a business doma
 
 Before we jump into integration challenges, let's clear up something that trips up a lot of people. Subdomains and bounded contexts aren't the same thing. Understanding this difference matters if you want to avoid confusion later.
 
-A subdomain is part of the problem space. It's literally what the business does. In our restaurant reservation example, we identified subdomains like Booking & Reservations, Restaurant Catalog, Reviews, Authentication, and Notifications. These exist whether we build software or not (Please take a moment and think about how a booking restaurant system could work without computers)
+A subdomain is part of the problem space. It's literally what the business does. In our restaurant reservation example, we identified subdomains like Booking & Reservations, Restaurant Catalog, Reviews, Authentication, and Notifications. These exist whether we build software or not (Please take a moment and think about how a booking restaurant system could work without computers. Nevertheless, most of the domains nowadays are difficult to imagine without computers).
 
 A bounded context lives in the solution space. We make a design decision about which subdomains we want to bundle together to share the same model. You might put multiple subdomains in one bounded context. Or you might split a single subdomain across multiple bounded contexts. It depends on what makes sense for your situation.
 
-Now, what do I mean by "model" here? This trips up a lot of people. A model isn't just some data structures or a bunch of classes you wrote. A model represents the behaviors you want to provide for a specific part of your domain within a bounded context. It includes the business rules, operations, and constraints that define how that piece of the domain actually works.
+Now, what do I mean by "model" here? This trips up a lot of people. A model isn't just some data structures or a bunch of classes you wrote. A model represents the behaviors you want to provide for a specific part of your domain within a bounded context. It includes the business rules, operations, and constraints that define how that piece of the domain works.
 
 Take our restaurant reservation system. The Booking & Reservations bounded context might handle behaviors like "reserve a table" and "cancel a reservation". The Restaurant Catalog bounded context provides different behaviors like "search restaurants" and "manage restaurant information".
 
-Here's something interesting. Each bounded context maintains its own model with its own language. The same concept can mean totally different things depending on which context you're in.
+Here's something interesting. Each bounded context maintains its model with its language. The same concept can mean totally different things depending on which context you're in.
 
 Take "User" for example. In an Authentication Context, a User represents someone's login identity. Email, password, security roles, that sort of thing. But in the Booking Context, that same person becomes a Guest with a reservation history. In the Reviews Context, they become a Reviewer with a review history and credibility score. Same person, completely different meanings depending on the context.
 
@@ -38,7 +38,7 @@ But here's the thing nobody talks about upfront. There's a fundamental cost that
 
 When we split up what used to be a monolithic domain into multiple bounded contexts, we lose something valuable. The simplicity of everything living in the same process. But the bounded contexts still need to work together. Their models need to interact across context boundaries to deliver complete business functionality. You can't complete a restaurant reservation without accessing restaurant information, user authentication, and notification services.
 
-If we mess up the division, we end up with what people call a "distributed monolith". Services that are physically separated but still tightly coupled logically. This creates all kinds of headaches. Due to the fact that each change needs coordinated updates across services, teams lose autonomy despite having physical boundaries between the services.
+If we mess up the division, we end up with what people call a "distributed monolith". Services that are physically separated but still tightly coupled logically. This creates all kinds of headaches. Since each change needs coordinated updates across services, teams lose autonomy despite having physical boundaries between the services.
 
 This is exactly why context mapping becomes so critical. It's our strategic approach to managing these integration challenges before they turn into technical disasters.
 
@@ -61,13 +61,17 @@ Think of the context map like an architectural blueprint. It answers questions l
 
 Strategic DDD gives us a vocabulary of well-established patterns. These patterns describe relationships between bounded contexts. Understanding these patterns is like learning the language of system integration.
 
-### Understanding Upstream and Downstream
+### Upstream and Downstream
 
-Most context relationships aren't symmetrical. There's usually an upstream and a downstream side. The upstream context provides the contract and has more control over the relationship. Think about an authentication service exposing a REST API. Or a booking service publishing "ReservationConfirmed" events.
+Most context relationships aren't symmetrical. There's usually an upstream or a downstream side.
+
+The upstream context provides the contract and has more control over the relationship. Think about an authentication service exposing a REST API. Or a booking service publishing "ReservationConfirmed" events.
 
 The downstream context needs to adapt to the upstream interface. It has less control but more flexibility in how it uses the upstream data. Examples would be a booking service calling an authentication API. Or a notification service subscribing to reservation events.
 
 Some patterns, like Shared Kernel, are symmetrical. Both contexts share equal responsibility and control over the shared elements.
+
+Being familiar with basic terminology, we can go through mapping patterns.
 
 ### Open Host Service (OHS)
 
@@ -87,7 +91,7 @@ Well-documented examples include OpenAPI specifications for REST APIs or AsyncAP
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1755773720437/2c4b8bbb-94a6-42d1-bec9-70671b0904a1.png align="center")
 
-Here, the downstream context just accepts whatever model the upstream provides. No transformation. The downstream context simply takes whatever the upstream gives them. This might seem like the easy choice, but be careful. It can create tight coupling that you don't need. Your downstream model might get polluted with concepts that don't really belong there. This makes changes more difficult than they should be.
+Here, the downstream context just accepts whatever model the upstream provides. No transformation. The downstream context simply takes whatever the upstream gives. This might seem like the easy choice, but be careful. It can create tight coupling that you don't need. Your downstream model might get polluted with concepts that don't really belong there. This makes changes more difficult than they should be.
 
 ### Anti-Corruption Layer (ACL)
 
@@ -131,13 +135,11 @@ Generic and stable contexts should generally be upstream. Authentication, notifi
 
 Core subdomains often work best as downstream contexts. They need flexibility to evolve rapidly in response to business changes. When your core domain is downstream, changes in the core don't ripple through other subsystems. This allows your most important business logic to evolve without creating widespread impact.
 
-Team dynamics also matter. Stronger or larger teams often naturally become upstream providers. Smaller teams adapt as downstream consumers. Understanding these organizational realities helps predict which relationship patterns will be sustainable over time.
-
 ## Applying Context Mapping to Our Restaurant System
 
 Let's examine two key relationships in our restaurant reservation system. We'll explore different integration options. Rather than getting lost in theory, let's see how these choices play out in practice.
 
-I'll provide pseudocode examples for better visualization, but remember - this part is about strategic relationship decisions, not implementation. Implementation should be derived from these strategic decisions, not the other way around.
+We'll provide pseudocode examples for better visualization, but remember - this part is about strategic relationship decisions, not implementation. Implementation should be derived from these strategic decisions, not the other way around.
 
 ### Booking Context and Notifications Context
 
@@ -179,7 +181,7 @@ class NotificationService:
         pass
 ```
 
-This approach makes the Notifications Context unstable. Every time we want to send a new type of notification, the Notifications Context needs to change to handle the new event.
+This approach makes the Notifications Context unstable. Every time we want to send a new type of notification, the Notifications Context needs to be updated to handle the new event type.
 
 #### Option 2: Notifications Upstream
 
@@ -199,13 +201,13 @@ class BookingService:
     def confirm_reservation(self, reservation_id):
         # Business logic
         self.notification_service.send_notification(
-            user_id="guest_123",
+            user_id="guest_1",
             message="Your reservation at Pizza Palace is confirmed",
             channel="email"
         )
 ```
 
-The choice between these approaches depends on your architectural goals. If you want notifications to be truly generic and stable, make it upstream. If you have a limited set of notification types that don't change often, the event-driven approach might be simpler.
+The choice between these approaches depends on your architectural goals. If you want notifications to be truly generic and stable, make them upstream. If you have a limited set of notification types that don't change often, the event-driven approach might be simpler.
 
 ### Booking Context and Authentication Context
 
@@ -220,8 +222,10 @@ Both use the same `User` class shared as a library.
 ```python
 # Shared UserModel Library
 class User:
-    def __init__(self, user_id, email, password_hash, name, 
-                 dietary_preferences, loyalty_level, registration_date):
+    def __init__(
+            self, user_id, email, password_hash, name, 
+            dietary_preferences, loyalty_level, registration_date,
+        ):
         self.user_id = user_id
         self.email = email
         self.password_hash = password_hash
@@ -249,8 +253,8 @@ class UserService:
     def verify_user(self, user_id):
         return {
             "user_id": "123",
-            "email": "guest@example.com", 
-            "name": "John Doe",
+            "email": "guest@test.com", 
+            "name": "John Test",
             "dietary_preferences": ["vegetarian"],
             "loyalty_level": "gold",
             "registration_date": "2023-01-15",
@@ -281,8 +285,8 @@ class UserService:
     def verify_user(self, user_id):
         return {
             "user_id": "123",
-            "email": "guest@example.com",
-            "name": "John Doe", 
+            "email": "guest@test.com",
+            "name": "John Test", 
             "dietary_preferences": ["vegetarian"],
             "loyalty_level": "gold",
             "registration_date": "2023-01-15",
