@@ -31,7 +31,7 @@ Most developers reach for one of two standard approaches when they need unique I
 
 **UUIDs** guarantee global uniqueness but don't provide sortability. Random UUIDs don't preserve creation order, which is often exactly what you need.
 
-## Approach #1: Separate ID Service
+## Separate ID Service
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756900772162/d0234404-ae39-4e76-b46a-c360cf36daea.png align="center")
 
@@ -39,7 +39,7 @@ You could create a dedicated service with access to an auto-increment database, 
 
 But here's the issue: it becomes a **single point of failure** for your entire system. It also adds a large service dependency to other systems. A simple operation like generating an ID suddenly gets additional network latency. It seems like great overhead for our task.
 
-## Approach #2: Timestamp-Based IDs (The Smart Move)
+## Timestamp-Based IDs (The Smart Move)
 
 Using a timestamp as part of the ID and leaving some bytes to randomize the ID seems more straightforward. Depending on your use case, you can choose one of the following options:
 
