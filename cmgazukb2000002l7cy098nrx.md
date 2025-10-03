@@ -1,7 +1,7 @@
 ---
 title: "Redis and the Magic of ZSET"
 seoTitle: "Redis and the Magic of ZSET"
-seoDescription: "The post shows how Redis utilizes skiplist to get a powerful zset  data structure "
+seoDescription: "The post shows how Redis utilizes skiplist to get a powerful zset  data structure"
 datePublished: Fri Oct 03 2025 15:23:21 GMT+0000 (Coordinated Universal Time)
 cuid: cmgazukb2000002l7cy098nrx
 slug: redis-and-the-magic-of-zset
@@ -15,8 +15,6 @@ Redis is often praised as one of the simplest yet most powerful databases. Its k
 A ZSET (sorted set) is Redis’ answer to the question: “How do I efficiently query ordered data?” With ZSETs you can get things like *top N players by score*, *all values between X and Y*, or *the rank of a specific member* in logarithmic time. Under the hood, ZSETs are powered by a surprisingly elegant data structure: the **skiplist**.
 
 This post breaks down how skiplists work, why Redis chose them, and how insertion, removal, and rank queries actually operate. By the end, you’ll understand why ZSETs can feel like magic when combined with normal Redis keys.
-
----
 
 ## Skiplist Basics: A Tower of Linked Lists
 
@@ -72,7 +70,7 @@ This randomness ensures a geometric distribution of node heights. Most nodes are
 
 ---
 
-## Insert
+## Insert Member
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1759502791502/727f4f7a-170b-4d26-aed9-28ab45789ac3.png align="center")
 
@@ -91,9 +89,7 @@ To insert `(score, member)`:
 
 Because spans tell us how many nodes each jump covers, they are carefully adjusted during insertion.
 
----
-
-## Remove
+## Remove Member
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1759502818993/55525a4c-b01f-48f8-af60-7b2d8a1b8d8f.png align="center")
 
