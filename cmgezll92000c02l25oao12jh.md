@@ -20,6 +20,8 @@ I want to discuss a few areas in this post where we should aim for balance rathe
 
 You probably know about the [marshmallow experiment](https://en.wikipedia.org/wiki/Stanford_marshmallow_experiment). It tells us that kids who can delay gratification are usually more successful in life. And this is probably true. This ability allows us to not over-optimize locally, to see beyond the immediate moment.
 
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1759747425315/724fb8eb-e2aa-432e-b9da-5cb54936e6fb.png align="center")
+
 But if we focus too much on delaying gratification, we can end up in a situation where we have no gratification at all. We keep delaying it forever, and it makes us frustrated. The reward never comes because we're always waiting for the next milestone, the next achievement, the next "right time."
 
 We need to be able to defer our rewards when it matters. But we also need the ability to take pleasure and enjoy the ride. Life isn't just about the destination. If you never taste the sweetness along the way, what's the point of the journey?
@@ -65,6 +67,8 @@ There's also a balance between stepping back and stepping in. Sometimes you need
 And sometimes you need to act and improve your knowledge by doing. You need to get your hands dirty, make mistakes, and learn from real feedback. All the reflection in the world won't teach you what one failed experiment will.
 
 The best growth happens when you can move fluidly between these modes. Reflect to gain insight. Act to test that insight. Step back to process what you learned. Step in to apply it again, better this time.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1759747225243/9813a432-dc48-4b8d-b6cf-e757e658be8a.png align="center")
 
 ## Conclusion
 
