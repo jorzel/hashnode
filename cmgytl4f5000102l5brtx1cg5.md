@@ -81,7 +81,7 @@ First, there's no explicit protection of the rule. The rule "only X sessions per
 
 Or the opposite problem happens. Over time, the `Account` object accumulates more and more responsibilities. It manages sessions, handles concurrency, coordinates with the streaming service, and suddenly it's a god object that does everything. Good naming is crucial here — if you call it `Account` instead of something more specific, it's even easier for the object to drift into becoming a catch-all.
 
-But there's a deeper performance problem hiding here. With high concurrency — multiple requests trying to start sessions for the same account simultaneously — you need pessimistic locking to preserve atomicity. You need to lock the `Account` row (and possibly `Session` rows) to ensure that two concurrent requests don't both think there's an available slot when there isn't one. Imagine two requests arriving at the same moment when your account has exactly one slot left. Without locks, both queries see one available slot, both add a session, and you've violated your invariant.
+But there's a deeper performance problem hiding here. With high concurrency — multiple requests trying to start sessions for the same account simultaneously — you need [pessimistic locking](https://en.wikipedia.org/wiki/Lock_\(computer_science\)#Database_locks) to preserve atomicity. You need to lock the `Account` row (and possibly `Session` rows) to ensure that two concurrent requests don't both think there's an available slot when there isn't one. Imagine two requests arriving at the same moment when your account has exactly one slot left. Without locks, both queries see one available slot, both add a session, and you've violated your invariant.
 
 Locking works, but it kills scalability. As traffic increases, lock contention increases, and requests pile up waiting for locks. Your throughput is hindered, and your system becomes slower the more successful you are.
 
@@ -147,7 +147,7 @@ func (m *SessionManager) AcquireSession(ctx context.Context, spec AcquireSpec) (
 
 This approach has real benefits. Your domain logic is testable and explicit (within `AccountSessions.AddSession` method). Your boundaries are clear. Anyone reading the code knows what invariants are being protected and where.
 
-However, it has a small tradeoff: optimistic locking. With high traffic and many concurrent requests trying to start sessions for the same account, you'll get conflicts. If two transactions load the same aggregate and both try to save, only one will succeed (the other will get a version mismatch error). Your application needs to retry, which adds complexity and latency.
+However, it has a small tradeoff: [optimistic locking](https://en.wikipedia.org/wiki/Optimistic_concurrency_control). With high traffic and many concurrent requests trying to start sessions for the same account, you'll get conflicts. If two transactions load the same aggregate and both try to save, only one will succeed (the other will get a version mismatch error). Your application needs to retry, which adds complexity and latency.
 
 However, here's the critical difference from the naive approach: you're not blocking other requests while you hold a lock (you “optimistically” assume that the blocking is not needed). Readers can still load the aggregate. Other accounts aren't affected. You scale much better because you're not serializing all requests on one account — you're just retrying conflicts, which are typically rare unless you're already at capacity.
 
