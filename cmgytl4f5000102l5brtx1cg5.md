@@ -135,7 +135,7 @@ func (m *SessionManager) AcquireSession(ctx context.Context, spec AcquireSpec) (
 	accountSessions, version, err := m.repo.LoadAccountSessionsInTx(ctx, tx, spec.AccountID)
 
 	// Execute business logic (invariant protection happens here)
-	err = accaoutSessions.AddSession(spec.SessionID, spec.LeaseDurationSeconds)
+	err = accountSessions.AddSession(spec.SessionID, spec.LeaseDurationSeconds)
 
 	// Save back with optimistic locking
 	// This will fail if another transaction modified the aggregate
