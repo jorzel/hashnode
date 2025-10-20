@@ -234,6 +234,8 @@ Lua scripts in Redis have constraints: [they can only read/write keys that are e
 
 This constraint actually forces good design: your aggregate boundaries become very clear. You can't accidentally reach outside your aggregate. The price is that some operations that would be easy in a relational database require careful thought in Redis.
 
+The whole Redis aggregate implementation can be found [here](https://github.com/jorzel/streaming-system/blob/main/sessions-service/internal/redis/sessionmanager.go).
+
 ## Choosing Your Approach
 
 The naive approach works for small, non-critical systems where lock contention isn't a problem yet. It's the simplest to understand, but it scales poorly as traffic increases.
