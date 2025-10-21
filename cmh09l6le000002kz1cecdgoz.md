@@ -1,7 +1,7 @@
 ---
 title: "Talent as a System: How to Build It When You Think You Lack It"
 seoTitle: "Talent as a System: How to Build It When You Think You Lack It"
-seoDescription: "How to build conditions to thrive instead of asking whether "I have talent" "
+seoDescription: "How to build conditions to thrive instead of asking whether "I have talent""
 datePublished: Tue Oct 21 2025 07:50:14 GMT+0000 (Coordinated Universal Time)
 cuid: cmh09l6le000002kz1cecdgoz
 slug: talent-as-a-system-how-to-build-it-when-you-think-you-lack-it
@@ -111,7 +111,7 @@ The mechanism is the same. The entry point can be different. And that difference
 
 Here's something crucial: the loop needs multiple contexts to align. But that doesn't mean you need *all possible contexts* to be perfect.
 
-Different combinations work for different people. Maybe you don't have money for formal training, but you have incredible grit and determination. Maybe you don't have a coach, but you have supportive parents who believe in you. Maybe you don't have someone providing expert feedback, but you're strongly analytical and can assess your own gaps.
+Different combinations work for different people. Maybe you don't have money for formal training, but you have incredible grit and determination. Maybe you don't have a coach, but you have supportive parents who believe in you. Perhaps you don't have someone providing expert feedback, but you're a strong analyst and can identify your own gaps.
 
 This is fundamentally different from the fixed talent approach. Fixed talent says: "You either have this specific thing or you don't." The loop approach says: "What combination of contexts can work for *you*?"
 
@@ -169,7 +169,7 @@ I propose three stages of skill development, each requiring a different approach
 
 ### Stage 1: Beginner (Play and Flow)
 
-Lots of play, exploration, and flow. You don't need to be good yet—you just need to enjoy it enough to keep going. Small wins matter enormously. Did I do that? I did that!
+Lots of play, exploration, and [flow](https://en.wikipedia.org/wiki/Flow_\(psychology\)). You don't need to be good yet—you just need to enjoy it enough to keep going. Small wins matter enormously. Did I do that? I did that!
 
 You're at the beginning of the path, so proper practice brings fast effects. The loop circulates rapidly. Progress feels visible. This is where you fall in love.
 
@@ -183,7 +183,7 @@ At this stage, a mentor or coach becomes invaluable. They provide feedback, supp
 
 You push toward excellence and a kind of uniqueness. Enjoyment is often traded for satisfaction—the satisfaction of solving hard problems in ways that are yours.
 
-Development needs to be carefully directed now. You drill when you see weakness. Deliberate practice can be self-directed, but also be supported by a mentor if you can find someone who can help at this level. Your competence is high, so you experiment. You try to find a totally new way—your way.
+Development needs to be carefully directed now. You drill when you see weakness. [Deliberate practice](https://en.wikipedia.org/wiki/Practice_\(learning_method\)#Deliberate_practice) can be self-directed, but also be supported by a mentor if you can find someone who can help at this level. Your competence is high, so you experiment. You try to find a totally new way—your way.
 
 Even here, you must not completely lose the enjoyment. It keeps you going through the hard parts. Burnout is the real threat at this stage.
 
