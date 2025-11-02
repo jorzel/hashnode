@@ -1,5 +1,5 @@
 ---
-title: "Talent as a System: How to Build It When You Think You Lack It"
+title: "Talent as a Loop, Not a Gift"
 seoTitle: "Talent as a System: How to Build It When You Think You Lack It"
 seoDescription: "How to build conditions to thrive instead of asking whether "I have talent""
 datePublished: Tue Oct 21 2025 07:50:14 GMT+0000 (Coordinated Universal Time)
