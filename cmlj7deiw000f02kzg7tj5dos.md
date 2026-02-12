@@ -90,6 +90,10 @@ You pick the beginner book instead of the advanced one. You join the slow-runnin
 
 Some environments do this for you automatically. Video games are the purest example — early levels are deliberately easy, teaching you mechanics through play. Difficulty scales with your skill. You never notice you're being scaffolded because it feels like fun, not instruction. Language apps like Duolingo work the same way — tasks sit right at the edge of your current ability, adjusted in real time.
 
+I recently started painting by numbers. The scaffolding is built right into the canvas — outlines, numbered sections, matched colors. You don't need to know how to compose or mix. You just paint. But along the way, your hand gets steadier, your brush control improves, and you start noticing how colors work together. The structure lets you focus on the craft without the overwhelm.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1770892825419/ac0d3486-96f6-4760-a612-260f2b0ac2c3.gif align="center")
+
 At its core, self-scaffolding is designing and managing your own contexts — choosing the right level, the right environment, the right strategy for where you are right now. It's what "Talent is a Loop" calls building conditions, applied deliberately at every stage.
 
 The people who fail to self-scaffold do the opposite. They jump into the deep end, struggle, conclude they lack talent, and quit. They didn't lack talent. They skipped the ladder.
